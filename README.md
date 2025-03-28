@@ -49,7 +49,7 @@ cat log.glpwnme
 python3 glpwnme -t <target> --list-plugins
 ```
 
-> __*Note*__ : Listing plugins might find additionnal vulnerabilities that the _'--check-all'_ would
+> __*Note*__ : Listing plugins might find additional vulnerabilities that the _'--check-all'_ would
 > have not detected
 
 ## Usage example
