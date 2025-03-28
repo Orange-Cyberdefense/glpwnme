@@ -1,7 +1,12 @@
 # Glpwnme
 glpwnme is a tool used to check for vulnerabilities on running instance of glpi
 
-## Install
+## :sunny: Contribution
+If you found a vulnerability on **GLPI** which is not implemented on **glpwnme**, do not hesitate to add it !
+
+You can copy the file ```exploits/implementations/template.py``` and import it in ```exploits/implementations/__init__.py```.
+
+## :wrench: Install
 To **install** glpwnme you can use the following:
 ```bash
 pipx install .
@@ -14,7 +19,7 @@ pip3 install .
 python3 -m glpwnme
 ```
 
-## Vulnerabilities available
+## :bomb: Vulnerabilities available
 
 | Name                 | Score | Privileges | Vulnerable versions |
 | --------             | ------- | ------- | ------- |
@@ -33,18 +38,22 @@ python3 -m glpwnme
 
 Also, this tool checks for **default credentials** and is able to **upload php file** from a privileged user.
 
-## Add exploit
-Create your exploits using the `exploits/implementations/template.py` file
-you can add the arguments to the run method as you want and use it after with **-O**
-
-## Clean
+## 🧹 Clean
 Exploits might have some consequences. You probably want to clean what the
 exploit did. For this, do not forget to check the **log file** created by glpwnme.
 ```bash
 cat log.glpwnme
 ```
 
-## List plugins
+Exploits may implement a ```clean``` method that allow you to clean the previous traces let by the exploit.
+As for the run method you can add an argument.
+
+```bash
+# Clean the exploit traces
+python3 glpwnme.py -t <target> -e <exploit_to_use> -O "option1=value1" "option2=value2" --clean
+```
+
+## :page_facing_up: List plugins
 ```bash
 python3 glpwnme -t <target> --list-plugins
 ```
@@ -52,7 +61,7 @@ python3 glpwnme -t <target> --list-plugins
 > __*Note*__ : Listing plugins might find additional vulnerabilities that the _'--check-all'_ would
 > have not detected
 
-## Usage example
+## :pencil2: Usage example
 
 ```bash
 python3 glpwnme.py -t https://test.glpi.com # List all of the available exploits
@@ -68,18 +77,6 @@ python3 glpwnme.py -t https://test.glpi.com -e <exploit_to_use> --infos
 python3 glpwnme.py -t https://test.glpi.com -e <exploit_to_use> --run -O "option1=value1" "option2=value2"
 
 # Do not forget to check your log for restoring the .htaccess and keep the api_key
-cat log.glpwnme
-```
-
-## Clean your traces
-Exploits may implement a ```clean``` method that allow you to clean the previous traces let by the exploit.
-As for the run method you can add an argument.
-
-```bash
-# Clean the exploit traces
-python3 glpwnme.py -t <target> -e <exploit_to_use> -O "option1=value1" "option2=value2" --clean
-
-# Again check the log, to be sure there are no problems
 cat log.glpwnme
 ```
 
