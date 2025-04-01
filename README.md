@@ -159,6 +159,10 @@ cat log.glpwnme
 
 ![Exploitation of CVE 2024 27937](./images/cve_2024_27937_example_glpwnme.png)
 
+![Web Interface](./images/gui.png)
+
+The web interface provides an easy-to-use GUI for interacting with glpwnme. It allows you to configure targets, select exploits, and view results through your browser without needing to remember command-line arguments. To use it, simply run `docker compose up -d web` and access http://localhost:5000 in your browser.
+
 ## Args details
 ```bash
 # Login with creds
