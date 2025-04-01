@@ -1,0 +1,14 @@
+services:
+  glpwnme:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: glpwnme
+    volumes:
+      - ./:/app
+    # Pour passer des arguments lors du lancement
+    # Exemple: docker-compose run glpwnme -t https://target.glpi.com --check-all
+    entrypoint: ["python", "-m", "glpwnme"]
+    # Ne démarre pas automatiquement, attend les arguments de l'utilisateur
+    command: ["--help"]
+    network_mode: "host"

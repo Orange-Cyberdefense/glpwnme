@@ -19,6 +19,25 @@ pip3 install .
 python3 -m glpwnme
 ```
 
+## :whale: Docker
+You can also run glpwnme using Docker, which eliminates the need to install dependencies locally:
+
+```bash
+# Build and start the container
+docker compose build
+
+# Run glpwnme with arguments
+docker compose run glpwnme -t https://target.glpi.com --check-all
+
+# List plugins example
+docker compose run glpwnme -t https://target.glpi.com --list-plugins
+
+# Run a specific exploit
+docker compose run glpwnme -t https://target.glpi.com -e <exploit_name> --run
+```
+
+The container mounts the current directory as a volume, so all generated files (like `log.glpwnme`) will be available on your local machine.
+
 ## :bomb: Vulnerabilities available
 
 | Name                 | Score | Privileges | Vulnerable versions |
