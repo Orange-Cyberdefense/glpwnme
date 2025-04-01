@@ -20,23 +20,67 @@ python3 -m glpwnme
 ```
 
 ## :whale: Docker
-You can also run glpwnme using Docker, which eliminates the need to install dependencies locally:
+You can also run glpwnme using Docker, which eliminates the need to install dependencies locally.
 
+### Basic Usage
 ```bash
-# Build and start the container
+# Build the images
 docker compose build
 
-# Run glpwnme with arguments
+# Run glpwnme with arguments (creates a new container each time)
 docker compose run glpwnme -t https://target.glpi.com --check-all
-
-# List plugins example
-docker compose run glpwnme -t https://target.glpi.com --list-plugins
-
-# Run a specific exploit
-docker compose run glpwnme -t https://target.glpi.com -e <exploit_name> --run
 ```
 
-The container mounts the current directory as a volume, so all generated files (like `log.glpwnme`) will be available on your local machine.
+### Persistent Container (Recommended)
+
+For a better experience, use the persistent daemon container to avoid creating a new container for each command:
+
+```bash
+# Build and start the persistent container
+docker compose up -d daemon
+
+# Run commands in the existing container
+docker exec glpwnme-daemon python -m glpwnme -t https://target.glpi.com --list-plugins
+docker exec glpwnme-daemon python -m glpwnme -t https://target.glpi.com --check-all
+docker exec glpwnme-daemon python -m glpwnme -t https://target.glpi.com -e PLUGIN_ORDER_2022 --infos
+docker exec glpwnme-daemon python -m glpwnme -t https://target.glpi.com -e PLUGIN_ORDER_2022 --run -O "command=id" -u [username] -p [password]
+
+# Run more intrusive checks
+docker exec glpwnme-daemon python -m glpwnme -t https://target.glpi.com --check-all --no-opsec
+```
+
+### Web Interface
+
+A simple web interface is available to interact with glpwnme through your browser:
+
+```bash
+# Start the web interface
+docker compose up -d web
+
+# Access the web interface
+# http://localhost:5000
+```
+
+The web interface provides:
+- Easy target configuration
+- Simple exploit selection and execution
+- Color-coded results display
+- Log access
+
+### Cleanup and Maintenance
+
+```bash
+# Remove orphaned containers
+docker compose down --remove-orphans
+
+# View logs for the web interface
+docker logs -f glpwnme-web
+
+# Stop all services
+docker compose down
+```
+
+All generated files (like `log.glpwnme`) will be available on your local machine due to the volume mounting.
 
 ## :bomb: Vulnerabilities available
 
