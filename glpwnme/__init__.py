@@ -1,5 +1,6 @@
 import argparse
 import requests
+from packaging import version
 from glpwnme.exploits.utils import *
 from glpwnme.exploits.implementations import *
 from glpwnme.exploits.orchestrator import ExploitOrchestrator
@@ -130,7 +131,9 @@ def run_cli():
             ### TODO, login before initializing the session if credentials are provided
             if not glpwnme.no_init:
                 session.init_session()
-                if session.glpi_infos.session_dir_listing:
+                if(session.glpi_infos.session_dir_listing
+                    and session.glpi_infos.glpi_version
+                    and version.parse(session.glpi_infos.glpi_version) < version.parse("10.0.18")):
                     go_on = Log.ask("Do you want [b]glpwnme[/] to achieve"
                                     " [red]code execution[/red] automatically ?")
 
