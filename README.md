@@ -35,6 +35,7 @@ python3 -m glpwnme
 | CVE_2024_37149       | 5.6    | Super-Admin | GLPI < 10.0.16 |
 | CVE_2024_40638       | 8.1    | Self-Service | GLPI < 10.0.17 |
 | Leakymetry           | 9.3    | Unauthenticated | GLPI < 10.0.17 |
+| CVE_2025_24799       | 7.4    | Unauthenticated | GLPI < 10.0.18 |
 
 Also, this tool checks for **default credentials** and is able to **upload php file** from a privileged user.
 
