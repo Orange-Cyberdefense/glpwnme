@@ -26,16 +26,3 @@ services:
     entrypoint: ["tail", "-f", "/dev/null"]
     restart: unless-stopped
     tty: true
-
-  # Interface web
-  web:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: glpwnme-web
-    ports:
-      - "5000:5000"
-    volumes:
-      - ./:/app
-    command: ["app.py"]
-    restart: unless-stopped
