@@ -1,0 +1,28 @@
+services:
+  # Service pour l'outil en ligne de commande (à usage ponctuel)
+  glpwnme:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: glpwnme
+    volumes:
+      - ./:/app
+    # Pour passer des arguments lors du lancement
+    # Exemple: docker compose run glpwnme -t https://target.glpi.com --check-all
+    entrypoint: ["python", "-m", "glpwnme"]
+    # Ne démarre pas automatiquement, attend les arguments de l'utilisateur
+    command: ["--help"]
+    network_mode: "host"
+
+  # Service qui reste actif pour utiliser docker exec
+  daemon:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: glpwnme-daemon
+    volumes:
+      - ./:/app
+    # Garde le conteneur actif sans rien faire
+    entrypoint: ["tail", "-f", "/dev/null"]
+    restart: unless-stopped
+    tty: true

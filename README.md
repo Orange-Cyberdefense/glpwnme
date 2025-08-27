@@ -19,6 +19,48 @@ pip3 install .
 python3 -m glpwnme
 ```
 
+## :whale: Docker
+You can also run glpwnme using Docker, which eliminates the need to install dependencies locally.
+
+### Basic Usage
+```bash
+# Build the images
+docker compose build
+
+# Run glpwnme with arguments (creates a new container each time)
+docker compose run glpwnme -t https://target.glpi.com --check-all
+```
+
+### Persistent Container (Recommended)
+
+For a better experience, use the persistent daemon container to avoid creating a new container for each command:
+
+```bash
+# Build and start the persistent container
+docker compose up -d daemon
+
+# Run commands in the existing container
+docker exec glpwnme-daemon python -m glpwnme -t https://target.glpi.com --list-plugins
+docker exec glpwnme-daemon python -m glpwnme -t https://target.glpi.com --check-all
+docker exec glpwnme-daemon python -m glpwnme -t https://target.glpi.com -e PLUGIN_ORDER_2022 --infos
+docker exec glpwnme-daemon python -m glpwnme -t https://target.glpi.com -e PLUGIN_ORDER_2022 --run -O "command=id" -u [username] -p [password]
+
+# Run more intrusive checks
+docker exec glpwnme-daemon python -m glpwnme -t https://target.glpi.com --check-all --no-opsec
+```
+
+### Cleanup and Maintenance
+
+```bash
+# Remove orphaned containers
+docker compose down --remove-orphans
+
+# Stop all services
+docker compose down
+```
+
+All generated files (like `log.glpwnme`) will be available on your local machine due to the volume mounting.
+
 ## :bomb: Vulnerabilities available
 
 | Name                 | Score | Privileges | Vulnerable versions |
@@ -97,6 +139,8 @@ cat log.glpwnme
 ![Vulnerabilities check](./images/glpwnme_check_all.png)
 
 ![Exploitation of CVE 2024 27937](./images/cve_2024_27937_example_glpwnme.png)
+
+
 
 ## Args details
 ```bash
