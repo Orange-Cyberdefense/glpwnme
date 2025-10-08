@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "glpwnme"
-version = "0.4.0"
+version = "0.4.1"
 description = "Tool to exploit non up-to-date GLPI"
 authors = ["Guilhem Rioux <guilhem.rioux@orangecyberdefense.com>"]
 readme = "README.md"
