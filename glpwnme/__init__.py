@@ -164,7 +164,7 @@ def run_cli():
 
         if glpwnme.dump_cookies:
             if session.login_with_credentials():
-                Log.msg(*session.get_login_cookie(), sep="; ") # Trickshot from Romain
+                Log.msg(*session.get_login_cookie(), sep="; ") # Trickshot from Romain Michel
             else:
                 Log.err("Login failed")
 
