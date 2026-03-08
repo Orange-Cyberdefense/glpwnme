@@ -41,7 +41,7 @@ docker compose build
 docker compose run --rm glpwnme -t https://target.glpi.com --check-all
 ```
 
-### Persistent Container (Recommended)
+### Persistent Container
 
 For a better experience, use the persistent daemon container to avoid creating a new container for each command:
 
