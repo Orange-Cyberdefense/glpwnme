@@ -19,6 +19,16 @@ pip3 install .
 python3 -m glpwnme
 ```
 
+## TLDR
+Here is a quick sum up on how to use glpwnme:
+```sh
+glpwnme -t "$Target" --check-all --no-opsec # Run all check without caring about opsec
+glpwnme -t "$Target" -e "$EXPLOIT_NAME" --infos # Show how to use the exploit
+glpwnme -t "$Target" -e "$EXPLOIT_NAME" --run
+cat log.glpwnme # Check what happened
+glpwnme -t "$Target" -e "$EXPLOIT_NAME" --clean # Clean the target
+```
+
 ## :whale: Docker
 You can also run glpwnme using Docker, which eliminates the need to install dependencies locally.
 
@@ -27,8 +37,8 @@ You can also run glpwnme using Docker, which eliminates the need to install depe
 # Build the images
 docker compose build
 
-# Run glpwnme with arguments (creates a new container each time)
-docker compose run glpwnme -t https://target.glpi.com --check-all
+# Run glpwnme with arguments (--rm to not polute fs)
+docker compose run --rm glpwnme -t https://target.glpi.com --check-all
 ```
 
 ### Persistent Container (Recommended)
@@ -79,6 +89,7 @@ All generated files (like `log.glpwnme`) will be available on your local machine
 | Leakymetry           | 9.3    | Unauthenticated | GLPI < 10.0.17 |
 | CVE_2025_24799       | 7.4    | Unauthenticated | GLPI < 10.0.18 |
 | CVE_2025_32786       | 7.4    | Unauthenticated | Plugin GLPI Inventory < 1.5.2 |
+| CVE_2026_26026       | 6.9    | Super-Admin | GLPI < 11.0.6 |
 
 Also, this tool checks for **default credentials** and is able to **upload php file** from a privileged user.
 

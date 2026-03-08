@@ -2,3 +2,5 @@ __pycache__/
 log.glpwnme
 check_file.py
 venv/
+tests/
+cve_2026_22044.py
