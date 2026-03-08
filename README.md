@@ -205,6 +205,7 @@ Thanks to the following person for their help:
   * https://glpi.client.com/glpi/ &rarr; works
 * Maybe the **--auth** is needed, check the source code of the login **html page** and recover it here
 * If **SSO** or other mechanisms are setup to access the GLPI, then you will need to give **glpwnme** the cookie used. **In this case** you also need to use the **--no-init** option in order to prevent glpwnme to logout at the scan phase.
+* Option **--cookie** fails, when using **--cookie** glpwnme might need to log you out in order to check vulnerability. That is why, depending on the cookie you provided, this option might not work as expected.
 
 ### The cookie given by the tool does not work ?
 * **Cookies** in GLPI depends on the **hostname**, cookie changes between same instance but different Host:
