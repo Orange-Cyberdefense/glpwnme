@@ -1,0 +1,18 @@
+FROM nextcloud:latest
+USER root
+RUN docker-php-ext-install mysqli
+
+# Override Apache vhost for GLPI 10.0.x
+RUN printf '<VirtualHost *:80>\n\
+    ServerName localhost\n\
+    DocumentRoot /var/www/glpi\n\
+    <Directory /var/www/glpi>\n\
+        Options FollowSymLinks\n\
+        AllowOverride All\n\
+        Require all granted\n\
+    </Directory>\n\
+</VirtualHost>\n' > /etc/apache2/sites-enabled/000-default.conf \
+    && a2enmod rewrite
+
+# Skip Nextcloud init logic by using apache directly
+ENTRYPOINT ["apache2-foreground"]

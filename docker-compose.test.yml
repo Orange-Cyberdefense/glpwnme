@@ -1,0 +1,34 @@
+services:
+  glpi-db:
+    image: mariadb:11.8
+    container_name: glpwnme-test-db
+    environment:
+      MARIADB_ROOT_PASSWORD: glpi
+      MARIADB_DATABASE: glpi
+      MARIADB_USER: glpi
+      MARIADB_PASSWORD: glpi
+    expose:
+      - "3306"
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 5s
+      timeout: 5s
+      retries: 15
+
+  glpi-app:
+    build:
+      context: .
+      dockerfile: Dockerfile.glpi-test
+    image: glpwnme-test-php:latest
+    container_name: glpwnme-test-app
+    depends_on:
+      glpi-db:
+        condition: service_healthy
+    volumes:
+      - /home/j4kuuu/Desktop/Now/free-time/cve_sec_research/glpi/glpi-10.0.23:/var/www/glpi
+      - /home/j4kuuu/Desktop/Now/free-time/cve_sec_research/glpi/glpi-source/vendor:/var/www/glpi/vendor:ro
+      - /home/j4kuuu/Desktop/Now/free-time/cve_sec_research/glpi/glpi-source/public/lib:/var/www/glpi/public/lib:ro
+      - /home/j4kuuu/Desktop/Now/free-time/cve_sec_research/glpi/glpi-test-data/files:/var/www/glpi/files
+      - /home/j4kuuu/Desktop/Now/free-time/cve_sec_research/glpi/glpi-test-data/config:/var/www/glpi/config
+    ports:
+      - "127.0.0.1:18080:80"
