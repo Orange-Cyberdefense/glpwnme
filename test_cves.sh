@@ -142,6 +142,18 @@ else
   fail "CVE_2026_42320 — expected arbitrary file read on 10.0.23 but got: $(echo "$result" | tail -2)"
 fi
 
+echo ""
+info "=== CVE_2026_42318 (SHOULD fire — patched in 10.0.25/11.0.7, instance is 10.0.23) ==="
+info "Behaviorally deletes a throwaway Supplier (a non-planning type) via planning delete_event."
+echo ""
+
+result=$(python3 -m glpwnme -t "$TARGET" $AUTH -e CVE_2026_42318 --check --no-opsec 2>&1)
+if echo "$result" | grep -qiE "arbitrary object deletion confirmed|deleted through the planning endpoint"; then
+  pass "CVE_2026_42318 — achieved arbitrary object deletion via planning on 10.0.23"
+else
+  fail "CVE_2026_42318 — expected arbitrary deletion on 10.0.23 but got: $(echo "$result" | tail -2)"
+fi
+
 # CVE_2026_22044 (backtick quoteName injection): fixed in 10.0.23 (GHSA-569q-j526-w385;
 # confirmed by source diff — str_replace('`','``') added to DBmysql::quoteName() in
 # 10.0.23, absent in 10.0.22). Correctly version-gated OUT on this 10.0.23 instance, so
