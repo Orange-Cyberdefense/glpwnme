@@ -106,9 +106,13 @@ for cve in \
   CVE_2026_25937 \
   CVE_2026_26026 \
   CVE_2026_26027 \
-  CVE_2026_26263; do
+  CVE_2026_26263 \
+  CVE_2026_5385; do
   assert_not_vulnerable "$cve"
 done
+# Note: CVE_2026_5385 (KB stored XSS) is 11.0-only; on this 10.0.23 harness it is
+# version-gated out (correctly not flagged). Its true-positive fire is validated
+# against 11.0.6 vs 11.0.7 (see deploy-glpi.sh 11.0.6 / 11.0.7).
 
 # CVE_2023_41323 has no check() method — use check-all to verify
 result=$(python3 -m glpwnme -t "$TARGET" $AUTH --check-all --no-opsec 2>&1 | grep "CVE_2023_41323")
