@@ -73,23 +73,60 @@ All generated files (like `log.glpwnme`) will be available on your local machine
 
 ## :bomb: Vulnerabilities available
 
-| Name                 | Score | Privileges | Vulnerable versions |
-| --------             | ------- | ------- | ------- |
-| CVE_2020_15175       | 7.4    | Unauthenticated | GLPI < 9.5.2 |
-| CVE_2022_31061       | 7.4    | Unauthenticated | GLPI < 10.0.2 |
-| CVE_2022_35914       | 10     | Unauthenticated | GLPI < 10.0.3 |
-| PLUGIN_ORDER_2022    | 8.3     | Self-Service | GLPI Plugin Order < 2.10.1 |
-| CVE_2023_41323       | 3      | Unauthenticated | GLPI < 10.0.10 |
-| CVE_2023_41326       | 8.1    | Self-Service | GLPI < 10.0.10 |
-| CVE_2024_27937       | 6.4    | Self-Service | GLPI < 10.0.13 |
-| CVE_2024_29889       | 8.1    | Self-Service | GLPI < 10.0.15 |
-| CVE_2024_37148       | 8.1    | Self-Service | GLPI < 10.0.16 |
-| CVE_2024_37149       | 5.6    | Super-Admin | GLPI < 10.0.16 |
-| CVE_2024_40638       | 8.1    | Self-Service | GLPI < 10.0.17 |
-| Leakymetry           | 9.3    | Unauthenticated | GLPI < 10.0.17 |
-| CVE_2025_24799       | 7.4    | Unauthenticated | GLPI < 10.0.18 |
-| CVE_2025_32786       | 7.4    | Unauthenticated | Plugin GLPI Inventory < 1.5.2 |
-| CVE_2026_26026       | 6.9    | Super-Admin | GLPI < 11.0.6 |
+| Name | Score | Privileges | Vulnerable versions |
+| ---- | ----- | ---------- | ------------------- |
+| CVE_2020_15175 | 7.4 | Unauthenticated | GLPI < 9.5.2 |
+| PLUGIN_ORDER_2022 | 8.6 | Self-Service | GLPI Plugin Order < 2.10.1 |
+| CVE_2022_31061 | 7.4 | Unauthenticated | GLPI < 10.0.2 |
+| CVE_2022_35914 | 10 | Unauthenticated | GLPI < 10.0.3 |
+| CVE_2022_35947 | 9.8 | Unauthenticated | GLPI < 10.0.3 |
+| CVE_2023_36808 | 9.8 | Unauthenticated | GLPI < 10.0.9 |
+| CVE_2023_36810 | 7.2 | Super-Admin | GLPI < 10.0.9 |
+| CVE_2023_41320 | 8.1 | Self-Service | GLPI < 10.0.10 |
+| CVE_2023_41323 | 3 | Unauthenticated | GLPI < 10.0.10 |
+| CVE_2023_41326 | 8.1 | Self-Service | GLPI < 10.0.10 |
+| CVE_2023_42802 | 9.8 | Unauthenticated | GLPI < 10.0.10 |
+| CVE_2023_43813 | 8.8 | Self-Service | GLPI < 10.0.11 |
+| CVE_2024_27096 | 7.7 | Self-Service | GLPI < 10.0.13 |
+| CVE_2024_27937 | 6.4 | Self-Service | GLPI < 10.0.13 |
+| CVE_2024_29889 | 8.1 | Self-Service | GLPI < 10.0.15 |
+| CVE_2024_31456 | 7.2 | Self-Service | GLPI < 10.0.15 |
+| CVE_2024_37148 | 8.1 | Self-Service | GLPI < 10.0.16 |
+| CVE_2024_37149 | 5.6 | Super-Admin | GLPI < 10.0.16 |
+| CVE_2024_40638 | 8.1 | Self-Service | GLPI < 10.0.17 |
+| CVE_2024_41679 | 6.5 | Self-Service | GLPI < 10.0.17 |
+| CVE_2024_43416 | 4.3 | Unauthenticated | GLPI < 10.0.17 |
+| CVE_2024_43418 | 9.8 | Unauthenticated | GLPI < 10.0.17 |
+| CVE_2024_45608 | 6.5 | Self-Service | GLPI < 10.0.17 |
+| CVE_2024_47758 | 7.6 | Self-Service | GLPI < 10.0.17 |
+| CVE_2024_47760 | 8.8 | Self-Service | GLPI < 10.0.17 |
+| CVE_2024_47761 | 7.5 | Self-Service | GLPI < 10.0.17 |
+| CVE_2024_48912 | 7.2 | Self-Service | GLPI < 10.0.17 |
+| Leakymetry | 9.3 | Unauthenticated | GLPI < 10.0.17 |
+| CVE_2025_21619 | 7.2 | Admin | GLPI < 10.0.18 |
+| CVE_2025_21626 | 5.8 | Unauthenticated | GLPI < 10.0.18 |
+| CVE_2025_23024 | 6.5 | Unauthenticated | GLPI < 10.0.18 |
+| CVE_2025_24799 | 7.5 | Unauthenticated | GLPI < 10.0.18 |
+| CVE_2025_24801 | 7.2 | Admin | GLPI < 10.0.18 |
+| CVE_2025_25192 | 4.3 | Self-Service | GLPI < 10.0.18 |
+| CVE_2025_32786 | 7.2 | Unauthenticated | Plugin GLPI Inventory < 1.5.1 |
+| CVE_2025_53008 | 5 | Self-Service | GLPI < 10.0.19 |
+| CVE_2025_53105 | 4.3 | Self-Service | GLPI < 10.0.19 |
+| CVE_2025_59935 | 8.8 | Unauthenticated | GLPI < 10.0.21 |
+| CVE_2025_64516 | 7.5 | Unauthenticated | GLPI < 11.0.3 |
+| CVE_2025_64520 | 4.3 | Read-Only | GLPI < 10.0.21 |
+| CVE_2025_66417 | 9.8 | Unauthenticated | GLPI < 11.0.3 |
+| CVE_2026_22044 | 6.5 | Self-Service | GLPI < 10.0.23 |
+| CVE_2026_22247 | 4.9 | Super-Admin | GLPI < 11.0.5 |
+| CVE_2026_22248 | 7.2 | Super-Admin | GLPI < 11.0.5 |
+| CVE_2026_23624 | 5.9 | Self-Service | GLPI < 10.0.23 |
+| CVE_2026_25936 | 6.5 | Self-Service | GLPI < 11.0.6 |
+| CVE_2026_25937 | 6.8 | Self-Service | GLPI < 11.0.6 |
+| CVE_2026_26026 | 9.1 | Admin | GLPI < 11.0.6 |
+| CVE_2026_26027 | 7.5 | Unauthenticated | GLPI < 11.0.6 |
+| CVE_2026_26263 | 8.1 | Unauthenticated | GLPI < 11.0.6 |
+| CVE_2026_29047 | 8.1 | Read-Only | GLPI < 11.0.6 |
+| CVE_2026_42320 | 6.5 | Technician | GLPI < 10.0.25 / 11.0.7 |
 
 Also, this tool checks for **default credentials** and is able to **upload php file** from a privileged user.
 
