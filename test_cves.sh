@@ -98,6 +98,7 @@ for cve in \
   CVE_2025_64516 \
   CVE_2025_64520 \
   CVE_2025_66417 \
+  CVE_2026_22044 \
   CVE_2026_22247 \
   CVE_2026_22248 \
   CVE_2026_23624 \
@@ -129,16 +130,27 @@ else
 fi
 
 echo ""
-info "=== CVE_2026_22044 (SHOULD fire — patched in 10.0.24, instance is 10.0.23) ==="
-info "Note: requires at least one user row; glpi/glpi admin user satisfies this"
+info "=== CVE_2026_42320 (SHOULD fire — patched in 10.0.25/11.0.7, instance is 10.0.23) ==="
+info "Behaviorally registers a doc referencing _log/php-errors.log and reads it back."
+info "Requires the target to run with display_errors=Off (production mode)."
 echo ""
 
-result=$(python3 -m glpwnme -t "$TARGET" $AUTH -e CVE_2026_22044 --check --no-opsec 2>&1)
-if echo "$result" | grep -qiE "injection present|timing confirmed|Confirmed:"; then
-  pass "CVE_2026_22044 — correctly detected ORDER BY backtick injection on 10.0.23"
+result=$(python3 -m glpwnme -t "$TARGET" $AUTH -e CVE_2026_42320 --check --no-opsec 2>&1)
+if echo "$result" | grep -qiE "arbitrary GLPI_DOC_DIR read|served [0-9]+ bytes"; then
+  pass "CVE_2026_42320 — achieved arbitrary GLPI_DOC_DIR file read on 10.0.23"
 else
-  info "CVE_2026_22044 — $(echo "$result" | tail -2)"
+  fail "CVE_2026_42320 — expected arbitrary file read on 10.0.23 but got: $(echo "$result" | tail -2)"
 fi
+
+# CVE_2026_22044 (backtick quoteName injection): fixed in 10.0.23 (GHSA-569q-j526-w385;
+# confirmed by source diff — str_replace('`','``') added to DBmysql::quoteName() in
+# 10.0.23, absent in 10.0.22). Correctly version-gated OUT on this 10.0.23 instance, so
+# it is in the not-flagged loop above.
+# KNOWN ISSUE: the check()'s detection vector (search sort[]=<col>`...) does NOT fire on
+# a vulnerable 10.0.22 either — GLPI's search sort goes through the addOrderBy()
+# searchopt_id whitelist, so user input never reaches quoteName() as a raw identifier.
+# The true reachable sink is unconfirmed; the check is currently a false negative on
+# vulnerable builds and needs a corrected vector before it can be trusted to fire.
 
 echo ""
 info "=== DEFAULT_PASSWORD_CHECK (SHOULD fire — default creds active on this instance) ==="
