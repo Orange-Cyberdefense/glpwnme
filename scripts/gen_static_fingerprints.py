@@ -127,37 +127,47 @@ def find_discriminating_files(
     target_versions: list[str],
 ) -> dict[str, dict[str, str]]:
     """
-    For each target version, pick up to MAX_FILES_PER_VERSION files whose hash
-    appears in the fewest other versions (globally unique files first).
-
-    When two versions share all file hashes, they are truly ambiguous — they
-    will naturally receive identical entries, and the scoring algorithm will
-    return both as candidates at detection time.
+    For each target version V, use greedy set cover to pick up to
+    MAX_FILES_PER_VERSION files that collectively have a different hash in as
+    many other versions as possible. A version W "covered" by at least one
+    chosen file will fail V's entry check on a W container, preventing false
+    matches. Versions that remain uncovered after MAX_FILES_PER_VERSION files
+    are genuinely ambiguous and flagged by check_system_ambiguities.
     """
-    # (file, sha1) -> set of versions that carry this hash for this file
-    hash_to_versions: dict[tuple[str, str], set[str]] = {}
-    for ver, files in matrix.items():
-        for file, h in files.items():
-            if h is None:
-                continue
-            hash_to_versions.setdefault((file, h), set()).add(ver)
+    all_versions = list(matrix.keys())
 
     result: dict[str, dict[str, str]] = {}
     for ver in target_versions:
-        # Rank available files by exclusivity (fewer versions sharing the hash = better)
-        candidates: list[tuple[int, str, str]] = []
-        for file, h in matrix[ver].items():
-            if h is None:
-                continue
-            group_size = len(hash_to_versions.get((file, h), set()))
-            candidates.append((group_size, file, h))
-        candidates.sort()
+        ver_files = {f: h for f, h in matrix[ver].items() if h is not None}
 
-        chosen = {file: h for _, file, h in candidates[:MAX_FILES_PER_VERSION]}
-        result[ver] = chosen
-
-        if not candidates:
+        if not ver_files:
             print(f"  WARNING: {ver} — no candidate files found", file=sys.stderr)
+            result[ver] = {}
+            continue
+
+        # For each file, which other versions have a different hash?
+        file_blocks: dict[str, set[str]] = {
+            f: {w for w in all_versions if w != ver and matrix[w].get(f) != h}
+            for f, h in ver_files.items()
+        }
+
+        chosen: dict[str, str] = {}
+        uncovered = set(all_versions) - {ver}
+
+        for _ in range(MAX_FILES_PER_VERSION):
+            if not uncovered:
+                break
+            best = max(
+                (f for f in ver_files if f not in chosen),
+                key=lambda f: len(file_blocks[f] & uncovered),
+                default=None,
+            )
+            if best is None or not (file_blocks[best] & uncovered):
+                break
+            chosen[best] = ver_files[best]
+            uncovered -= file_blocks[best]
+
+        result[ver] = chosen
 
     return result
 
