@@ -1,33 +1,37 @@
 #!/usr/bin/env python3
 """
-Generate STATIC_FILES_VERSION dict entries for a list of GLPI versions.
+Generate STATIC_FILES_VERSION dict entries from a local GLPI git clone.
+
+For each requested version, selects the most discriminating JS files — those
+whose SHA1 hash appears in the fewest other versions. Globally unique files
+(hash found in exactly one version) are preferred. When two versions share all
+file hashes, they are flagged as ambiguous and get identical entries; the
+detection algorithm will return both as candidates at runtime.
 
 Usage:
-    python scripts/gen_static_fingerprints.py <releases_dir> [--baseline <version>]
+    python scripts/gen_static_fingerprints.py <glpi_repo> [--tags VERSION ...]
 
-    releases_dir: directory containing extracted GLPI releases as subdirs
-                  named glpi-<version> (e.g. glpi-11.0.2, glpi-11.0.3, ...)
+    glpi_repo: path to a local clone of https://github.com/glpi-project/glpi
+    --tags:    version strings to emit entries for (e.g. 10.0.18 11.0.7).
+               Defaults to all glpi-10.* and glpi-11.* tags found in the repo.
 
-    --baseline: version to diff against for the first discovered version.
-                Must also be present in releases_dir.
-                Defaults to auto (each version is diffed against the previous one).
+Maintainability workflow for a new GLPI release:
+    cd ~/glpi-repo && git fetch --tags
+    python scripts/gen_static_fingerprints.py ~/glpi-repo --tags 11.0.8
+    # paste the output into glpi_static_files_version.py
 
-Example:
-    python scripts/gen_static_fingerprints.py ~/glpi-releases --baseline 11.0.1
+The clone stays on the maintainer's machine and is never committed to glpwnme.
 """
 
 import argparse
 import hashlib
+import subprocess
 import sys
 from pathlib import Path
 from packaging.version import Version
 
 
-# Candidate paths are URL-relative (as the web server serves them).
-# GLPI < 11: files live at  <root>/js/...
-# GLPI 11+:  files live at  <root>/public/js/... but are served as /js/...
 JS_CANDIDATES = [
-    # classic JS (10.x and 11.x)
     "js/common.js",
     "js/common_ajax_controller.js",
     "js/dashboard.js",
@@ -43,7 +47,6 @@ JS_CANDIDATES = [
     "js/RichText/ContentTemplatesParameters.js",
     "js/RichText/UserMention.js",
     "js/RichText/FormTags.js",
-    # 11.x additions
     "js/modules/Forms/EditorController.js",
     "js/modules/Forms/RendererController.js",
     "js/modules/Forms/BaseConditionEditorController.js",
@@ -59,119 +62,189 @@ JS_CANDIDATES = [
     "js/reservations.js",
 ]
 
-
-def sha1_file(path: Path) -> str:
-    return hashlib.sha1(path.read_bytes()).hexdigest()
+MAX_FILES_PER_VERSION = 3
 
 
-def find_release_dir(releases_dir: Path, version: str) -> Path | None:
-    for candidate in [
-        releases_dir / f"glpi-{version}",
-        releases_dir / version,
-    ]:
-        if candidate.is_dir():
-            return candidate
+def git_show(repo: Path, tag: str, git_path: str) -> bytes | None:
+    result = subprocess.run(
+        ["git", "show", f"{tag}:{git_path}"],
+        cwd=repo,
+        capture_output=True,
+    )
+    return result.stdout if result.returncode == 0 else None
+
+
+def sha1(content: bytes) -> str:
+    return hashlib.sha1(content).hexdigest()
+
+
+def get_file_hash(repo: Path, tag: str, url_rel: str) -> str | None:
+    """
+    Read url_rel from the git tag. Tries public/<url_rel> first (GLPI 11.x layout
+    where files live under public/ but are served without the prefix), then
+    <url_rel> directly (GLPI 10.x).
+    """
+    for git_path in [f"public/{url_rel}", url_rel]:
+        content = git_show(repo, tag, git_path)
+        if content is not None:
+            return sha1(content)
     return None
 
 
-def resolve_disk_path(release_dir: Path, url_rel: str) -> Path | None:
-    """
-    Given a URL-relative path like 'js/common.js', find the actual file on disk.
-    Tries public/<url_rel> first (GLPI 11.x layout), then <url_rel> directly (GLPI 10.x).
-    """
-    for prefix in ["public", ""]:
-        p = release_dir / prefix / url_rel if prefix else release_dir / url_rel
-        if p.exists():
-            return p
-    return None
-
-
-def get_changed_files(dir_a: Path, dir_b: Path) -> dict[str, str]:
-    """
-    Return candidates that changed between dir_a and dir_b,
-    keyed by URL-relative path, valued by SHA1 hash in dir_b.
-    """
-    changed = {}
-    for rel in JS_CANDIDATES:
-        fa = resolve_disk_path(dir_a, rel)
-        fb = resolve_disk_path(dir_b, rel)
-        if fb is None:
-            continue
-        if fa is None:
-            changed[rel] = sha1_file(fb)
-        elif sha1_file(fa) != sha1_file(fb):
-            changed[rel] = sha1_file(fb)
-    return changed
-
-
-def main():
-    parser = argparse.ArgumentParser(
-        description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
+def list_version_tags(repo: Path) -> list[str]:
+    result = subprocess.run(
+        ["git", "tag", "-l", "10.*", "11.*"],
+        cwd=repo,
+        capture_output=True,
+        text=True,
     )
-    parser.add_argument("releases_dir", type=Path)
-    parser.add_argument(
-        "--baseline",
-        help="Version to diff the first discovered version against (must also be in releases_dir)",
-    )
-    args = parser.parse_args()
-
-    releases_dir: Path = args.releases_dir.expanduser().resolve()
-    if not releases_dir.is_dir():
-        print(f"Error: {releases_dir} is not a directory", file=sys.stderr)
-        sys.exit(1)
-
     versions = []
-    for p in releases_dir.iterdir():
-        name = p.name
-        ver_str = name.removeprefix("glpi-") if name.startswith("glpi-") else name
+    for line in result.stdout.splitlines():
+        ver_str = line.strip()
+        if "-" in ver_str:  # skip pre-releases (betas, RCs)
+            continue
         try:
             Version(ver_str)
             versions.append(ver_str)
         except Exception:
             pass
     versions.sort(key=Version)
+    return versions
 
-    if not versions:
-        print(f"Error: no versioned subdirs found in {releases_dir}", file=sys.stderr)
+
+def build_matrix(repo: Path, versions: list[str]) -> dict[str, dict[str, str | None]]:
+    """Build a version x file -> sha1 | None matrix from the git clone."""
+    matrix: dict[str, dict[str, str | None]] = {}
+    for ver in versions:
+        tag = ver
+        print(f"  reading {tag}...", file=sys.stderr)
+        matrix[ver] = {url_rel: get_file_hash(repo, tag, url_rel) for url_rel in JS_CANDIDATES}
+    return matrix
+
+
+def find_discriminating_files(
+    matrix: dict[str, dict[str, str | None]],
+    target_versions: list[str],
+) -> dict[str, dict[str, str]]:
+    """
+    For each target version, pick up to MAX_FILES_PER_VERSION files whose hash
+    appears in the fewest other versions (globally unique files first).
+
+    When two versions share all file hashes, they are truly ambiguous — they
+    will naturally receive identical entries, and the scoring algorithm will
+    return both as candidates at detection time.
+    """
+    # (file, sha1) -> set of versions that carry this hash for this file
+    hash_to_versions: dict[tuple[str, str], set[str]] = {}
+    for ver, files in matrix.items():
+        for file, h in files.items():
+            if h is None:
+                continue
+            hash_to_versions.setdefault((file, h), set()).add(ver)
+
+    result: dict[str, dict[str, str]] = {}
+    for ver in target_versions:
+        # Rank available files by exclusivity (fewer versions sharing the hash = better)
+        candidates: list[tuple[int, str, str]] = []
+        for file, h in matrix[ver].items():
+            if h is None:
+                continue
+            group_size = len(hash_to_versions.get((file, h), set()))
+            candidates.append((group_size, file, h))
+        candidates.sort()
+
+        chosen = {file: h for _, file, h in candidates[:MAX_FILES_PER_VERSION]}
+        result[ver] = chosen
+
+        if not candidates:
+            print(f"  WARNING: {ver} — no candidate files found", file=sys.stderr)
+
+    return result
+
+
+def check_system_ambiguities(
+    entries: dict[str, dict[str, str]],
+    matrix: dict[str, dict[str, str | None]],
+    target_versions: list[str],
+) -> dict[str, list[str]]:
+    """
+    For each target version, find other versions whose entry would also fully
+    match a container running that version — i.e. genuine detection-time ties.
+    Returns {version: [conflicting versions]}.
+    """
+    ambiguities: dict[str, list[str]] = {}
+    for ver in target_versions:
+        conflicts = [
+            other_ver
+            for other_ver, other_files in entries.items()
+            if other_ver != ver
+            and other_files
+            and all(matrix[ver].get(file) == h for file, h in other_files.items())
+        ]
+        if conflicts:
+            ambiguities[ver] = sorted(conflicts, key=Version)
+    return ambiguities
+
+
+def main():
+    parser = argparse.ArgumentParser(
+        description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
+    )
+    parser.add_argument("glpi_repo", type=Path, help="Path to local GLPI git clone")
+    parser.add_argument(
+        "--tags",
+        nargs="+",
+        metavar="VERSION",
+        help="Version strings to emit (e.g. 10.0.18 11.0.7). "
+             "Defaults to all glpi-10.* and glpi-11.* tags.",
+    )
+    args = parser.parse_args()
+
+    repo: Path = args.glpi_repo.expanduser().resolve()
+    if not (repo / ".git").exists() and not (repo / "HEAD").exists():
+        print(f"Error: {repo} does not look like a git repository", file=sys.stderr)
         sys.exit(1)
 
-    print(f"Found versions: {', '.join(versions)}\n")
+    print("Discovering tags...", file=sys.stderr)
+    all_versions = list_version_tags(repo)
+    if not all_versions:
+        print("Error: no glpi-10.* or glpi-11.* tags found", file=sys.stderr)
+        sys.exit(1)
+    print(f"Found {len(all_versions)} version tags: {', '.join(all_versions)}", file=sys.stderr)
 
-    results: dict[str, dict[str, str]] = {}
+    target_versions = args.tags if args.tags else all_versions
+    unknown = [v for v in target_versions if v not in all_versions]
+    for v in unknown:
+        print(f"Warning: glpi-{v} not found in repository tags, skipping", file=sys.stderr)
+    target_versions = [v for v in target_versions if v in all_versions]
 
-    for i, ver in enumerate(versions):
-        ver_dir = find_release_dir(releases_dir, ver)
-        if ver_dir is None:
-            print(f"Warning: could not locate dir for {ver}", file=sys.stderr)
-            continue
+    if not target_versions:
+        print("Error: no valid target versions", file=sys.stderr)
+        sys.exit(1)
 
-        if args.baseline and i == 0:
-            baseline_ver = args.baseline
-        elif i == 0:
-            print(f"Skipping {ver} — no previous version to diff against (use --baseline)")
-            continue
-        else:
-            baseline_ver = versions[i - 1]
+    print(f"\nBuilding hash matrix for all {len(all_versions)} versions...", file=sys.stderr)
+    matrix = build_matrix(repo, all_versions)
 
-        baseline_dir = find_release_dir(releases_dir, baseline_ver)
-        if baseline_dir is None:
-            print(f"Warning: baseline dir for {baseline_ver} not found, skipping {ver}", file=sys.stderr)
-            continue
+    print("\nSelecting discriminating files...", file=sys.stderr)
+    entries = find_discriminating_files(matrix, target_versions)
 
-        changed = get_changed_files(baseline_dir, ver_dir)
-        results[ver] = changed
-        print(f"{ver} (diff vs {baseline_ver}): {len(changed)} changed file(s)")
-        for f in changed:
-            print(f"  {f}")
+    ambiguities = check_system_ambiguities(entries, matrix, target_versions)
+    for ver, conflicts in sorted(ambiguities.items(), key=lambda x: Version(x[0])):
+        print(
+            f"  NOTE: {ver} cannot be distinguished from {', '.join(conflicts)} "
+            f"at detection time — both entries will match",
+            file=sys.stderr,
+        )
 
     print("\n\n# ---- Paste into STATIC_FILES_VERSION ----\n")
-    for ver, files in results.items():
+    for ver in sorted(target_versions, key=Version):
+        files = entries.get(ver, {})
         if not files:
-            print(f'        # {ver}: no tracked JS files changed vs previous version')
+            print(f'        # {ver}: no discriminating files found')
             continue
         print(f'        "{ver}": {{')
-        for path, digest in files.items():
-            print(f'            "{path}": "{digest}",')
+        for file, h in files.items():
+            print(f'            "{file}": "{h}",')
         print("        },")
 
 
