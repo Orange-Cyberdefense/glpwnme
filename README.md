@@ -78,6 +78,7 @@ All generated files (like `log.glpwnme`) will be available on your local machine
 | CVE_2020_15175       | 7.4    | Unauthenticated | GLPI < 9.5.2 |
 | CVE_2022_31061       | 7.4    | Unauthenticated | GLPI < 10.0.2 |
 | CVE_2022_35914       | 10     | Unauthenticated | GLPI < 10.0.3 |
+| CVE_2022_35947       | 7.5    | Unauthenticated | GLPI < 10.0.3 |
 | PLUGIN_ORDER_2022    | 8.3     | Self-Service | GLPI Plugin Order < 2.10.1 |
 | CVE_2023_41323       | 3      | Unauthenticated | GLPI < 10.0.10 |
 | CVE_2023_41326       | 8.1    | Self-Service | GLPI < 10.0.10 |
