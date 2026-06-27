@@ -194,6 +194,8 @@ GLPI Version is shown for logged in user, it would be great to add an observer /
 
 Change the way plugins are enumerated, in order to prevent false positive when webroot is not accessible.
 
+Allow authent NTLM and kerberos.
+
 ## Contributions
 Thanks to the following person for their help:
 * Aurelien In the Shallow
