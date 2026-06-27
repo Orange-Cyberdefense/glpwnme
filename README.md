@@ -207,6 +207,8 @@ Change the way plugins are enumerated, in order to prevent false positive when w
 
 Allow authent NTLM and kerberos.
 
+Add mode for login with and without noAUTO.
+
 ## Contributions
 Thanks to the following person for their help:
 * Aurelien In the Shallow
