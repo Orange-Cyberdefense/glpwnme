@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" class='loginpage'><head><title>GLPI - Authentication</title>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="shortcut icon" type="images/x-icon" href="/pics/favicon.ico" /><meta name='viewport' content='width=device-width, initial-scale=1'/><link rel="stylesheet" type="text/css" href="/front/css.php?file=main_styles&v=9.4.0" media="all"><link rel="stylesheet" type="text/css" href="/lib/font-awesome/css/all.min.css?v=9.4.0" media="all"><script type="text/javascript" src="/lib/jquery/js/jquery.min.js?v=9.4.0"></script><script type="text/javascript" src="/lib/jqueryplugins/select2/js/select2.full.js?v=9.4.0"></script><link rel="stylesheet" type="text/css" href="/lib/jqueryplugins/select2/css/select2.min.css?v=9.4.0" media="all"><script type="text/javascript" src="/js/common.min.js?v=9.4.0"></script></head><body><div id='firstboxlogin'><div id='logo_login'></div><div id='text-login'></div><div id='boxlogin'><form action='/front/login.php' method='post'><p class="login_input" id="login_input_name">
+         <input type="text" name="fielda6a435c2a8b582" id="login_name" required="required"
+                placeholder="Login" autofocus="autofocus" />
+         </p><p class="login_input" id="login_input_password">
+         <input type="password" name="fieldb6a435c2a8b583" id="login_password" required="required"
+                placeholder="Password"  />
+         </p><input type="hidden" name="auth" value="local" /><p class="login_input">
+            <label for="login_remember">
+                   <input type="checkbox" name="fieldc6a435c2a8b584" id="login_remember"
+                   checked="checked" />
+            Remember me</label>
+            </p><p class="login_input">
+         <input type="submit" name="submit" value="Post" class="submit" />
+         </p>
+<input type="hidden" name="_glpi_csrf_token" value="cc220601eed0a3731fbc5846030c8ddb" />
+</form>
+<script type="text/javascript">
+//<![CDATA[
+
+$(function() {
+      $('#login_name').focus();
+   });
+
+//]]>
+</script></div><div class='error'><noscript><p>You must activate the JavaScript function of your browser</p></noscript></div><div id='display-login'></div></div><div id='footer-login' class='home'><a href="http://glpi-project.org/" title="Powered by Teclib and contributors" class="copyright">GLPI Copyright (C) 2015-2018 Teclib' and contributors</a></div><div style="background-image: url('/front/cron.php');"></div></body></html>

@@ -1,0 +1,1261 @@
+
+<!DOCTYPE html>
+<html lang="en"       >
+<head>
+   <title>Home - GLPI</title>
+
+   <meta charset="utf-8" />
+
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+      <meta name="robots" content="noindex, nofollow" />
+
+        
+   <meta property="glpi:csrf_token" content="26902b9cd24f0794c1b38839ae271d85091c302ad386b590f116e1ba23637200" />
+
+         <link rel="stylesheet" type="text/css" href="/public/lib/base.min.css?v=09c5e7efb1a078f15be7c30d56ea8703b6127f39" />
+         <link rel="stylesheet" type="text/css" href="/public/lib/leaflet.min.css?v=09c5e7efb1a078f15be7c30d56ea8703b6127f39" />
+         <link rel="stylesheet" type="text/css" href="/public/lib/flatpickr.min.css?v=09c5e7efb1a078f15be7c30d56ea8703b6127f39" />
+         <link rel="stylesheet" type="text/css" href="/public/lib/flatpickr/themes/dark.min.css?v=09c5e7efb1a078f15be7c30d56ea8703b6127f39" />
+         <link rel="stylesheet" type="text/css" href="/public/lib/photoswipe.min.css?v=09c5e7efb1a078f15be7c30d56ea8703b6127f39" />
+         <link rel="stylesheet" type="text/css" href="/public/lib/fullcalendar.min.css?v=09c5e7efb1a078f15be7c30d56ea8703b6127f39" />
+         <link rel="stylesheet" type="text/css" href="/css_compiled/css_standalone_reservations.min.css?v=09c5e7efb1a078f15be7c30d56ea8703b6127f39" />
+         <link rel="stylesheet" type="text/css" href="/public/lib/jquery.rateit.min.css?v=09c5e7efb1a078f15be7c30d56ea8703b6127f39" />
+         <link rel="stylesheet" type="text/css" href="/css_compiled/css_palettes_auror.min.css?v=09c5e7efb1a078f15be7c30d56ea8703b6127f39" />
+         <link rel="stylesheet" type="text/css" href="/marketplace/formcreator/css_compiled/styles.min.css?v=8b9a72a2fee82a013c02a643cd7eeb6c4c0dafed" />
+   
+   
+
+   <link rel="shortcut icon" type="images/x-icon" href="/pics/favicon.ico" />
+
+         <script type="text/javascript" src="/public/lib/base.min.js?v=09c5e7efb1a078f15be7c30d56ea8703b6127f39"></script>
+         <script type="text/javascript" src="/js/webkit_fix.min.js?v=09c5e7efb1a078f15be7c30d56ea8703b6127f39"></script>
+         <script type="text/javascript" src="/js/common.min.js?v=09c5e7efb1a078f15be7c30d56ea8703b6127f39"></script>
+   
+         <script type="module" src="/js/modules/Search/ResultsView.min.js?v=09c5e7efb1a078f15be7c30d56ea8703b6127f39"></script>
+         <script type="module" src="/js/modules/Search/Table.min.js?v=09c5e7efb1a078f15be7c30d56ea8703b6127f39"></script>
+   
+   <script type="text/javascript">
+//<![CDATA[
+
+         $(function() {
+            i18n.setLocale('en_GB');
+         });
+
+         $.fn.select2.defaults.set(
+            'language',
+            'en-GB',
+         );            $(function() {
+               $.ajax({
+                  type: 'GET',
+                  url: '/front/locale.php?domain=glpi&v=09c5e7efb1a078f15be7c30d56ea8703b6127f39',
+                  success: function(json) {
+                     i18n.loadJSON(json, 'glpi');
+                  }
+               });
+            });            $(function() {
+               $.ajax({
+                  type: 'GET',
+                  url: '/front/locale.php?domain=archimap&v=5495f706d3e7da598c8e88fd99c50f785fcfd74b',
+                  success: function(json) {
+                     i18n.loadJSON(json, 'archimap');
+                  }
+               });
+            });            $(function() {
+               $.ajax({
+                  type: 'GET',
+                  url: '/front/locale.php?domain=formcreator&v=8b9a72a2fee82a013c02a643cd7eeb6c4c0dafed',
+                  success: function(json) {
+                     i18n.loadJSON(json, 'formcreator');
+                  }
+               });
+            });            $(function() {
+               $.ajax({
+                  type: 'GET',
+                  url: '/front/locale.php?domain=mreporting&v=f43a73e2202aac21f8a955f0d5f930f3b70146ed',
+                  success: function(json) {
+                     i18n.loadJSON(json, 'mreporting');
+                  }
+               });
+            });
+
+//]]>
+</script>
+</head>
+
+
+
+<body class=" vertical-layout ">
+      
+
+   
+
+
+    <div class="toast-container bottom-0 end-0 p-3 messages_after_redirect" id="messages_after_redirect">
+            
+
+        <script type="text/javascript">
+        var initMessagesAfterRedirectToasts = function() {
+            var toastElList = [].slice.call(document.querySelectorAll('#messages_after_redirect .toast:not(.show)'));
+            var toastList = toastElList.map(function (toastEl) {
+                var toast = new bootstrap.Toast(toastEl, {
+                    delay: 10000,
+                })
+                toast.show()
+
+                $(toastEl).on('hidden.bs.toast', function () {
+                    $(toastEl).remove();
+                });
+
+                return toast;
+            });
+        }
+        $(function() {
+            initMessagesAfterRedirectToasts();
+        });
+        </script>
+    </div>
+
+
+   <div class="page">
+
+            <aside class="navbar navbar-vertical navbar-expand-lg sticky-lg-top sidebar">
+         <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu">
+               <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <a href="/front/helpdesk.public.php" accesskey="1" title="Home"
+               class="navbar-brand">
+               <span class="glpi-logo"></span>
+            </a>
+
+                           <span class="d-none d-lg-inline-block">
+                   
+
+               </span>
+            
+                                          <div class="d-lg-none">
+                  
+
+<div class="btn-group">
+         <div class="navbar-nav flex-row order-md-last user-menu">
+         <div class="nav-item dropdown">
+            <a href="#" class="nav-link d-flex lh-1 text-reset p-1 dropdown-toggle user-menu-dropdown-toggle "
+               data-bs-toggle="dropdown" data-bs-auto-close="outside">
+                                 <div class="pe-2 d-none d-xl-block">
+                     <div>Self-Service</div>
+                                          <div class="mt-1 small text-muted" title="Entité racine (tree structure)"
+                          data-bs-toggle="tooltip" data-bs-placement="bottom">
+                        Entité racine (tree structure)
+                     </div>
+                  </div>
+
+                  
+
+
+<span class="avatar  rounded"
+      style=" background-color: #7de881">
+            PO
+   </span>
+
+
+                           </a>
+            <div class="dropdown-menu dropdown-menu-end mt-1 dropdown-menu-arrow animate__animated animate__fadeInRight">
+               <h6 class="dropdown-header">post-only</h6>
+
+                                 
+
+<div class="dropdown dropstart">
+    <button class="dropdown-item dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="ti ti-user-check"></i>
+        Self-Service
+    </button>
+    <div class="dropdown-menu" data-bs-popper="none">
+        <span class="dropdown-header">Profiles</span>
+                    <a class="dropdown-item active" href="/front/helpdesk.public.php?newprofile=1">
+                <i class="ti ti-user-check"></i>
+                Self-Service
+            </a>
+            </div>
+</div>
+
+    
+    <div class="dropdown dropstart" id="entity-tree-dropdown-339994498">
+        <a href="#" class="dropdown-item dropdown-toggle entity-dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside" title="Entité racine (tree structure)">
+            <i class="fa-fw ti ti-stack"></i>
+            Entité racine (tree structure)
+        </a>
+        <div class="dropdown-menu p-3">
+            <h3>Select the desired entity</h3>
+
+            <div class="alert alert-info" role="alert">
+                                                Tip: You can call this modal with <kbd>Ctrl + Alt + E</kbd> keys combination
+            </div>
+            <div class="alert alert-info" role="alert">
+                <i class="fas fa-info-circle"></i>
+                <span class="ms-2">
+                                Click on the                     <i class="fas fa-angle-double-down" title="+ sub-entities"></i>
+                 icon to load the elements of the selected entity, as well as its sub-entities.
+                </span>
+            </div>
+
+            <form id="entsearchform339994498">
+                <div class="input-group">
+                <input type="text" class="form-control" name="entsearchtext" id="entsearchtext339994498"
+                        placeholder="Search entity" autocomplete="off">
+                <button type="submit" class="btn btn-icon btn-primary" title="Search"
+                        data-bs-toggle="tooltip" data-bs-placement="top">
+                    <i class="ti ti-search"></i>
+                </button>
+                <a class="btn btn-icon btn-outline-secondary" href="#" id="entsearchtext339994498_clear"
+                    title="Clear search" data-bs-toggle="tooltip" data-bs-placement="top">
+                        <i class="ti ti-x"></i>
+                </a>
+                <a href="/front/helpdesk.public.php?active_entity=all" class="btn btn-secondary"
+                    title="Select all" data-bs-toggle="tooltip" data-bs-placement="top">
+                    <i class="ti ti-eye"></i>
+                </a>
+                </div>
+            </form>
+
+            <div class="fancytree-grid-container flexbox-item-grow entity_tree">
+                <table id="tree_entity339994498">
+                <colgroup>
+                    <col></col>
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th class="parent-path"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+                </table>
+                <div id="verticalScrollbar-339994498" style="height:100%;"></div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+    $(function() {
+        var initTree339994498 = function() {
+            if ($.ui.fancytree.getTree("#tree_entity339994498") !== null) {
+                return;
+            }
+
+            $('#tree_entity339994498').fancytree({
+                // load plugins
+                extensions: ['filter', 'glyph', 'grid'],
+
+                // Scroll node into visible area, when focused by keyboard
+                autoScroll: true,
+
+                // enable font-awesome icons
+                glyph: {
+                    preset: "awesome5",
+                    map: {}
+                },
+
+                // enable virtual dom, it requires the grid (table extension) plugin
+                table: {
+                    indentation: 20,       // indent 20px per node level
+                    nodeColumnIdx: 0,      // render the node title into the 1st column
+                    mergeStatusColumns: false,
+                },
+                grid: {
+                    mergeStatusColumns: false,
+                },
+                viewport: {
+                    enabled: true,
+                    count: 15, // number of items to display at once
+                },
+
+                // translate strings
+                strings: {
+                    loading: __("Loading..."),
+                    loadError: __("Unexpected error."),
+                    moreData: __("More..."),
+                    noData: __("No data found")
+                },
+
+                // load data by ajax
+                source: {
+                    url:  '/ajax/entitytreesons.php',
+                    cache: false
+                },
+
+                // filter plugin options
+                filter: {
+                    mode: "hide", // remove unmatched nodes
+                    autoExpand: true, // if results found in children, auto-expand parent
+                    nodata: 'No entity found', // message when no data found
+                    highlight: false, // do not highlight matches by wrapping inside tags (when true, this strip the a tag)
+                    counter: false, // do not show counters when filtering entity tree
+                },
+
+                // load 3rd party scrollbar extension for viewport mode
+                preInit: function(event, data) {
+                    var tree = data.tree;
+
+                    tree.verticalScrollbar = new PlainScrollbar({
+                    alwaysVisible: true,
+                    arrows: true,
+                    orientation: "vertical",
+                    onSet: function(numberOfItems) {
+                        tree.setViewport({
+                            start: Math.round(numberOfItems.start),
+                        });
+                    },
+                    scrollbarElement: document.getElementById("verticalScrollbar-339994498"),
+                    });
+                },
+
+                // update scrollbar when viewport is updated
+                updateViewport: function(event, data) {
+                    var tree = data.tree;
+
+                    tree.verticalScrollbar.set({
+                    start: tree.viewport.start,
+                    total: tree.visibleNodeList.length,
+                    visible: tree.viewport.count,
+                    }, true);  // do not trigger `onSet`
+
+                    initTooltips();
+                },
+
+                // update toolips on node expand
+                expand: function(event, data) {
+                    initTooltips();
+                },
+            });
+        };
+
+      // init Entities tree only when user ask for it (when dropdown is opened)
+        document.getElementById('entity-tree-dropdown-339994498')
+            .addEventListener('show.bs.dropdown', function (event) {
+                initTree339994498();
+            });
+
+        var searchTree = function() {
+            var search_text = $("#entsearchtext339994498").val();
+            $.ui.fancytree.getTree("#tree_entity339994498").filterBranches(search_text);
+        }
+
+        $('#entsearchform339994498').submit(function(event) {
+            // cancel submit of entity search form
+            event.preventDefault();
+
+            searchTree();
+        });
+
+        $('#entsearchtext339994498').keyup(function () {
+            var inputsearch = $(this);
+            typewatch(function () {
+                if (inputsearch.val().length >= 3) {
+                searchTree();
+                }
+            }, 500);
+        }).focus();
+
+        $('#entsearchtext339994498_clear').click(function () {
+            $('#entsearchtext339994498').val('');
+            searchTree();
+        });
+
+        // when the shortcut for entity form is called
+        hotkeys('ctrl+alt+e, option+command+e', async function(e) {
+            e.stopPropagation();
+            e.preventDefault();
+            $('.user-menu-dropdown-toggle').dropdown('show');
+            await new Promise(r => setTimeout(r, 100));
+            $('.entity-dropdown-toggle').dropdown('show');
+            $('input[name=entsearchtext]').filter(":visible")[0].focus();
+        });
+    });
+    </script>
+
+
+                  <div class="dropdown-divider"></div>
+
+                                 
+               
+               <div class="dropdown-item">
+                  <i class="ti fa-fw ti-language"></i>
+                  <form method='post' name='switchlang' action='/front/user.form.php' autocomplete='off'><select name='language' id='dropdown_language1039108368' class="form-select" onChange='this.form.submit()' size='1'><option value='ar_SA'>العَرَبِيَّةُ</option><option value='bg_BG'>Български</option><option value='id_ID'>Bahasa Indonesia</option><option value='ms_MY'>Bahasa Melayu</option><option value='ca_ES'>Catal&agrave;</option><option value='cs_CZ'>Če&scaron;tina</option><option value='de_DE'>Deutsch</option><option value='da_DK'>Dansk</option><option value='et_EE'>Eesti</option><option value='en_GB' selected>English</option><option value='en_US'>English (US)</option><option value='es_AR'>Espa&ntilde;ol (Argentina)</option><option value='es_EC'>Espa&ntilde;ol (Ecuador)</option><option value='es_CO'>Espa&ntilde;ol (Colombia)</option><option value='es_ES'>Espa&ntilde;ol (Espa&ntilde;a)</option><option value='es_419'>Espa&ntilde;ol (Am&eacute;rica Latina)</option><option value='es_MX'>Espa&ntilde;ol (Mexico)</option><option value='es_VE'>Espa&ntilde;ol (Venezuela)</option><option value='eu_ES'>Euskara</option><option value='fr_FR'>Fran&ccedil;ais</option><option value='fr_CA'>Fran&ccedil;ais (Canada)</option><option value='fr_BE'>Fran&ccedil;ais (Belgique)</option><option value='gl_ES'>Galego</option><option value='el_GR'>&Epsilon;&lambda;&lambda;&eta;&nu;&iota;&kappa;ά</option><option value='he_IL'>עברית</option><option value='hi_IN'>हिन्दी</option><option value='hr_HR'>Hrvatski</option><option value='hu_HU'>Magyar</option><option value='it_IT'>Italiano</option><option value='kn'>ಕನ್ನಡ</option><option value='lv_LV'>Latvie&scaron;u</option><option value='lt_LT'>Lietuvių</option><option value='mn_MN'>Монгол хэл</option><option value='nl_NL'>Nederlands</option><option value='nl_BE'>Flemish</option><option value='nb_NO'>Norsk (Bokm&aring;l)</option><option value='nn_NO'>Norsk (Nynorsk)</option><option value='fa_IR'>فارسی</option><option value='pl_PL'>Polski</option><option value='pt_PT'>Portugu&ecirc;s</option><option value='pt_BR'>Portugu&ecirc;s do Brasil</option><option value='ro_RO'>Rom&acirc;nă</option><option value='ru_RU'>Русский</option><option value='sk_SK'>Slovenčina</option><option value='sl_SI'>Sloven&scaron;čina</option><option value='sr_RS'>Srpski</option><option value='fi_FI'>Suomi</option><option value='sv_SE'>Svenska</option><option value='vi_VN'>Tiếng Việt</option><option value='th_TH'>ภาษาไทย</option><option value='tr_TR'>T&uuml;rk&ccedil;e</option><option value='uk_UA'>Українська</option><option value='ja_JP'>日本語</option><option value='zh_CN'>简体中文</option><option value='zh_TW'>繁體中文</option><option value='ko_KR'>한국/韓國</option><option value='zh_HK'>香港</option><option value='be_BY'>Belarussian</option><option value='is_IS'>&iacute;slenska</option><option value='eo'>Esperanto</option></select><script type="text/javascript">
+//<![CDATA[
+
+$(function() {
+         const select2_el = $('#dropdown_language1039108368').select2({
+            
+            width: '',
+            dropdownAutoWidth: true,
+            dropdownParent: $('#dropdown_language1039108368').closest('div.modal, div.dropdown-menu, body'),
+            quietMillis: 100,
+            minimumResultsForSearch: 10,
+            matcher: function(params, data) {
+               // store last search in the global var
+               query = params;
+
+               // If there are no search terms, return all of the data
+               if ($.trim(params.term) === '') {
+                  return data;
+               }
+
+               var searched_term = getTextWithoutDiacriticalMarks(params.term);
+               var data_text = typeof(data.text) === 'string'
+                  ? getTextWithoutDiacriticalMarks(data.text)
+                  : '';
+               var select2_fuzzy_opts = {
+                  pre: '<span class="select2-rendered__match">',
+                  post: '</span>',
+               };
+
+               if (data_text.indexOf('>') !== -1 || data_text.indexOf('<') !== -1) {
+                  // escape text, if it contains chevrons (can already be escaped prior to this point :/)
+                  data_text = jQuery.fn.select2.defaults.defaults.escapeMarkup(data_text);
+               }
+
+               // Skip if there is no 'children' property
+               if (typeof data.children === 'undefined') {
+                  var match  = fuzzy.match(searched_term, data_text, select2_fuzzy_opts);
+                  if (match == null) {
+                     return false;
+                  }
+                  data.rendered_text = match.rendered_text;
+                  data.score = match.score;
+                  return data;
+               }
+
+               // `data.children` contains the actual options that we are matching against
+               // also check in `data.text` (optgroup title)
+               var filteredChildren = [];
+
+               $.each(data.children, function (idx, child) {
+                  var child_text = typeof(child.text) === 'string'
+                     ? getTextWithoutDiacriticalMarks(child.text)
+                     : '';
+
+                  if (child_text.indexOf('>') !== -1 || child_text.indexOf('<') !== -1) {
+                     // escape text, if it contains chevrons (can already be escaped prior to this point :/)
+                     child_text = jQuery.fn.select2.defaults.defaults.escapeMarkup(child_text);
+                  }
+
+                  var match_child = fuzzy.match(searched_term, child_text, select2_fuzzy_opts);
+                  var match_text  = fuzzy.match(searched_term, data_text, select2_fuzzy_opts);
+                  if (match_child !== null || match_text !== null) {
+                     if (match_text !== null) {
+                        data.score         = match_text.score;
+                        data.rendered_text = match_text.rendered;
+                     }
+
+                     if (match_child !== null) {
+                        child.score         = match_child.score;
+                        child.rendered_text = match_child.rendered;
+                     }
+                     filteredChildren.push(child);
+                  }
+               });
+
+               // If we matched any of the group's children, then set the matched children on the group
+               // and return the group object
+               if (filteredChildren.length) {
+                  var modifiedData = $.extend({}, data, true);
+                  modifiedData.children = filteredChildren;
+
+                  // You can return modified objects from here
+                  // This includes matching the `children` how you want in nested data sets
+                  return modifiedData;
+               }
+
+               // Return `null` if the term should not be displayed
+               return null;
+            },
+            templateResult: templateResult,
+            templateSelection: templateSelection,
+         })
+         .bind('setValue', function(e, value) {
+            $('#dropdown_language1039108368').val(value).trigger('change');
+         })
+         $('label[for=dropdown_language1039108368]').on('click', function(){ $('#dropdown_language1039108368').select2('open'); });
+         $('#dropdown_language1039108368').on('select2:open', function(e){
+            const search_input = document.querySelector(`.select2-search__field[aria-controls='select2-${e.target.id}-results']`);
+            if (search_input) {
+               search_input.focus();
+            }
+         });
+      });
+
+//]]>
+</script><input type="hidden" name="_glpi_csrf_token" value="5c729eb5d0de9a1bd3e05be9c55408bbf514a6e59cba65bb6eb4eb397009cdc4" /></form>
+               </div>
+
+               <div class="dropdown-divider"></div>
+
+               <a href="https://glpi-project.org/documentation" class="dropdown-item" title="Help">
+                  <i class="ti fa-fw ti-help"></i>
+                  Help
+               </a>
+
+               <a href="#" class="dropdown-item" title="About"
+                  id="show_about_modal_1144590202">
+                  <i class="ti fa-fw ti-info-circle"></i>
+                  About
+                                 </a>
+
+               <div class="dropdown-divider"></div>
+
+               <a href="/front/preference.php" class="dropdown-item" title="My settings">
+                  <i class="ti fa-fw ti-adjustments-alt"></i>
+                  My settings
+               </a>
+               <a href="/front/logout.php" class="dropdown-item" title="Logout">
+                  <i class="ti fa-fw ti-logout"></i>
+                  Logout
+               </a>
+            </div>
+         </div>
+      </div>
+
+      <div class="modal fade" id="about_modal_1144590202" role="dialog">
+         <div class="modal-dialog">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h4 class="modal-title">About</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+               </div>
+               <div class="modal-body">
+                  <p><a href="http://glpi-project.org/" title="Powered by Teclib and contributors" class="copyright">
+                     GLPI 10.0.18
+                     Copyright (C) 2015-2025 Teclib' and contributors
+                  </a></p>
+                                 </div>
+            </div>
+         </div>
+      </div>
+
+   </div>
+
+<script type="text/javascript">
+$(function() {
+   $("#show_about_modal_1144590202").click(function(e) {
+      e.preventDefault();
+      $("#about_modal_1144590202").remove().modal("show");
+   });
+});
+</script>
+
+               </div>
+            
+                           <div class="collapse navbar-collapse" id="navbar-menu">
+                   <span class="d-inline-block d-lg-none ms-2">
+                       
+
+                   </span>
+                   
+
+<ul class="navbar-nav" id="menu_485792367">
+                     <li class="nav-item dropdown " data-bs-toggle="tooltip"
+       title="Home">
+         <a class="nav-link" href="/front/helpdesk.public.php">
+            <i class="fa-fw fas fa-home"></i>
+            <span class="menu-label">Home</span>
+         </a>
+      <li>
+                        <li class="nav-item dropdown " data-bs-toggle="tooltip"
+       title="Create a ticket">
+         <a class="nav-link" href="/front/helpdesk.public.php?create_ticket=1">
+            <i class="fa-fw ti ti-plus"></i>
+            <span class="menu-label">Create a ticket</span>
+         </a>
+      <li>
+                        <li class="nav-item dropdown " data-bs-toggle="tooltip"
+       title="Forms">
+         <a class="nav-link" href="/marketplace/formcreator/front/wizard.php">
+            <i class="fa-fw fa-fw ti ti-headset"></i>
+            <span class="menu-label">Forms</span>
+         </a>
+      <li>
+                                                      <li class="nav-item dropdown " data-bs-toggle="tooltip"
+       title="Tickets">
+         <a class="nav-link" href="/front/ticket.php">
+            <i class="fa-fw ti ti-alert-circle"></i>
+            <span class="menu-label">Tickets</span>
+         </a>
+      <li>
+                        <li class="nav-item dropdown " data-bs-toggle="tooltip"
+       title="Reservations">
+         <a class="nav-link" href="/front/reservationitem.php">
+            <i class="fa-fw ti ti-calendar-event"></i>
+            <span class="menu-label">Reservations</span>
+         </a>
+      <li>
+                        <li class="nav-item dropdown " data-bs-toggle="tooltip"
+       title="FAQ">
+         <a class="nav-link" href="/front/helpdesk.faq.php">
+            <i class="fa-fw ti ti-lifebuoy"></i>
+            <span class="menu-label">FAQ</span>
+         </a>
+      <li>
+   </ul>
+
+<script type="text/javascript">
+$(function() {
+   // below, some modifications of dropdowns menu behavior
+   document.querySelectorAll('#menu_485792367 > .dropdown').forEach(function(menuDropdown) {
+      // prevent menu closes
+      menuDropdown.addEventListener('hide.bs.dropdown', function (event) {
+         var orig_event = event.clickEvent;
+         if (typeof orig_event != "undefined"
+             && typeof orig_event.target != "undefined") {
+            // prevent body clicking to hide menu
+            if (!document.getElementById('menu_485792367').contains(orig_event.target)) {
+               event.preventDefault();
+               return;
+            }
+
+            // prevent menu links to close menu (waiting the page redirection)
+            if (orig_event.target.className.indexOf('dropdown-item') !== false) {
+               for (var item of document.querySelectorAll('#menu_485792367 .dropdown-item')) {
+                  item.classList.remove('active');
+               }
+               orig_event.target.classList.add('active');
+               event.preventDefault();
+            }
+         }
+      });
+
+      // opening a sub menu close others
+      menuDropdown.addEventListener('show.bs.dropdown', function (event) {
+         $('#menu_485792367 .nav-link').removeClass('show active');
+         $('#menu_485792367 .nav-item').removeClass('active');
+         $('#menu_485792367 .dropdown-menu').removeClass('show');
+      })
+   });
+
+});
+</script>
+
+
+
+                  <p class="text-start">
+                     <button class="btn btn-sm btn-ghost-secondary  mb-2 reduce-menu d-none d-md-block">
+                        <span class="menu-label">Collapse menu</span>
+                     </button>
+                  </p>
+               </div>
+                     </div>
+      </aside>
+      
+      <header class="navbar d-print-none sticky-lg-top shadow-sm navbar-light navbar-expand-md">
+         <div class="container-fluid flex-xl-nowrap pe-xl-0">
+                           
+<ol class="breadcrumb breadcrumb-alternate pe-1 pe-sm-3" aria-label="breadcrumbs">
+   <li class="breadcrumb-item text-truncate">
+      <a href="/front/helpdesk.public.php" title="Home">
+         <i class="ti ti-home-2"></i>
+         Home
+      </a>
+   </li>
+
+   
+      </ol>
+
+
+
+                <div class="ms-lg-auto d-none d-lg-block flex-grow-1 flex-lg-grow-0">
+                     
+
+                </div>
+
+            
+            <div class="ms-md-4 d-none d-lg-block">
+               
+
+<div class="btn-group">
+         <div class="navbar-nav flex-row order-md-last user-menu">
+         <div class="nav-item dropdown">
+            <a href="#" class="nav-link d-flex lh-1 text-reset p-1 dropdown-toggle user-menu-dropdown-toggle "
+               data-bs-toggle="dropdown" data-bs-auto-close="outside">
+                                 <div class="pe-2 d-none d-xl-block">
+                     <div>Self-Service</div>
+                                          <div class="mt-1 small text-muted" title="Entité racine (tree structure)"
+                          data-bs-toggle="tooltip" data-bs-placement="bottom">
+                        Entité racine (tree structure)
+                     </div>
+                  </div>
+
+                  
+
+
+<span class="avatar  rounded"
+      style=" background-color: #7de881">
+            PO
+   </span>
+
+
+                           </a>
+            <div class="dropdown-menu dropdown-menu-end mt-1 dropdown-menu-arrow animate__animated animate__fadeInRight">
+               <h6 class="dropdown-header">post-only</h6>
+
+                                 
+
+<div class="dropdown dropstart">
+    <button class="dropdown-item dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="ti ti-user-check"></i>
+        Self-Service
+    </button>
+    <div class="dropdown-menu" data-bs-popper="none">
+        <span class="dropdown-header">Profiles</span>
+                    <a class="dropdown-item active" href="/front/helpdesk.public.php?newprofile=1">
+                <i class="ti ti-user-check"></i>
+                Self-Service
+            </a>
+            </div>
+</div>
+
+    
+    <div class="dropdown dropstart" id="entity-tree-dropdown-543687294">
+        <a href="#" class="dropdown-item dropdown-toggle entity-dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside" title="Entité racine (tree structure)">
+            <i class="fa-fw ti ti-stack"></i>
+            Entité racine (tree structure)
+        </a>
+        <div class="dropdown-menu p-3">
+            <h3>Select the desired entity</h3>
+
+            <div class="alert alert-info" role="alert">
+                                                Tip: You can call this modal with <kbd>Ctrl + Alt + E</kbd> keys combination
+            </div>
+            <div class="alert alert-info" role="alert">
+                <i class="fas fa-info-circle"></i>
+                <span class="ms-2">
+                                Click on the                     <i class="fas fa-angle-double-down" title="+ sub-entities"></i>
+                 icon to load the elements of the selected entity, as well as its sub-entities.
+                </span>
+            </div>
+
+            <form id="entsearchform543687294">
+                <div class="input-group">
+                <input type="text" class="form-control" name="entsearchtext" id="entsearchtext543687294"
+                        placeholder="Search entity" autocomplete="off">
+                <button type="submit" class="btn btn-icon btn-primary" title="Search"
+                        data-bs-toggle="tooltip" data-bs-placement="top">
+                    <i class="ti ti-search"></i>
+                </button>
+                <a class="btn btn-icon btn-outline-secondary" href="#" id="entsearchtext543687294_clear"
+                    title="Clear search" data-bs-toggle="tooltip" data-bs-placement="top">
+                        <i class="ti ti-x"></i>
+                </a>
+                <a href="/front/helpdesk.public.php?active_entity=all" class="btn btn-secondary"
+                    title="Select all" data-bs-toggle="tooltip" data-bs-placement="top">
+                    <i class="ti ti-eye"></i>
+                </a>
+                </div>
+            </form>
+
+            <div class="fancytree-grid-container flexbox-item-grow entity_tree">
+                <table id="tree_entity543687294">
+                <colgroup>
+                    <col></col>
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th class="parent-path"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+                </table>
+                <div id="verticalScrollbar-543687294" style="height:100%;"></div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+    $(function() {
+        var initTree543687294 = function() {
+            if ($.ui.fancytree.getTree("#tree_entity543687294") !== null) {
+                return;
+            }
+
+            $('#tree_entity543687294').fancytree({
+                // load plugins
+                extensions: ['filter', 'glyph', 'grid'],
+
+                // Scroll node into visible area, when focused by keyboard
+                autoScroll: true,
+
+                // enable font-awesome icons
+                glyph: {
+                    preset: "awesome5",
+                    map: {}
+                },
+
+                // enable virtual dom, it requires the grid (table extension) plugin
+                table: {
+                    indentation: 20,       // indent 20px per node level
+                    nodeColumnIdx: 0,      // render the node title into the 1st column
+                    mergeStatusColumns: false,
+                },
+                grid: {
+                    mergeStatusColumns: false,
+                },
+                viewport: {
+                    enabled: true,
+                    count: 15, // number of items to display at once
+                },
+
+                // translate strings
+                strings: {
+                    loading: __("Loading..."),
+                    loadError: __("Unexpected error."),
+                    moreData: __("More..."),
+                    noData: __("No data found")
+                },
+
+                // load data by ajax
+                source: {
+                    url:  '/ajax/entitytreesons.php',
+                    cache: false
+                },
+
+                // filter plugin options
+                filter: {
+                    mode: "hide", // remove unmatched nodes
+                    autoExpand: true, // if results found in children, auto-expand parent
+                    nodata: 'No entity found', // message when no data found
+                    highlight: false, // do not highlight matches by wrapping inside tags (when true, this strip the a tag)
+                    counter: false, // do not show counters when filtering entity tree
+                },
+
+                // load 3rd party scrollbar extension for viewport mode
+                preInit: function(event, data) {
+                    var tree = data.tree;
+
+                    tree.verticalScrollbar = new PlainScrollbar({
+                    alwaysVisible: true,
+                    arrows: true,
+                    orientation: "vertical",
+                    onSet: function(numberOfItems) {
+                        tree.setViewport({
+                            start: Math.round(numberOfItems.start),
+                        });
+                    },
+                    scrollbarElement: document.getElementById("verticalScrollbar-543687294"),
+                    });
+                },
+
+                // update scrollbar when viewport is updated
+                updateViewport: function(event, data) {
+                    var tree = data.tree;
+
+                    tree.verticalScrollbar.set({
+                    start: tree.viewport.start,
+                    total: tree.visibleNodeList.length,
+                    visible: tree.viewport.count,
+                    }, true);  // do not trigger `onSet`
+
+                    initTooltips();
+                },
+
+                // update toolips on node expand
+                expand: function(event, data) {
+                    initTooltips();
+                },
+            });
+        };
+
+      // init Entities tree only when user ask for it (when dropdown is opened)
+        document.getElementById('entity-tree-dropdown-543687294')
+            .addEventListener('show.bs.dropdown', function (event) {
+                initTree543687294();
+            });
+
+        var searchTree = function() {
+            var search_text = $("#entsearchtext543687294").val();
+            $.ui.fancytree.getTree("#tree_entity543687294").filterBranches(search_text);
+        }
+
+        $('#entsearchform543687294').submit(function(event) {
+            // cancel submit of entity search form
+            event.preventDefault();
+
+            searchTree();
+        });
+
+        $('#entsearchtext543687294').keyup(function () {
+            var inputsearch = $(this);
+            typewatch(function () {
+                if (inputsearch.val().length >= 3) {
+                searchTree();
+                }
+            }, 500);
+        }).focus();
+
+        $('#entsearchtext543687294_clear').click(function () {
+            $('#entsearchtext543687294').val('');
+            searchTree();
+        });
+
+        // when the shortcut for entity form is called
+        hotkeys('ctrl+alt+e, option+command+e', async function(e) {
+            e.stopPropagation();
+            e.preventDefault();
+            $('.user-menu-dropdown-toggle').dropdown('show');
+            await new Promise(r => setTimeout(r, 100));
+            $('.entity-dropdown-toggle').dropdown('show');
+            $('input[name=entsearchtext]').filter(":visible")[0].focus();
+        });
+    });
+    </script>
+
+
+                  <div class="dropdown-divider"></div>
+
+                                 
+               
+               <div class="dropdown-item">
+                  <i class="ti fa-fw ti-language"></i>
+                  <form method='post' name='switchlang' action='/front/user.form.php' autocomplete='off'><select name='language' id='dropdown_language1012641125' class="form-select" onChange='this.form.submit()' size='1'><option value='ar_SA'>العَرَبِيَّةُ</option><option value='bg_BG'>Български</option><option value='id_ID'>Bahasa Indonesia</option><option value='ms_MY'>Bahasa Melayu</option><option value='ca_ES'>Catal&agrave;</option><option value='cs_CZ'>Če&scaron;tina</option><option value='de_DE'>Deutsch</option><option value='da_DK'>Dansk</option><option value='et_EE'>Eesti</option><option value='en_GB' selected>English</option><option value='en_US'>English (US)</option><option value='es_AR'>Espa&ntilde;ol (Argentina)</option><option value='es_EC'>Espa&ntilde;ol (Ecuador)</option><option value='es_CO'>Espa&ntilde;ol (Colombia)</option><option value='es_ES'>Espa&ntilde;ol (Espa&ntilde;a)</option><option value='es_419'>Espa&ntilde;ol (Am&eacute;rica Latina)</option><option value='es_MX'>Espa&ntilde;ol (Mexico)</option><option value='es_VE'>Espa&ntilde;ol (Venezuela)</option><option value='eu_ES'>Euskara</option><option value='fr_FR'>Fran&ccedil;ais</option><option value='fr_CA'>Fran&ccedil;ais (Canada)</option><option value='fr_BE'>Fran&ccedil;ais (Belgique)</option><option value='gl_ES'>Galego</option><option value='el_GR'>&Epsilon;&lambda;&lambda;&eta;&nu;&iota;&kappa;ά</option><option value='he_IL'>עברית</option><option value='hi_IN'>हिन्दी</option><option value='hr_HR'>Hrvatski</option><option value='hu_HU'>Magyar</option><option value='it_IT'>Italiano</option><option value='kn'>ಕನ್ನಡ</option><option value='lv_LV'>Latvie&scaron;u</option><option value='lt_LT'>Lietuvių</option><option value='mn_MN'>Монгол хэл</option><option value='nl_NL'>Nederlands</option><option value='nl_BE'>Flemish</option><option value='nb_NO'>Norsk (Bokm&aring;l)</option><option value='nn_NO'>Norsk (Nynorsk)</option><option value='fa_IR'>فارسی</option><option value='pl_PL'>Polski</option><option value='pt_PT'>Portugu&ecirc;s</option><option value='pt_BR'>Portugu&ecirc;s do Brasil</option><option value='ro_RO'>Rom&acirc;nă</option><option value='ru_RU'>Русский</option><option value='sk_SK'>Slovenčina</option><option value='sl_SI'>Sloven&scaron;čina</option><option value='sr_RS'>Srpski</option><option value='fi_FI'>Suomi</option><option value='sv_SE'>Svenska</option><option value='vi_VN'>Tiếng Việt</option><option value='th_TH'>ภาษาไทย</option><option value='tr_TR'>T&uuml;rk&ccedil;e</option><option value='uk_UA'>Українська</option><option value='ja_JP'>日本語</option><option value='zh_CN'>简体中文</option><option value='zh_TW'>繁體中文</option><option value='ko_KR'>한국/韓國</option><option value='zh_HK'>香港</option><option value='be_BY'>Belarussian</option><option value='is_IS'>&iacute;slenska</option><option value='eo'>Esperanto</option></select><script type="text/javascript">
+//<![CDATA[
+
+$(function() {
+         const select2_el = $('#dropdown_language1012641125').select2({
+            
+            width: '',
+            dropdownAutoWidth: true,
+            dropdownParent: $('#dropdown_language1012641125').closest('div.modal, div.dropdown-menu, body'),
+            quietMillis: 100,
+            minimumResultsForSearch: 10,
+            matcher: function(params, data) {
+               // store last search in the global var
+               query = params;
+
+               // If there are no search terms, return all of the data
+               if ($.trim(params.term) === '') {
+                  return data;
+               }
+
+               var searched_term = getTextWithoutDiacriticalMarks(params.term);
+               var data_text = typeof(data.text) === 'string'
+                  ? getTextWithoutDiacriticalMarks(data.text)
+                  : '';
+               var select2_fuzzy_opts = {
+                  pre: '<span class="select2-rendered__match">',
+                  post: '</span>',
+               };
+
+               if (data_text.indexOf('>') !== -1 || data_text.indexOf('<') !== -1) {
+                  // escape text, if it contains chevrons (can already be escaped prior to this point :/)
+                  data_text = jQuery.fn.select2.defaults.defaults.escapeMarkup(data_text);
+               }
+
+               // Skip if there is no 'children' property
+               if (typeof data.children === 'undefined') {
+                  var match  = fuzzy.match(searched_term, data_text, select2_fuzzy_opts);
+                  if (match == null) {
+                     return false;
+                  }
+                  data.rendered_text = match.rendered_text;
+                  data.score = match.score;
+                  return data;
+               }
+
+               // `data.children` contains the actual options that we are matching against
+               // also check in `data.text` (optgroup title)
+               var filteredChildren = [];
+
+               $.each(data.children, function (idx, child) {
+                  var child_text = typeof(child.text) === 'string'
+                     ? getTextWithoutDiacriticalMarks(child.text)
+                     : '';
+
+                  if (child_text.indexOf('>') !== -1 || child_text.indexOf('<') !== -1) {
+                     // escape text, if it contains chevrons (can already be escaped prior to this point :/)
+                     child_text = jQuery.fn.select2.defaults.defaults.escapeMarkup(child_text);
+                  }
+
+                  var match_child = fuzzy.match(searched_term, child_text, select2_fuzzy_opts);
+                  var match_text  = fuzzy.match(searched_term, data_text, select2_fuzzy_opts);
+                  if (match_child !== null || match_text !== null) {
+                     if (match_text !== null) {
+                        data.score         = match_text.score;
+                        data.rendered_text = match_text.rendered;
+                     }
+
+                     if (match_child !== null) {
+                        child.score         = match_child.score;
+                        child.rendered_text = match_child.rendered;
+                     }
+                     filteredChildren.push(child);
+                  }
+               });
+
+               // If we matched any of the group's children, then set the matched children on the group
+               // and return the group object
+               if (filteredChildren.length) {
+                  var modifiedData = $.extend({}, data, true);
+                  modifiedData.children = filteredChildren;
+
+                  // You can return modified objects from here
+                  // This includes matching the `children` how you want in nested data sets
+                  return modifiedData;
+               }
+
+               // Return `null` if the term should not be displayed
+               return null;
+            },
+            templateResult: templateResult,
+            templateSelection: templateSelection,
+         })
+         .bind('setValue', function(e, value) {
+            $('#dropdown_language1012641125').val(value).trigger('change');
+         })
+         $('label[for=dropdown_language1012641125]').on('click', function(){ $('#dropdown_language1012641125').select2('open'); });
+         $('#dropdown_language1012641125').on('select2:open', function(e){
+            const search_input = document.querySelector(`.select2-search__field[aria-controls='select2-${e.target.id}-results']`);
+            if (search_input) {
+               search_input.focus();
+            }
+         });
+      });
+
+//]]>
+</script><input type="hidden" name="_glpi_csrf_token" value="5c729eb5d0de9a1bd3e05be9c55408bbf514a6e59cba65bb6eb4eb397009cdc4" /></form>
+               </div>
+
+               <div class="dropdown-divider"></div>
+
+               <a href="https://glpi-project.org/documentation" class="dropdown-item" title="Help">
+                  <i class="ti fa-fw ti-help"></i>
+                  Help
+               </a>
+
+               <a href="#" class="dropdown-item" title="About"
+                  id="show_about_modal_765980740">
+                  <i class="ti fa-fw ti-info-circle"></i>
+                  About
+                                 </a>
+
+               <div class="dropdown-divider"></div>
+
+               <a href="/front/preference.php" class="dropdown-item" title="My settings">
+                  <i class="ti fa-fw ti-adjustments-alt"></i>
+                  My settings
+               </a>
+               <a href="/front/logout.php" class="dropdown-item" title="Logout">
+                  <i class="ti fa-fw ti-logout"></i>
+                  Logout
+               </a>
+            </div>
+         </div>
+      </div>
+
+      <div class="modal fade" id="about_modal_765980740" role="dialog">
+         <div class="modal-dialog">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h4 class="modal-title">About</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+               </div>
+               <div class="modal-body">
+                  <p><a href="http://glpi-project.org/" title="Powered by Teclib and contributors" class="copyright">
+                     GLPI 10.0.18
+                     Copyright (C) 2015-2025 Teclib' and contributors
+                  </a></p>
+                                 </div>
+            </div>
+         </div>
+      </div>
+
+   </div>
+
+<script type="text/javascript">
+$(function() {
+   $("#show_about_modal_765980740").click(function(e) {
+      e.preventDefault();
+      $("#about_modal_765980740").remove().modal("show");
+   });
+});
+</script>
+
+            </div>
+         </div>
+      </header>
+
+      
+      <div class="page-wrapper mb-0">
+         <div class="page-body container-fluid">
+            <main role="main" id="page" class="legacy">
+
+
+<table class="central">
+   
+</table>
+
+
+                                                      
+
+   
+<div id="grid_1790618661" class="masonry_grid row row-cards mb-5">
+                  <div class="grid-item col-xl-6">
+            
+
+<div class="card">
+   <div class="card-body">
+      <div class="card-title d-flex justify-content-between">
+                  <a class="" href="/front/ticket.php?criteria%5B0%5D%5Bfield%5D=12&amp;criteria%5B0%5D%5Bsearchtype%5D=equals&amp;criteria%5B0%5D%5Bvalue%5D=process&amp;criteria%5B0%5D%5Blink%5D=AND&amp;reset=reset">
+            <span>
+                           <i class="ti ti-alert-circle"></i>
+                        Tickets
+         </span>
+                  </a>
+   
+
+                              <a class="btn btn-sm btn-outline-secondary" href="/front/helpdesk.public.php?create_ticket=1">
+            <span>
+                           <i class="ti ti-plus"></i>
+                        Create a ticket
+         </span>
+                  </a>
+   
+               </div>
+
+         </div>
+
+
+   <ul class="list-group list-group-flush">
+                        <a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" href="/front/ticket.php?criteria%5B0%5D%5Bfield%5D=12&amp;criteria%5B0%5D%5Bsearchtype%5D=equals&amp;criteria%5B0%5D%5Bvalue%5D=1&amp;criteria%5B0%5D%5Blink%5D=AND&amp;reset=reset">
+            <span>
+                           <i class="itilstatus fas fa-circle new"></i>
+                        New
+         </span>
+                     <span class="badge bg-secondary">1</span>
+                  </a>
+   
+                        <a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" href="/front/ticket.php?criteria%5B0%5D%5Bfield%5D=12&amp;criteria%5B0%5D%5Bsearchtype%5D=equals&amp;criteria%5B0%5D%5Bvalue%5D=2&amp;criteria%5B0%5D%5Blink%5D=AND&amp;reset=reset">
+            <span>
+                           <i class="itilstatus far fa-circle assigned"></i>
+                        Processing (assigned)
+         </span>
+                     <span class="badge bg-secondary">0</span>
+                  </a>
+   
+                        <a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" href="/front/ticket.php?criteria%5B0%5D%5Bfield%5D=12&amp;criteria%5B0%5D%5Bsearchtype%5D=equals&amp;criteria%5B0%5D%5Bvalue%5D=3&amp;criteria%5B0%5D%5Blink%5D=AND&amp;reset=reset">
+            <span>
+                           <i class="itilstatus far fa-calendar planned"></i>
+                        Processing (planned)
+         </span>
+                     <span class="badge bg-secondary">0</span>
+                  </a>
+   
+                        <a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" href="/front/ticket.php?criteria%5B0%5D%5Bfield%5D=12&amp;criteria%5B0%5D%5Bsearchtype%5D=equals&amp;criteria%5B0%5D%5Bvalue%5D=4&amp;criteria%5B0%5D%5Blink%5D=AND&amp;reset=reset">
+            <span>
+                           <i class="itilstatus fas fa-circle waiting"></i>
+                        Pending
+         </span>
+                     <span class="badge bg-secondary">0</span>
+                  </a>
+   
+                        <a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" href="/front/ticket.php?criteria%5B0%5D%5Bfield%5D=12&amp;criteria%5B0%5D%5Bsearchtype%5D=equals&amp;criteria%5B0%5D%5Bvalue%5D=5&amp;criteria%5B0%5D%5Blink%5D=AND&amp;reset=reset">
+            <span>
+                           <i class="itilstatus far fa-circle solved"></i>
+                        Solved
+         </span>
+                     <span class="badge bg-secondary">0</span>
+                  </a>
+   
+                        <a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" href="/front/ticket.php?criteria%5B0%5D%5Bfield%5D=12&amp;criteria%5B0%5D%5Bsearchtype%5D=equals&amp;criteria%5B0%5D%5Bvalue%5D=6&amp;criteria%5B0%5D%5Blink%5D=AND&amp;reset=reset">
+            <span>
+                           <i class="itilstatus fas fa-circle closed"></i>
+                        Closed
+         </span>
+                     <span class="badge bg-secondary">1</span>
+                  </a>
+   
+                        <a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" href="/front/ticket.php?criteria%5B0%5D%5Bfield%5D=12&amp;criteria%5B0%5D%5Bsearchtype%5D=equals&amp;criteria%5B0%5D%5Bvalue%5D=all&amp;criteria%5B0%5D%5Blink%5D=AND&amp;reset=reset&amp;is_deleted=1">
+            <span>
+                           <i class="fas fa-trash bg-red-lt"></i>
+                        Deleted
+         </span>
+                     <span class="badge bg-secondary">0</span>
+                  </a>
+   
+         </ul>
+</div>
+
+         </div>
+                        <div class="grid-item col-xl-6">
+            <div class="card"><table class='table table-striped card-table table-hover'><thead><tr class='noHover'><th><div class='relative'><span>Public reminders</span></div></th></tr></thead></table></div>
+         </div>
+                        <div class="grid-item col-xl-6">
+            <div class="card"><table class='table table-striped table-hover card-table'><thead><tr class='noHover'><th colspan='2'><div class='relative'><span>Public RSS feeds</span></div></th></tr></thead></table></div>
+         </div>
+         </div>
+
+<script type="text/javascript">
+$(function() {
+   window.msnry_grid_1790618661 = new Masonry('#grid_1790618661', {
+      "percentPosition": true,
+      "horizontalOrder": true,
+   });
+
+   $('#grid_1790618661').on("layout:refresh", function() {
+       window.msnry_grid_1790618661.layout();
+   });
+
+   $(document).on('masonry_grid:layout', function() {
+       window.msnry_grid_1790618661.layout();
+   })
+
+});
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+
+
+            var CFG_GLPI  = {"languages":{"ar_SA":["\u0627\u0644\u0639\u064e\u0631\u064e\u0628\u0650\u064a\u064e\u0651\u0629\u064f","ar_SA.mo","ar","ar","arabic",103],"bg_BG":["\u0411\u044a\u043b\u0433\u0430\u0440\u0441\u043a\u0438","bg_BG.mo","bg","bg","bulgarian",2],"id_ID":["Bahasa Indonesia","id_ID.mo","id","id","indonesian",2],"ms_MY":["Bahasa Melayu","ms_MY.mo","ms","ms","malay",2],"ca_ES":["Catal\u00e0","ca_ES.mo","ca","ca","catalan",2],"cs_CZ":["\u010ce\u0161tina","cs_CZ.mo","cs","cs","czech",10],"de_DE":["Deutsch","de_DE.mo","de","de","german",2],"da_DK":["Dansk","da_DK.mo","da","da","danish",2],"et_EE":["Eesti","et_EE.mo","et","et","estonian",2],"en_GB":["English","en_GB.mo","en-GB","en","english",2],"en_US":["English (US)","en_US.mo","en-GB","en","english",2],"es_AR":["Espa\u00f1ol (Argentina)","es_AR.mo","es","es","spanish",2],"es_EC":["Espa\u00f1ol (Ecuador)","es_EC.mo","es","es","spanish",2],"es_CO":["Espa\u00f1ol (Colombia)","es_CO.mo","es","es","spanish",2],"es_ES":["Espa\u00f1ol (Espa\u00f1a)","es_ES.mo","es","es","spanish",2],"es_419":["Espa\u00f1ol (Am\u00e9rica Latina)","es_419.mo","es","es","spanish",2],"es_MX":["Espa\u00f1ol (Mexico)","es_MX.mo","es","es","spanish",2],"es_VE":["Espa\u00f1ol (Venezuela)","es_VE.mo","es","es","spanish",2],"eu_ES":["Euskara","eu_ES.mo","eu","eu","basque",2],"fr_FR":["Fran\u00e7ais","fr_FR.mo","fr","fr","french",2],"fr_CA":["Fran\u00e7ais (Canada)","fr_CA.mo","fr","fr","french",2],"fr_BE":["Fran\u00e7ais (Belgique)","fr_BE.mo","fr","fr","french",2],"gl_ES":["Galego","gl_ES.mo","gl","gl","galician",2],"el_GR":["\u0395\u03bb\u03bb\u03b7\u03bd\u03b9\u03ba\u03ac","el_GR.mo","el","el","greek",2],"he_IL":["\u05e2\u05d1\u05e8\u05d9\u05ea","he_IL.mo","he","he","hebrew",2],"hi_IN":["\u0939\u093f\u0928\u094d\u0926\u0940","hi_IN.mo","hi","hi_IN","hindi",2],"hr_HR":["Hrvatski","hr_HR.mo","hr","hr","croatian",2],"hu_HU":["Magyar","hu_HU.mo","hu","hu","hungarian",2],"it_IT":["Italiano","it_IT.mo","it","it","italian",2],"kn":["\u0c95\u0ca8\u0ccd\u0ca8\u0ca1","kn.mo","en-GB","en","kannada",2],"lv_LV":["Latvie\u0161u","lv_LV.mo","lv","lv","latvian",2],"lt_LT":["Lietuvi\u0173","lt_LT.mo","lt","lt","lithuanian",2],"mn_MN":["\u041c\u043e\u043d\u0433\u043e\u043b \u0445\u044d\u043b","mn_MN.mo","mn","mn","mongolian",2],"nl_NL":["Nederlands","nl_NL.mo","nl","nl","dutch",2],"nl_BE":["Flemish","nl_BE.mo","nl","nl","flemish",2],"nb_NO":["Norsk (Bokm\u00e5l)","nb_NO.mo","no","nb","norwegian",2],"nn_NO":["Norsk (Nynorsk)","nn_NO.mo","no","nn","norwegian",2],"fa_IR":["\u0641\u0627\u0631\u0633\u06cc","fa_IR.mo","fa","fa","persian",2],"pl_PL":["Polski","pl_PL.mo","pl","pl","polish",2],"pt_PT":["Portugu\u00eas","pt_PT.mo","pt","pt","portuguese",2],"pt_BR":["Portugu\u00eas do Brasil","pt_BR.mo","pt-BR","pt","brazilian portuguese",2],"ro_RO":["Rom\u00e2n\u0103","ro_RO.mo","ro","en","romanian",2],"ru_RU":["\u0420\u0443\u0441\u0441\u043a\u0438\u0439","ru_RU.mo","ru","ru","russian",2],"sk_SK":["Sloven\u010dina","sk_SK.mo","sk","sk","slovak",10],"sl_SI":["Sloven\u0161\u010dina","sl_SI.mo","sl","sl","slovenian slovene",2],"sr_RS":["Srpski","sr_RS.mo","sr","sr","serbian",2],"fi_FI":["Suomi","fi_FI.mo","fi","fi","finish",2],"sv_SE":["Svenska","sv_SE.mo","sv","sv","swedish",2],"vi_VN":["Ti\u1ebfng Vi\u1ec7t","vi_VN.mo","vi","vi","vietnamese",2],"th_TH":["\u0e20\u0e32\u0e29\u0e32\u0e44\u0e17\u0e22","th_TH.mo","th","th","thai",2],"tr_TR":["T\u00fcrk\u00e7e","tr_TR.mo","tr","tr","turkish",2],"uk_UA":["\u0423\u043a\u0440\u0430\u0457\u043d\u0441\u044c\u043a\u0430","uk_UA.mo","uk","en","ukrainian",2],"ja_JP":["\u65e5\u672c\u8a9e","ja_JP.mo","ja","ja","japanese",2],"zh_CN":["\u7b80\u4f53\u4e2d\u6587","zh_CN.mo","zh-CN","zh","chinese",2],"zh_TW":["\u7e41\u9ad4\u4e2d\u6587","zh_TW.mo","zh-TW","zh","chinese",2],"ko_KR":["\ud55c\uad6d\/\u97d3\u570b","ko_KR.mo","ko","ko","korean",1],"zh_HK":["\u9999\u6e2f","zh_HK.mo","zh-HK","zh","chinese",2],"be_BY":["Belarussian","be_BY.mo","be","be","belarussian",3],"is_IS":["\u00edslenska","is_IS.mo","is","en","icelandic",2],"eo":["Esperanto","eo.mo","eo","en","esperanto",2],"es_CL":["Espa\u00f1ol chileno","es_CL","es","es","spanish chilean",2]},"glpitables":[],"unicity_types":["Budget","Computer","Contact","Contract","Infocom","Monitor","NetworkEquipment","Peripheral","Phone","Printer","Software","SoftwareLicense","Supplier","User","Certificate","Rack","Enclosure","PDU","Cluster","Item_DeviceSimcard"],"state_types":["Computer","Monitor","NetworkEquipment","Peripheral","Phone","Printer","SoftwareLicense","Certificate","Enclosure","PDU","Line","Rack","SoftwareVersion","Cluster","Contract","Appliance","DatabaseInstance","Cable","Unmanaged","PassiveDCEquipment"],"asset_types":["Computer","Monitor","NetworkEquipment","Peripheral","Phone","Printer","SoftwareLicense","Certificate","Unmanaged","Appliance"],"project_asset_types":["Computer","Monitor","NetworkEquipment","Peripheral","Phone","Printer","Software","DeviceMotherboard","DeviceProcessor","DeviceMemory","DeviceHardDrive","DeviceNetworkCard","DeviceDrive","DeviceControl","DeviceGraphicCard","DeviceSoundCard","DevicePci","DeviceCase","DevicePowerSupply","DeviceGeneric","DeviceBattery","DeviceFirmware","DeviceCamera","Certificate","Appliance"],"document_types":["Budget","CartridgeItem","Change","Computer","ConsumableItem","Contact","Contract","Document","Entity","KnowbaseItem","Monitor","NetworkEquipment","Peripheral","Phone","Printer","Problem","Project","ProjectTask","Reminder","Software","Line","SoftwareLicense","Supplier","Ticket","User","Certificate","Cluster","ITILFollowup","ITILSolution","ChangeTask","ProblemTask","TicketTask","Appliance","DatabaseInstance","PluginArchimapGraph","PluginFormcreatorFormAnswer","PluginFormcreatorForm"],"consumables_types":["Group","User"],"report_types":["Computer","Monitor","NetworkEquipment","Peripheral","Phone","Printer","Project","Software","SoftwareLicense","Certificate"],"directconnect_types":["Monitor","Peripheral","Phone","Printer"],"infocom_types":["Cartridge","CartridgeItem","Computer","Consumable","ConsumableItem","Monitor","NetworkEquipment","Peripheral","Phone","Printer","Software","SoftwareLicense","Line","Certificate","Domain","Appliance","Item_DeviceSimcard","Rack","Enclosure","PDU","PassiveDCEquipment","DatabaseInstance","Cable"],"reservation_types":["Computer","Monitor","NetworkEquipment","Peripheral","Phone","Printer","Software"],"linkuser_types":["Computer","Monitor","NetworkEquipment","Peripheral","Phone","Printer","Software","SoftwareLicense","Certificate","Appliance","Item_DeviceSimcard","Line"],"linkgroup_types":["Computer","Consumable","Monitor","NetworkEquipment","Peripheral","Phone","Printer","Software","SoftwareLicense","Certificate","Appliance","Item_DeviceSimcard","Line"],"linkuser_tech_types":["Computer","ConsumableItem","Monitor","NetworkEquipment","Peripheral","Phone","Printer","Software","SoftwareLicense","Certificate","Appliance","DatabaseInstance"],"linkgroup_tech_types":["Computer","ConsumableItem","Monitor","NetworkEquipment","Peripheral","Phone","Printer","Software","SoftwareLicense","Certificate","Appliance","DatabaseInstance"],"location_types":["Budget","CartridgeItem","ConsumableItem","Computer","Monitor","Glpi\\Socket","NetworkEquipment","Peripheral","Phone","Printer","Software","SoftwareLicense","Ticket","User","Certificate","Item_DeviceSimcard","Line","Appliance","PassiveDCEquipment","DataCenter","DCRoom","Rack","Enclosure","PDU","Item_DeviceMotherboard","Item_DeviceFirmware","Item_DeviceProcessor","Item_DeviceMemory","Item_DeviceHardDrive","Item_DeviceNetworkCard","Item_DeviceDrive","Item_DeviceBattery","Item_DeviceGraphicCard","Item_DeviceSoundCard","Item_DeviceControl","Item_DevicePci","Item_DeviceCase","Item_DevicePowerSupply","Item_DeviceGeneric","Item_DeviceSimcard","Item_DeviceSensor","Item_DeviceCamera"],"ticket_types":["Computer","Monitor","NetworkEquipment","Peripheral","Phone","Printer","Software","SoftwareLicense","Certificate","Line","DCRoom","Rack","Enclosure","Cluster","PDU","Domain","DomainRecord","Appliance","Item_DeviceSimcard","PassiveDCEquipment","DatabaseInstance","Database","Cable","PluginArchimapGraph","PluginFormcreatorFormAnswer"],"link_types":["Budget","CartridgeItem","Computer","ConsumableItem","Contact","Contract","Monitor","NetworkEquipment","Peripheral","Phone","Printer","Software","Supplier","User","Certificate","Cluster","DCRoom","Domain","Appliance","DatabaseInstance"],"dictionnary_types":["ComputerModel","ComputerType","Manufacturer","MonitorModel","MonitorType","NetworkEquipmentModel","NetworkEquipmentType","OperatingSystem","OperatingSystemServicePack","OperatingSystemVersion","PeripheralModel","PeripheralType","PhoneModel","PhoneType","Printer","PrinterModel","PrinterType","Software","OperatingSystemArchitecture","OperatingSystemKernel","OperatingSystemKernelVersion","OperatingSystemEdition","ImageResolution","ImageFormat","DatabaseInstanceType","Glpi\\SocketModel","CableType"],"helpdesk_visible_types":["Software","Appliance","DatabaseInstance","PluginArchimapGraph"],"networkport_types":["Computer","Monitor","NetworkEquipment","Peripheral","Phone","Printer","Enclosure","PDU","Cluster","Unmanaged"],"networkport_instantiations":["NetworkPortEthernet","NetworkPortWifi","NetworkPortAggregate","NetworkPortAlias","NetworkPortDialup","NetworkPortLocal","NetworkPortFiberchannel"],"device_types":["DeviceMotherboard","DeviceFirmware","DeviceProcessor","DeviceMemory","DeviceHardDrive","DeviceNetworkCard","DeviceDrive","DeviceBattery","DeviceGraphicCard","DeviceSoundCard","DeviceControl","DevicePci","DeviceCase","DevicePowerSupply","DeviceGeneric","DeviceSimcard","DeviceSensor","DeviceCamera"],"socket_types":["Computer","NetworkEquipment","Peripheral","Phone","Printer","PassiveDCEquipment"],"itemdevices":["Item_DeviceMotherboard","Item_DeviceFirmware","Item_DeviceProcessor","Item_DeviceMemory","Item_DeviceHardDrive","Item_DeviceNetworkCard","Item_DeviceDrive","Item_DeviceBattery","Item_DeviceGraphicCard","Item_DeviceSoundCard","Item_DeviceControl","Item_DevicePci","Item_DeviceCase","Item_DevicePowerSupply","Item_DeviceGeneric","Item_DeviceSimcard","Item_DeviceSensor","Item_DeviceCamera"],"itemdevices_types":["Computer","NetworkEquipment","Peripheral","Phone","Printer","Enclosure"],"itemdevices_itemaffinity":["Computer"],"itemdevicememory_types":["Computer","NetworkEquipment","Peripheral","Printer","Phone"],"itemdevicepowersupply_types":["Computer","NetworkEquipment","Peripheral","Enclosure","Phone"],"itemdevicenetworkcard_types":["Computer","NetworkEquipment","Peripheral","Phone","Printer"],"itemdeviceharddrive_types":["Computer","Peripheral","NetworkEquipment","Printer","Phone"],"itemdevicebattery_types":["Computer","Peripheral","Phone","Printer"],"itemdevicefirmware_types":["Computer","Peripheral","Phone","NetworkEquipment","Printer"],"itemdevicesimcard_types":["Computer","Peripheral","Phone","NetworkEquipment","Printer"],"itemdevicegeneric_types":["*"],"itemdevicepci_types":["*"],"itemdevicesensor_types":["Computer","Peripheral","Phone"],"itemdeviceprocessor_types":["Computer","Phone"],"itemdevicesoundcard_types":["Computer"],"itemdevicegraphiccard_types":["Computer","Phone"],"itemdevicemotherboard_types":["Computer","Phone"],"itemdevicecamera_types":["Computer","Phone"],"notificationtemplates_types":["CartridgeItem","Change","ConsumableItem","Contract","CronTask","DBConnection","FieldUnicity","Infocom","MailCollector","ObjectLock","PlanningRecall","Problem","Project","ProjectTask","Reservation","SoftwareLicense","Ticket","User","SavedSearch_Alert","Certificate","Glpi\\Marketplace\\Controller","Domain","PluginFormcreatorFormAnswer","PluginMreportingNotification"],"contract_types":["Computer","Monitor","NetworkEquipment","Peripheral","Phone","Printer","Project","Line","Software","SoftwareLicense","Certificate","DCRoom","Rack","Enclosure","Cluster","PDU","Appliance","Domain","DatabaseInstance","Item_DeviceMotherboard","Item_DeviceFirmware","Item_DeviceProcessor","Item_DeviceMemory","Item_DeviceHardDrive","Item_DeviceNetworkCard","Item_DeviceDrive","Item_DeviceBattery","Item_DeviceGraphicCard","Item_DeviceSoundCard","Item_DeviceControl","Item_DevicePci","Item_DeviceCase","Item_DevicePowerSupply","Item_DeviceGeneric","Item_DeviceSimcard","Item_DeviceSensor","Item_DeviceCamera"],"union_search_type":{"ReservationItem":"reservation_types","AllAssets":"asset_types"},"systeminformations_types":["AuthLDAP","DBConnection","MailCollector","Plugin"],"rulecollections_types":["RuleImportAssetCollection","RuleImportEntityCollection","RuleLocationCollection","RuleMailCollectorCollection","RuleRightCollection","RuleSoftwareCategoryCollection","RuleTicketCollection","RuleAssetCollection"],"planning_types":["ChangeTask","ProblemTask","Reminder","TicketTask","ProjectTask","PlanningExternalEvent"],"planning_add_types":["PlanningExternalEvent"],"caldav_supported_components":["VEVENT","VJOURNAL"],"globalsearch_types":["Computer","Contact","Contract","Document","Monitor","NetworkEquipment","Peripheral","Phone","Printer","Software","SoftwareLicense","Ticket","Problem","Change","User","Group","Project","Supplier","Budget","Certificate","Line","Datacenter","DCRoom","Enclosure","PDU","Rack","Cluster","PassiveDCEquipment","Domain","Appliance"],"number_format":"0","decimal_number":"2","debug_lang":1,"debug_vars":1,"debug_sql":1,"user_pref_field":["backcreated","csv_delimiter","date_format","default_requesttypes_id","display_count_on_home","duedatecritical_color","duedatecritical_less","duedatecritical_unit","duedateok_color","duedatewarning_color","duedatewarning_less","duedatewarning_unit","followup_private","is_ids_visible","keep_devices_when_purging_item","language","list_limit","lock_autolock_mode","lock_directunlock_notification","names_format","notification_to_myself","number_format","pdffont","priority_1","priority_2","priority_3","priority_4","priority_5","priority_6","refresh_views","set_default_tech","set_default_requester","show_count_on_tabs","show_jobs_at_login","task_private","task_state","use_flat_dropdowntree","use_flat_dropdowntree_on_search_result","palette","page_layout","highcontrast_css","default_dashboard_central","default_dashboard_assets","default_dashboard_helpdesk","default_dashboard_mini_ticket","default_central_tab","fold_menu","fold_search","savedsearches_pinned","richtext_layout","timeline_order","itil_layout","timeline_action_btn_layout","timeline_date_format"],"lock_lockable_objects":["Budget","Change","Contact","Contract","Document","CartridgeItem","Computer","ConsumableItem","Entity","Group","KnowbaseItem","Line","Link","Monitor","NetworkEquipment","NetworkName","Peripheral","Phone","Printer","Problem","Profile","Project","Reminder","RSSFeed","Software","Supplier","Ticket","User","SoftwareLicense","Certificate"],"inventory_types":["Computer","Phone","Printer","NetworkEquipment"],"inventory_lockable_objects":["Computer_Item","Item_SoftwareLicense","Item_SoftwareVersion","Item_Disk","ComputerVirtualMachine","ComputerAntivirus","NetworkPort","NetworkName","IPAddress","Item_OperatingSystem","Item_DeviceBattery","Item_DeviceCase","Item_DeviceControl","Item_DeviceDrive","Item_DeviceFirmware","Item_DeviceGeneric","Item_DeviceGraphicCard","Item_DeviceHardDrive","Item_DeviceMemory","Item_DeviceMotherboard","Item_DeviceNetworkCard","Item_DevicePci","Item_DevicePowerSupply","Item_DeviceProcessor","Item_DeviceSensor","Item_DeviceSimcard","Item_DeviceSoundCard","DatabaseInstance","Item_RemoteManagement","Monitor","Domain_Item"],"kb_types":["Budget","Change","Computer","Contract","Entity","Monitor","NetworkEquipment","Peripheral","Phone","Printer","Problem","Project","Software","SoftwareLicense","Supplier","Ticket","Certificate","Appliance","DatabaseInstance"],"certificate_types":["Computer","NetworkEquipment","Peripheral","Phone","Printer","SoftwareLicense","User","Domain","Appliance","DatabaseInstance"],"rackable_types":["Computer","Monitor","NetworkEquipment","Peripheral","Enclosure","PDU","PassiveDCEquipment"],"cluster_types":["Computer","NetworkEquipment"],"operatingsystem_types":["Computer","Monitor","NetworkEquipment","Peripheral","Phone","Printer"],"software_types":["Computer","Monitor","NetworkEquipment","Peripheral","Phone","Printer"],"disk_types":["Computer","NetworkEquipment","Phone","Printer"],"kanban_types":["Project"],"domain_types":["Computer","Monitor","NetworkEquipment","Peripheral","Phone","Printer","Software","Appliance","Certificate","DatabaseInstance","Database","Unmanaged"],"appliance_types":["Computer","Monitor","NetworkEquipment","Peripheral","Phone","Printer","Software","Appliance","Cluster","DatabaseInstance","Database"],"appliance_relation_types":["Location","Network","Domain"],"remote_management_types":["Computer","Phone"],"databaseinstance_types":["Computer"],"agent_types":["Computer","Phone"],"javascript":{"central":{"central":["fullcalendar","planning","masonry","tinymce","dashboard"]},"assets":{"dashboard":["dashboard"],"rack":["gridstack","rack"],"printer":["dashboard","fullcalendar","reservations"],"cable":["cable"],"socket":["cable"],"networkport":["dashboard"],"computer":["fullcalendar","reservations"],"monitor":["fullcalendar","reservations"],"networkequipment":["fullcalendar","reservations"],"peripheral":["fullcalendar","reservations"],"phone":["fullcalendar","reservations"],"software":["fullcalendar","reservations"]},"helpdesk":{"dashboard":["dashboard"],"planning":["clipboard","fullcalendar","tinymce","planning"],"ticket":["rateit","tinymce","kanban","dashboard"],"problem":["tinymce","kanban","sortable"],"change":["tinymce","kanban","sortable"],"stat":["charts","rateit"],"pluginformcreatorformlist":["gridstack"],"pluginformcreatorissue":["photoswipe"]},"tools":{"project":["kanban","tinymce","sortable"],"knowbaseitem":["tinymce"],"knowbaseitemtranslation":["tinymce"],"reminder":["tinymce"],"remindertranslation":["tinymce"],"reservationitem":["fullcalendar","reservations"]},"management":{"datacenter":{"dcroom":["gridstack","rack"]}},"config":{"commondropdown":{"ITILFollowupTemplate":["tinymce"],"ProjectTaskTemplate":["tinymce"],"SolutionTemplate":["tinymce"],"TaskTemplate":["tinymce"]},"notification":{"notificationtemplate":["tinymce"]},"plugin":{"marketplace":["marketplace"]},"config":["clipboard","tinymce"]},"admin":{"0":"clipboard","1":"sortable","pluginformcreatorform":["gridstack"]},"preference":["clipboard"],"self-service":["tinymce","fullcalendar","reservations"],"tickets":{"ticket":["tinymce"]},"create_ticket":["tinymce"],"reservation":["tinymce","fullcalendar","reservations"],"faq":["tinymce"],"seek_assistance":{"PluginFormcreatorForm":["dashboard","gridstack"]}},"max_time_for_count":200,"default_impact_asset_types":{"Appliance":"pics\/impact\/appliance.png","Cluster":"pics\/impact\/cluster.png","Computer":"pics\/impact\/computer.png","Datacenter":"pics\/impact\/datacenter.png","DCRoom":"pics\/impact\/dcroom.png","Domain":"pics\/impact\/domain.png","Enclosure":"pics\/impact\/enclosure.png","Monitor":"pics\/impact\/monitor.png","NetworkEquipment":"pics\/impact\/networkequipment.png","PDU":"pics\/impact\/pdu.png","Peripheral":"pics\/impact\/peripheral.png","Phone":"pics\/impact\/phone.png","Printer":"pics\/impact\/printer.png","Rack":"pics\/impact\/rack.png","Software":"pics\/impact\/software.png","DatabaseInstance":"pics\/impact\/databaseinstance.png"},"impact_asset_types":{"Appliance":"pics\/impact\/appliance.png","Cluster":"pics\/impact\/cluster.png","Computer":"pics\/impact\/computer.png","Datacenter":"pics\/impact\/datacenter.png","DCRoom":"pics\/impact\/dcroom.png","Domain":"pics\/impact\/domain.png","Enclosure":"pics\/impact\/enclosure.png","Monitor":"pics\/impact\/monitor.png","NetworkEquipment":"pics\/impact\/networkequipment.png","PDU":"pics\/impact\/pdu.png","Peripheral":"pics\/impact\/peripheral.png","Phone":"pics\/impact\/phone.png","Printer":"pics\/impact\/printer.png","Rack":"pics\/impact\/rack.png","Software":"pics\/impact\/software.png","DatabaseInstance":"pics\/impact\/databaseinstance.png","AuthLDAP":"pics\/impact\/authldap.png","CartridgeItem":"pics\/impact\/cartridgeitem.png","Contract":"pics\/impact\/contract.png","CronTask":"pics\/impact\/crontask.png","DeviceSimcard":"pics\/impact\/devicesimcard.png","Entity":"pics\/impact\/entity.png","Group":"pics\/impact\/group.png","ITILCategory":"pics\/impact\/itilcategory.png","Line":"pics\/impact\/line.png","Location":"pics\/impact\/location.png","MailCollector":"pics\/impact\/mailcollector.png","Notification":"pics\/impact\/notification.png","Profile":"pics\/impact\/profile.png","Project":"pics\/impact\/project.png","SLM":"pics\/impact\/slm.png","SoftwareLicense":"pics\/impact\/softwarelicense.png","Supplier":"pics\/impact\/supplier.png","User":"pics\/impact\/user.png","Database":"pics\/impact\/database.png"},"root_doc":"","typedoc_icon_dir":"\/pics\/icones","glpitablesitemtype":{"Config":"glpi_configs","User":"glpi_users","Profile_User":"glpi_profiles_users","Plugin":"glpi_plugins","Entity":"glpi_entities","PluginFormcreatorEntityconfig":"glpi_plugin_formcreator_entityconfigs","PluginMreportingProfile":"glpi_plugin_mreporting_profiles","Ticket":"glpi_tickets","RSSFeed":"glpi_rssfeeds","KnowbaseItem":"glpi_knowbaseitems","KnowbaseItem_User":"glpi_knowbaseitems_users","KnowbaseItem_Profile":"glpi_knowbaseitems_profiles","Entity_KnowbaseItem":"glpi_entities_knowbaseitems"},"glpiitemtypetables":{"glpi_configs":"Config","glpi_users":"User","glpi_profiles_users":"Profile_User","glpi_plugins":"Plugin","glpi_entities":"Entity","glpi_plugin_formcreator_entityconfigs":"PluginFormcreatorEntityconfig","glpi_plugin_mreporting_profiles":"PluginMreportingProfile","glpi_tickets":"Ticket","glpi_rssfeeds":"RSSFeed","glpi_knowbaseitems":"KnowbaseItem","glpi_knowbaseitems_users":"KnowbaseItem_User","glpi_knowbaseitems_profiles":"KnowbaseItem_Profile","glpi_entities_knowbaseitems":"Entity_KnowbaseItem"},"version":"10.0.18","show_jobs_at_login":"0","cut":"250","list_limit":20,"list_limit_max":"50","url_maxlength":"30","event_loglevel":"5","notifications_mailing":"1","admin_email_name":"","from_email":"","from_email_name":"","noreply_email":"","noreply_email_name":"","replyto_email_name":"","mailing_signature":"SIGNATURE","use_anonymous_helpdesk":"0","use_anonymous_followups":"0","language":"en_GB","priority_1":"#fff2f2","priority_2":"#ffe0e0","priority_3":"#ffcece","priority_4":"#ffbfbf","priority_5":"#ffadad","priority_6":"#ff5555","date_tax":"2005-12-31","cas_host":"","cas_port":"443","cas_uri":"","cas_logout":"","cas_version":"CAS_VERSION_2_0","existing_auth_server_field_clean_domain":"0","planning_begin":"08:00:00","planning_end":"20:00:00","utf8_conv":"1","use_public_faq":"0","url_base":"http:\/\/localhost","show_link_in_mail":"0","text_login":"","founded_new_version":"","dropdown_max":"100","ajax_wildcard":"*","ajax_limit_count":"10","is_users_auto_add":"1","date_format":"0","csv_delimiter":";","is_ids_visible":"0","smtp_mode":"0","smtp_host":"","smtp_port":"25","smtp_username":"","smtp_oauth_provider":"","proxy_name":"","proxy_port":"8080","proxy_user":"","add_followup_on_update_ticket":"1","keep_tickets_on_delete":"0","time_step":"5","helpdesk_doc_url":"","central_doc_url":"","documentcategories_id_forticket":"0","monitors_management_restrict":"2","phones_management_restrict":"2","peripherals_management_restrict":"2","printers_management_restrict":"2","use_log_in_files":"1","time_offset":"0","is_contact_autoupdate":"1","is_user_autoupdate":"1","is_group_autoupdate":"1","is_location_autoupdate":"1","state_autoupdate_mode":"0","is_contact_autoclean":"0","is_user_autoclean":"0","is_group_autoclean":"0","is_location_autoclean":"0","state_autoclean_mode":"0","use_flat_dropdowntree":"0","use_flat_dropdowntree_on_search_result":"1","use_autoname_by_entity":"1","softwarecategories_id_ondelete":"1","x509_email_field":"","x509_cn_restrict":"","x509_o_restrict":"","x509_ou_restrict":"","default_mailcollector_filesize_max":"2097152","followup_private":"0","task_private":"0","default_software_helpdesk_visible":"1","names_format":"0","default_requesttypes_id":"1","use_noright_users_add":"1","cron_limit":"5","priority_matrix":{"1":{"1":1,"2":1,"3":2,"4":2,"5":2},"2":{"1":1,"2":2,"3":2,"4":3,"5":3},"3":{"1":2,"2":2,"3":3,"4":4,"5":4},"4":{"1":2,"2":3,"3":4,"4":4,"5":5},"5":{"1":2,"2":3,"3":4,"4":5,"5":5}},"urgency_mask":"62","impact_mask":"62","user_deleted_ldap":"0","user_restored_ldap":"0","auto_create_infocoms":"0","use_slave_for_search":"0","show_count_on_tabs":"1","refresh_views":"0","set_default_tech":"1","allow_search_view":"2","allow_search_all":"0","allow_search_global":"1","display_count_on_home":"5","use_password_security":"0","password_min_length":"8","password_need_number":"1","password_need_letter":"1","password_need_caps":"1","password_need_symbol":"1","use_check_pref":"0","notification_to_myself":"1","duedateok_color":"#06ff00","duedatewarning_color":"#ffb800","duedatecritical_color":"#ff0000","duedatewarning_less":"20","duedatecritical_less":"5","duedatewarning_unit":"%","duedatecritical_unit":"%","realname_ssofield":"","firstname_ssofield":"","email1_ssofield":"","email2_ssofield":"","email3_ssofield":"","email4_ssofield":"","phone_ssofield":"","phone2_ssofield":"","mobile_ssofield":"","comment_ssofield":"","title_ssofield":"","category_ssofield":"","language_ssofield":"","entity_ssofield":"","registration_number_ssofield":"","ssovariables_id":"0","ssologout_url":"","translate_kb":"0","translate_dropdowns":"0","translate_reminders":"0","pdffont":"dejavusans","keep_devices_when_purging_item":"0","maintenance_mode":"0","maintenance_text":"","attach_ticket_documents_to_mail":"0","backcreated":"0","task_state":"1","palette":"auror","page_layout":"vertical","fold_menu":"0","fold_search":"0","savedsearches_pinned":"{\"jrjgjk\":\"exploit', savedsearches_pinned=NULL, savedsearches_pinned=(SELECT SLEEP(3) UNION SELECT NULL LIMIT 1 OFFSET 1) WHERE is_active=1 LIMIT 1; -- '\",\"Link\":1}","timeline_order":"natural","itil_layout":"","richtext_layout":"classic","lock_use_lock_item":"0","lock_autolock_mode":"1","lock_directunlock_notification":"0","lock_item_list":[],"lock_lockprofile_id":"8","set_default_requester":"1","highcontrast_css":"0","default_central_tab":"0","smtp_check_certificate":"1","enable_api":"1","enable_api_login_credentials":"0","enable_api_login_external_token":"1","url_base_api":"http:\/\/localhost\/apirest.php\/","login_remember_time":"604800","login_remember_default":"1","use_notifications":"1","notifications_ajax":"0","notifications_ajax_check_interval":"5","notifications_ajax_sound":null,"notifications_ajax_icon_url":"\/pics\/glpi.png","dbversion":"10.0.18@d64066799f068b16ee973b377bdd13f984fe062a","smtp_max_retries":"5","smtp_sender":null,"instance_uuid":"9PdM03EEh5wM0qP0BbXMYgI1rZMu3PaZnn4CNwO9","registration_uuid":"DebASdJjrgD1c9OE4WW94Re9lKjYXAvYEXRBkLVl","smtp_retry_time":"5","purge_addrelation":"0","purge_deleterelation":"0","purge_createitem":"0","purge_deleteitem":"0","purge_restoreitem":"0","purge_updateitem":"0","purge_item_software_install":"0","purge_software_item_install":"0","purge_software_version_install":"0","purge_infocom_creation":"0","purge_profile_user":"0","purge_group_user":"0","purge_adddevice":"0","purge_updatedevice":"0","purge_deletedevice":"0","purge_connectdevice":"0","purge_disconnectdevice":"0","purge_userdeletedfromldap":"0","purge_comments":"0","purge_datemod":"0","purge_all":"0","purge_user_auth_changes":"0","purge_plugins":"0","purge_refusedequipment":"0","display_login_source":"1","devices_in_menu":["Item_DeviceSimcard"],"password_expiration_delay":"-1","password_expiration_notice":"-1","password_expiration_lock_delay":"-1","default_dashboard_central":"central","default_dashboard_assets":"assets","default_dashboard_helpdesk":"assistance","default_dashboard_mini_ticket":"mini_tickets","impact_enabled_itemtypes":["Appliance","Cluster","Computer","Datacenter","DCRoom","Domain","Enclosure","Monitor","NetworkEquipment","PDU","Peripheral","Phone","Printer","Rack","Software","DatabaseInstance"],"document_max_size":"20","planning_work_days":[0,1,2,3,4,5,6],"system_user":"6","support_legacy_data":"0","initialized_rules_collections":"[\"RuleImportAssetCollection\",\"RuleMailCollectorCollection\",\"RuleRightCollection\",\"RuleSoftwareCategoryCollection\",\"RuleTicketCollection\",\"RuleAssetCollection\",\"RuleDictionnaryOperatingSystemCollection\",\"RuleDictionnaryOperatingSystemVersionCollection\",\"RuleDictionnaryOperatingSystemEditionCollection\"]","timeline_action_btn_layout":"0","timeline_date_format":"0","enabled_inventory":"0","import_software":"1","import_volume":"1","import_antivirus":"1","import_registry":"1","import_process":"1","import_vm":"1","import_monitor_on_partial_sn":"0","import_unmanaged":"1","component_processor":"1","component_memory":"1","component_harddrive":"1","component_networkcard":"1","component_graphiccard":"1","component_soundcard":"1","component_drive":"1","component_networkdrive":"1","component_networkcardvirtual":"1","component_control":"1","component_battery":"1","component_simcard":"1","states_id_default":"0","entities_id_default":"0","location":"0","group":"0","vm_type":"0","vm_components":"0","vm_as_computer":"0","component_removablemedia":"1","component_powersupply":"1","inventory_frequency":"24","import_monitor":"1","import_printer":"1","import_peripheral":"1","stale_agents_delay":"0","stale_agents_action":"[0]","stale_agents_status":"0","marketplace_replace_plugins":"2","glpi_network_uuid":"YotH1pJ4VtbOgRf7VBvOVE7AtY6HNsYxY0Wvx3zp","notification_uuid":"N6N0nsR7N0nwPUHPpYISe1vqfr7OnLUKfoXxoD3f"};
+            var GLPI_PLUGINS_PATH = {"archimap":"marketplace\/archimap","formcreator":"marketplace\/formcreator","mreporting":"marketplace\/mreporting"};
+        
+
+//]]>
+</script>
+
+            </main>          </div>       </div>    </div> 
+   <div class="floating-buttons d-inline-flex">
+      <span class="btn btn-secondary d-none me-1" id="backtotop">
+         <i class="fas fa-arrow-up" title="Back to top of the page">
+            <span class="visually-hidden">Top of the page</span>
+         </i>
+      </span>
+   </div>
+
+   
+         <script type="text/javascript" src="/public/lib/leaflet.min.js?v=09c5e7efb1a078f15be7c30d56ea8703b6127f39"></script>
+         <script type="text/javascript" src="/public/lib/flatpickr.min.js?v=09c5e7efb1a078f15be7c30d56ea8703b6127f39"></script>
+         <script type="text/javascript" src="/js/flatpickr_buttons_plugin.min.js?v=09c5e7efb1a078f15be7c30d56ea8703b6127f39"></script>
+         <script type="text/javascript" src="/public/lib/photoswipe.min.js?v=09c5e7efb1a078f15be7c30d56ea8703b6127f39"></script>
+         <script type="text/javascript" src="/public/lib/fullcalendar.min.js?v=09c5e7efb1a078f15be7c30d56ea8703b6127f39"></script>
+         <script type="text/javascript" src="/public/lib/fullcalendar/core/locales/en-gb.min.js?v=09c5e7efb1a078f15be7c30d56ea8703b6127f39"></script>
+         <script type="text/javascript" src="/js/reservations.min.js?v=09c5e7efb1a078f15be7c30d56ea8703b6127f39"></script>
+         <script type="text/javascript" src="/public/lib/tinymce.min.js?v=09c5e7efb1a078f15be7c30d56ea8703b6127f39"></script>
+         <script type="text/javascript" src="/js/RichText/UserMention.min.js?v=09c5e7efb1a078f15be7c30d56ea8703b6127f39"></script>
+         <script type="text/javascript" src="/js/RichText/ContentTemplatesParameters.min.js?v=09c5e7efb1a078f15be7c30d56ea8703b6127f39"></script>
+         <script type="text/javascript" src="/public/lib/jquery.rateit.min.js?v=09c5e7efb1a078f15be7c30d56ea8703b6127f39"></script>
+         <script type="text/javascript" src="/public/lib/jquery-file-upload.min.js?v=09c5e7efb1a078f15be7c30d56ea8703b6127f39"></script>
+         <script type="text/javascript" src="/js/fileupload.min.js?v=09c5e7efb1a078f15be7c30d56ea8703b6127f39"></script>
+         <script type="text/javascript" src="/public/lib/fuzzy.min.js?v=09c5e7efb1a078f15be7c30d56ea8703b6127f39"></script>
+         <script type="text/javascript" src="/js/fuzzysearch.min.js?v=09c5e7efb1a078f15be7c30d56ea8703b6127f39"></script>
+         <script type="text/javascript" src="/js/glpi_dialog.min.js?v=09c5e7efb1a078f15be7c30d56ea8703b6127f39"></script>
+         <script type="text/javascript" src="/js/log_filters.min.js?v=09c5e7efb1a078f15be7c30d56ea8703b6127f39"></script>
+         <script type="text/javascript" src="/public/lib/masonry.min.js?v=09c5e7efb1a078f15be7c30d56ea8703b6127f39"></script>
+         <script type="text/javascript" src="/js/misc.min.js?v=09c5e7efb1a078f15be7c30d56ea8703b6127f39"></script>
+         <script type="text/javascript" src="/marketplace/formcreator/js/scripts.js?v=8b9a72a2fee82a013c02a643cd7eeb6c4c0dafed"></script>
+         <script type="text/javascript" src="/marketplace/formcreator/lib/jquery-slinky/dist/slinky.min.js?v=8b9a72a2fee82a013c02a643cd7eeb6c4c0dafed"></script>
+   
+   
+</body>
+</html>
