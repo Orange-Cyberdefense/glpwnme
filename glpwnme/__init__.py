@@ -37,6 +37,7 @@ class GlpwnMe:
         self.parser.add_argument("--cookie", help="Cookie value for login into glpi")
         self.parser.add_argument("--auth", help="Auth to use (default taken from glpi)")
         self.parser.add_argument("--profile", help="Profile to use (if any)")
+        self.parser.add_argument("--otp", help="MFA code to use for login")
 
         self.parser.add_argument("-su", "--server-user", help="Username to use for server authentication", default="")
         self.parser.add_argument("-sp", "--server-password", help="Password to use for server authentication", default="")
@@ -105,6 +106,7 @@ def run_cli():
                           headers=headers_to_dict(glpwnme.header),
                           credentials=GlpiCredentials(glpwnme.username,
                                                       glpwnme.password,
+                                                      glpwnme.otp,
                                                       glpwnme.auth,
                                                       glpwnme.token,
                                                       glpwnme.cookie,

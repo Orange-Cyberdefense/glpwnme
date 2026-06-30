@@ -20,6 +20,7 @@ standard pytest pattern for "parametrize over files found on disk".
 import json
 import pytest
 from unittest.mock import MagicMock
+from glpwnme.exploits.utils import LoginResult
 from conftest import FakeResponse, discover_fixture_files, load_response_fixture, FIXTURES_DIR
 
 def fixture_id(param):
@@ -63,7 +64,7 @@ def test_login_success_fixture(glpi_session, version_and_path):
 
     result = glpi_session.login("admin", "correct-password")
 
-    assert result is True, f"Expected login() to succeed for fixture {path}"
+    assert result is LoginResult.SUCCESS, f"Expected login() to succeed for fixture {path}"
     assert glpi_session.login_infos["after_login_response"] is not None
 
 
@@ -76,5 +77,5 @@ def test_login_failure_fixture(glpi_session, version_and_path):
 
     result = glpi_session.login("admin", "wrong-password")
 
-    assert result is False, f"Expected login() to fail for fixture {path}"
+    assert result is LoginResult.FAILED, f"Expected login() to fail for fixture {path}"
     assert glpi_session.login_infos["after_login_response"] is None

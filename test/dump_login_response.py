@@ -38,8 +38,8 @@ def main():
 
     if hookable.json_res:
         with open(args.outputfile, "w", encoding="utf-8") as f:
-            # json.dump(hookable.json_res, fp=f)
-            f.write(session.get(session.current_url).text)
+            json.dump(hookable.json_res, fp=f)
+            # f.write(session.get(session.current_url).text)
     else:
         print(f"Failed recovering response")
 

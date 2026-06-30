@@ -20,6 +20,7 @@ import json
 import pytest
 from pathlib import Path
 from unittest.mock import MagicMock, patch
+from glpwnme.exploits.utils import LoginResult
 from conftest import FakeResponse, glpi_session, load_response_fixture, FIXTURES_DIR
 
 GLPI_VERSIONS = ["9.4.0", "10.0.18", "11.0.7"]
@@ -40,7 +41,7 @@ class TestLoginAcrossVersions:
 
         result = glpi_session.login("admin", "correct-password")
 
-        assert result is True, f"Expected successful login to be detected on GLPI {glpi_version}"
+        assert result is LoginResult.SUCCESS, f"Expected successful login to be detected on GLPI {glpi_version}"
         assert glpi_session.login_infos["after_login_response"] is not None
 
     def test_login_failure(self, glpi_session, glpi_version):
@@ -51,5 +52,19 @@ class TestLoginAcrossVersions:
 
         result = glpi_session.login("admin", "wrong-password")
 
-        assert result is False, f"Expected failed login to be detected on GLPI {glpi_version}"
+        assert result is LoginResult.FAILED, f"Expected failed login to be detected on GLPI {glpi_version}"
         assert glpi_session.login_infos["after_login_response"] is None
+
+    def test_login_mfa(self, glpi_session, glpi_version):
+        """Only available on GLPI 11.X"""
+        version_in_used = int(glpi_version.split(".")[0])
+        if version_in_used >= 11:
+            glpi_session.sess.get = MagicMock(return_value=FakeResponse(text=load_login_page(glpi_version)))
+            glpi_session.sess.post = MagicMock(return_value=load_response_fixture(
+                FIXTURES_DIR / glpi_version / "login" / "mfa_redirected.json"
+            ))
+
+            result = glpi_session.login("admin", "wrong-password")
+
+            assert result is LoginResult.MFA_REQUIRED, f"Expected failed login to be detected on GLPI {glpi_version}"
+            assert glpi_session.login_infos["after_login_response"] is None
