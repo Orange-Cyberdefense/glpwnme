@@ -79,7 +79,7 @@ All generated files (like `log.glpwnme`) will be available on your local machine
 | CVE_2022_31061       | 7.4    | Unauthenticated | GLPI < 10.0.2 |
 | CVE_2022_35914       | 10     | Unauthenticated | GLPI < 10.0.3 |
 | CVE_2022_35947       | 7.5    | Unauthenticated | GLPI < 10.0.3 |
-| PLUGIN_ORDER_2022    | 8.3     | Self-Service | GLPI Plugin Order < 2.10.1 |
+| PLUGIN_ORDER_2022    | 8.3    | Self-Service | GLPI Plugin Order < 2.10.1 |
 | CVE_2023_41323       | 3      | Unauthenticated | GLPI < 10.0.10 |
 | CVE_2023_41326       | 8.1    | Self-Service | GLPI < 10.0.10 |
 | CVE_2024_27937       | 6.4    | Self-Service | GLPI < 10.0.13 |
@@ -91,6 +91,7 @@ All generated files (like `log.glpwnme`) will be available on your local machine
 | CVE_2025_24799       | 7.4    | Unauthenticated | GLPI < 10.0.18 |
 | CVE_2025_32786       | 7.4    | Unauthenticated | Plugin GLPI Inventory < 1.5.2 |
 | CVE_2026_26026       | 7.2    | Super-Admin | GLPI < 11.0.6 |
+| CVE_2026_22044       | 6.4    | Self-Service | GLPI < 11.0.8 |
 | CVE_2026_26263       | 8.1    | Unauthenticated | GLPI < 11.0.6 |
 | CVE_2026_48482       | 7.2    | Super-Admin | GLPI < 11.0.8 |
 | CVE_2026_52848       | 5.2    | Authenticated | GLPI < 11.0.8 |
@@ -217,6 +218,7 @@ Thanks to the following person for their help:
 * Sebastien Le Corre
 * chapochapo
 * UncleJ4ck
+* Ne0re0
 
 ## FAQ
 ### I cannot connect with glpwnme ?
