@@ -1,0 +1,3864 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en"
+                    data-glpi-theme="auror"
+        data-glpi-theme-dark="0"
+        >
+<head>
+   <title>Home - GLPI</title>
+
+   <meta charset="utf-8" />
+
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+      <meta name="robots" content="noindex, nofollow" />
+
+        
+   <meta property="glpi:csrf_token" content="419fdf108adc0b4e864a5b51b786867dbc1c7b5a42eb89f81e881663d4e0208e" />
+
+         <link rel="stylesheet" type="text/css" href="/lib/base.min.css?v=8089f4b87aad4847e72603fe6d7cd94d7e2201ef" />
+         <link rel="stylesheet" type="text/css" href="/lib/leaflet.min.css?v=8089f4b87aad4847e72603fe6d7cd94d7e2201ef" />
+         <link rel="stylesheet" type="text/css" href="/lib/flatpickr.min.css?v=8089f4b87aad4847e72603fe6d7cd94d7e2201ef" />
+         <link rel="stylesheet" type="text/css" href="/lib/flatpickr/themes/dark.min.css?v=8089f4b87aad4847e72603fe6d7cd94d7e2201ef" />
+         <link rel="stylesheet" type="text/css" href="/lib/photoswipe.min.css?v=8089f4b87aad4847e72603fe6d7cd94d7e2201ef" />
+         <link rel="stylesheet" type="text/css" href="/css_compiled/css_standalone_dashboard.min.css?v=8089f4b87aad4847e72603fe6d7cd94d7e2201ef" />
+         <link rel="stylesheet" type="text/css" href="/lib/gridstack.min.css?v=8089f4b87aad4847e72603fe6d7cd94d7e2201ef" />
+         <link rel="stylesheet" type="text/css" href="/css_compiled/css_helpdesk_home.min.css?v=8089f4b87aad4847e72603fe6d7cd94d7e2201ef" />
+         <link rel="stylesheet" type="text/css" href="/lib/jquery.rateit.min.css?v=8089f4b87aad4847e72603fe6d7cd94d7e2201ef" />
+         <link rel="stylesheet" type="text/css" href="/lib/tabler.min.css?v=8089f4b87aad4847e72603fe6d7cd94d7e2201ef" />
+         <link rel="stylesheet" type="text/css" href="/css_compiled/css_glpi.min.css?v=8089f4b87aad4847e72603fe6d7cd94d7e2201ef" />
+         <link rel="stylesheet" type="text/css" href="/css_compiled/css_core_palettes.min.css?v=8089f4b87aad4847e72603fe6d7cd94d7e2201ef" />
+         <link rel="stylesheet" type="text/css" href="/plugins/accounts/accounts.css?v=b02209e16b67965f37bddbdf6391c41884075c3a" />
+         <link rel="stylesheet" type="text/css" href="/plugins/advancedforms/css/advancedforms.css?v=f70ac11774b17cb748110e54979b11c7b4897338" />
+   
+   
+
+   <link rel="shortcut icon" type="images/x-icon" href="/pics/favicon.ico" />
+
+   <script type="importmap">{
+    "imports": {
+        "\/js\/modules\/Dashboard\/Dashboard.min.js": "\/js\/modules\/Dashboard\/Dashboard.min.js?v=7740ba57",
+        "\/js\/modules\/Dashboard\/Dashboard.js": "\/js\/modules\/Dashboard\/Dashboard.js?v=fb610ba5",
+        "\/js\/modules\/Monaco\/MonacoEditor.min.js": "\/js\/modules\/Monaco\/MonacoEditor.min.js?v=d996d05f",
+        "\/js\/modules\/Monaco\/MonacoEditor.js": "\/js\/modules\/Monaco\/MonacoEditor.js?v=2d74e7b2",
+        "\/js\/modules\/Form\/GeolocationField.min.js": "\/js\/modules\/Form\/GeolocationField.min.js?v=fc47faae",
+        "\/js\/modules\/Form\/WebIconSelector.js": "\/js\/modules\/Form\/WebIconSelector.js?v=9f562926",
+        "\/js\/modules\/Form\/GeolocationField.js": "\/js\/modules\/Form\/GeolocationField.js?v=a95776b6",
+        "\/js\/modules\/Form\/WebIconSelector.min.js": "\/js\/modules\/Form\/WebIconSelector.min.js?v=fa40f290",
+        "\/js\/modules\/Knowbase.min.js": "\/js\/modules\/Knowbase.min.js?v=946a1a51",
+        "\/js\/modules\/Helpdesk\/HelpdeskConfigForEmptyEntityController.min.js": "\/js\/modules\/Helpdesk\/HelpdeskConfigForEmptyEntityController.min.js?v=7db293e9",
+        "\/js\/modules\/Helpdesk\/HelpdeskConfigController.js": "\/js\/modules\/Helpdesk\/HelpdeskConfigController.js?v=6d7c4a97",
+        "\/js\/modules\/Helpdesk\/IndexController.js": "\/js\/modules\/Helpdesk\/IndexController.js?v=78ef7c2f",
+        "\/js\/modules\/Helpdesk\/HelpdeskConfigController.min.js": "\/js\/modules\/Helpdesk\/HelpdeskConfigController.min.js?v=8010315f",
+        "\/js\/modules\/Helpdesk\/HelpdeskConfigForEmptyEntityController.js": "\/js\/modules\/Helpdesk\/HelpdeskConfigForEmptyEntityController.js?v=4efe4b0f",
+        "\/js\/modules\/Helpdesk\/IndexController.min.js": "\/js\/modules\/Helpdesk\/IndexController.min.js?v=99e1a4e8",
+        "\/js\/modules\/IllustrationPicker\/Controller.min.js": "\/js\/modules\/IllustrationPicker\/Controller.min.js?v=02a47c31",
+        "\/js\/modules\/IllustrationPicker\/Controller.js": "\/js\/modules\/IllustrationPicker\/Controller.js?v=4cce637a",
+        "\/js\/modules\/Knowbase.js": "\/js\/modules\/Knowbase.js?v=793e8e1a",
+        "\/js\/modules\/ObjectLock.min.js": "\/js\/modules\/ObjectLock.min.js?v=7ce56737",
+        "\/js\/modules\/DynamicDropdownController.min.js": "\/js\/modules\/DynamicDropdownController.min.js?v=a234ff4d",
+        "\/js\/modules\/Screenshot\/Screenshot.min.js": "\/js\/modules\/Screenshot\/Screenshot.min.js?v=cfa2bb7c",
+        "\/js\/modules\/Screenshot\/Screenshot.js": "\/js\/modules\/Screenshot\/Screenshot.js?v=577b1c76",
+        "\/js\/modules\/Forms\/EditorConvertedExtractedSelectableDefaultValue.js": "\/js\/modules\/Forms\/EditorConvertedExtractedSelectableDefaultValue.js?v=f22ca2a8",
+        "\/js\/modules\/Forms\/DestinationAutoConfigController.js": "\/js\/modules\/Forms\/DestinationAutoConfigController.js?v=7a04d8b0",
+        "\/js\/modules\/Forms\/FieldDestinationMultipleConfig.min.js": "\/js\/modules\/Forms\/FieldDestinationMultipleConfig.min.js?v=14e43b49",
+        "\/js\/modules\/Forms\/ItemAdvancedConfig.min.js": "\/js\/modules\/Forms\/ItemAdvancedConfig.min.js?v=3488c712",
+        "\/js\/modules\/Forms\/ConditionVisibilityEditorController.min.js": "\/js\/modules\/Forms\/ConditionVisibilityEditorController.min.js?v=b5576eec",
+        "\/js\/modules\/Forms\/FieldDestinationAssociatedItem.min.js": "\/js\/modules\/Forms\/FieldDestinationAssociatedItem.min.js?v=f69e1ff9",
+        "\/js\/modules\/Forms\/ConditionValidationEditorController.js": "\/js\/modules\/Forms\/ConditionValidationEditorController.js?v=2e815bbe",
+        "\/js\/modules\/Forms\/DestinationAccordionController.js": "\/js\/modules\/Forms\/DestinationAccordionController.js?v=200c8764",
+        "\/js\/modules\/Forms\/QuestionDropdown.js": "\/js\/modules\/Forms\/QuestionDropdown.js?v=137cf37b",
+        "\/js\/modules\/Forms\/ItemDropdownAdvancedConfig.js": "\/js\/modules\/Forms\/ItemDropdownAdvancedConfig.js?v=2d459ef6",
+        "\/js\/modules\/Forms\/QuestionItem.js": "\/js\/modules\/Forms\/QuestionItem.js?v=cd623afe",
+        "\/js\/modules\/Forms\/QuestionSelectable.js": "\/js\/modules\/Forms\/QuestionSelectable.js?v=7cfac8bc",
+        "\/js\/modules\/Forms\/FieldDestinationAssociatedItem.js": "\/js\/modules\/Forms\/FieldDestinationAssociatedItem.js?v=51ad5eb1",
+        "\/js\/modules\/Forms\/ItemAdvancedConfig.js": "\/js\/modules\/Forms\/ItemAdvancedConfig.js?v=1a0624cc",
+        "\/js\/modules\/Forms\/EditorConvertedExtractedDefaultValue.min.js": "\/js\/modules\/Forms\/EditorConvertedExtractedDefaultValue.min.js?v=0dae9126",
+        "\/js\/modules\/Forms\/EditorController.min.js": "\/js\/modules\/Forms\/EditorController.min.js?v=d2127214",
+        "\/js\/modules\/Forms\/RendererController.js": "\/js\/modules\/Forms\/RendererController.js?v=2b92dd5b",
+        "\/js\/modules\/Forms\/QuestionSelectable.min.js": "\/js\/modules\/Forms\/QuestionSelectable.min.js?v=65ac8165",
+        "\/js\/modules\/Forms\/DestinationConditionController.min.js": "\/js\/modules\/Forms\/DestinationConditionController.min.js?v=c27ffa9b",
+        "\/js\/modules\/Forms\/EditorConvertedExtractedDefaultValue.js": "\/js\/modules\/Forms\/EditorConvertedExtractedDefaultValue.js?v=f762e6ad",
+        "\/js\/modules\/Forms\/EditorConvertedExtractedSelectableDefaultValue.min.js": "\/js\/modules\/Forms\/EditorConvertedExtractedSelectableDefaultValue.min.js?v=d9f847ea",
+        "\/js\/modules\/Forms\/QuestionDateTime.min.js": "\/js\/modules\/Forms\/QuestionDateTime.min.js?v=e74d6ef3",
+        "\/js\/modules\/Forms\/DestinationConditionController.js": "\/js\/modules\/Forms\/DestinationConditionController.js?v=cb5166ba",
+        "\/js\/modules\/Forms\/QuestionItem.min.js": "\/js\/modules\/Forms\/QuestionItem.min.js?v=77047041",
+        "\/js\/modules\/Forms\/ConditionVisibilityEditorController.js": "\/js\/modules\/Forms\/ConditionVisibilityEditorController.js?v=7000e5d5",
+        "\/js\/modules\/Forms\/EditorController.js": "\/js\/modules\/Forms\/EditorController.js?v=79359aba",
+        "\/js\/modules\/Forms\/FieldDestinationMultipleConfig.js": "\/js\/modules\/Forms\/FieldDestinationMultipleConfig.js?v=c960226a",
+        "\/js\/modules\/Forms\/QuestionDropdown.min.js": "\/js\/modules\/Forms\/QuestionDropdown.min.js?v=e12fa603",
+        "\/js\/modules\/Forms\/ServiceCatalogController.min.js": "\/js\/modules\/Forms\/ServiceCatalogController.min.js?v=3318e5e4",
+        "\/js\/modules\/Forms\/RendererController.min.js": "\/js\/modules\/Forms\/RendererController.min.js?v=b8e89789",
+        "\/js\/modules\/Forms\/ItemDropdownAdvancedConfig.min.js": "\/js\/modules\/Forms\/ItemDropdownAdvancedConfig.min.js?v=6c9373f0",
+        "\/js\/modules\/Forms\/DestinationAccordionController.min.js": "\/js\/modules\/Forms\/DestinationAccordionController.min.js?v=d9c616ca",
+        "\/js\/modules\/Forms\/ConditionValidationEditorController.min.js": "\/js\/modules\/Forms\/ConditionValidationEditorController.min.js?v=6ec8648a",
+        "\/js\/modules\/Forms\/Condition\/Engine.min.js": "\/js\/modules\/Forms\/Condition\/Engine.min.js?v=f2a1fe2b",
+        "\/js\/modules\/Forms\/Condition\/Engine.js": "\/js\/modules\/Forms\/Condition\/Engine.js?v=f1426a66",
+        "\/js\/modules\/Forms\/DestinationAutoConfigController.min.js": "\/js\/modules\/Forms\/DestinationAutoConfigController.min.js?v=03924580",
+        "\/js\/modules\/Forms\/BaseConditionEditorController.js": "\/js\/modules\/Forms\/BaseConditionEditorController.js?v=ca2ae32c",
+        "\/js\/modules\/Forms\/QuestionDateTime.js": "\/js\/modules\/Forms\/QuestionDateTime.js?v=1f6eb9e8",
+        "\/js\/modules\/Forms\/BaseConditionEditorController.min.js": "\/js\/modules\/Forms\/BaseConditionEditorController.min.js?v=ae1b36ef",
+        "\/js\/modules\/Forms\/ServiceCatalogController.js": "\/js\/modules\/Forms\/ServiceCatalogController.js?v=dc41ce83",
+        "\/js\/modules\/Search\/ResultsView.min.js": "\/js\/modules\/Search\/ResultsView.min.js?v=5215cb1f",
+        "\/js\/modules\/Search\/GenericView.min.js": "\/js\/modules\/Search\/GenericView.min.js?v=4800e373",
+        "\/js\/modules\/Search\/Table.min.js": "\/js\/modules\/Search\/Table.min.js?v=126b8ce8",
+        "\/js\/modules\/Search\/ResultsView.js": "\/js\/modules\/Search\/ResultsView.js?v=8c23b24c",
+        "\/js\/modules\/Search\/Table.js": "\/js\/modules\/Search\/Table.js?v=2240dd3c",
+        "\/js\/modules\/Search\/GenericView.js": "\/js\/modules\/Search\/GenericView.js?v=91f99830",
+        "\/js\/modules\/DynamicDropdownController.js": "\/js\/modules\/DynamicDropdownController.js?v=c43a3760",
+        "\/js\/modules\/GlpiInstall.min.js": "\/js\/modules\/GlpiInstall.min.js?v=18d689f3",
+        "\/js\/modules\/ProgressIndicator.js": "\/js\/modules\/ProgressIndicator.js?v=5c6de096",
+        "\/js\/modules\/GlpiInstall.js": "\/js\/modules\/GlpiInstall.js?v=966200cc",
+        "\/js\/modules\/ITIL\/Timeline\/DocumentForm.js": "\/js\/modules\/ITIL\/Timeline\/DocumentForm.js?v=c74a6e9e",
+        "\/js\/modules\/ITIL\/Timeline\/DocumentForm.min.js": "\/js\/modules\/ITIL\/Timeline\/DocumentForm.min.js?v=ca248f5d",
+        "\/js\/modules\/ProgressIndicator.min.js": "\/js\/modules\/ProgressIndicator.min.js?v=cb070680",
+        "\/js\/modules\/ObjectLock.js": "\/js\/modules\/ObjectLock.js?v=0428714e",
+        "\/lib\/cytoscape.min.js": "\/lib\/cytoscape.min.js?v=f20ce475",
+        "\/lib\/tabler.min.js": "\/lib\/tabler.min.js?v=90dedd9b",
+        "\/lib\/tabler.js": "\/lib\/tabler.js?v=1c5f286c",
+        "\/lib\/ts.worker.min.js": "\/lib\/ts.worker.min.js?v=8782ed7c",
+        "\/lib\/24.min.js": "\/lib\/24.min.js?v=649f745d",
+        "\/lib\/masonry.min.js": "\/lib\/masonry.min.js?v=57937a73",
+        "\/lib\/gridstack.min.js": "\/lib\/gridstack.min.js?v=f2bd0305",
+        "\/lib\/jquery-file-upload.js": "\/lib\/jquery-file-upload.js?v=78089f90",
+        "\/lib\/masonry.js": "\/lib\/masonry.js?v=d075fbf6",
+        "\/lib\/ts.worker.js": "\/lib\/ts.worker.js?v=d4af67f6",
+        "\/lib\/23.js": "\/lib\/23.js?v=188190f4",
+        "\/lib\/tablericons-definitions.js": "\/lib\/tablericons-definitions.js?v=4770a5fd",
+        "\/lib\/photoswipe.min.js": "\/lib\/photoswipe.min.js?v=b8bd55ff",
+        "\/lib\/fullcalendar.js": "\/lib\/fullcalendar.js?v=95d33df7",
+        "\/lib\/tinymce.js": "\/lib\/tinymce.js?v=a044275d",
+        "\/lib\/html.worker.js": "\/lib\/html.worker.js?v=d1bcd564",
+        "\/lib\/select2\/js\/i18n\/et.js": "\/lib\/select2\/js\/i18n\/et.js?v=8e6329d0",
+        "\/lib\/select2\/js\/i18n\/eu.js": "\/lib\/select2\/js\/i18n\/eu.js?v=edab873f",
+        "\/lib\/select2\/js\/i18n\/tk.min.js": "\/lib\/select2\/js\/i18n\/tk.min.js?v=2f648157",
+        "\/lib\/select2\/js\/i18n\/tr.js": "\/lib\/select2\/js\/i18n\/tr.js?v=dd9ce34d",
+        "\/lib\/select2\/js\/i18n\/is.js": "\/lib\/select2\/js\/i18n\/is.js?v=dbc2ae5e",
+        "\/lib\/select2\/js\/i18n\/de.min.js": "\/lib\/select2\/js\/i18n\/de.min.js?v=1f8696a9",
+        "\/lib\/select2\/js\/i18n\/hi.min.js": "\/lib\/select2\/js\/i18n\/hi.min.js?v=4abbbcac",
+        "\/lib\/select2\/js\/i18n\/bn.js": "\/lib\/select2\/js\/i18n\/bn.js?v=2aff1669",
+        "\/lib\/select2\/js\/i18n\/tk.js": "\/lib\/select2\/js\/i18n\/tk.js?v=8f6b4f99",
+        "\/lib\/select2\/js\/i18n\/ar.min.js": "\/lib\/select2\/js\/i18n\/ar.min.js?v=0f4ebe0c",
+        "\/lib\/select2\/js\/i18n\/fr.js": "\/lib\/select2\/js\/i18n\/fr.js?v=2acd18c4",
+        "\/lib\/select2\/js\/i18n\/gl.js": "\/lib\/select2\/js\/i18n\/gl.js?v=a937efd0",
+        "\/lib\/select2\/js\/i18n\/fa.min.js": "\/lib\/select2\/js\/i18n\/fa.min.js?v=3f46eb60",
+        "\/lib\/select2\/js\/i18n\/en.min.js": "\/lib\/select2\/js\/i18n\/en.min.js?v=0270b4d5",
+        "\/lib\/select2\/js\/i18n\/is.min.js": "\/lib\/select2\/js\/i18n\/is.min.js?v=e3e88722",
+        "\/lib\/select2\/js\/i18n\/ko.js": "\/lib\/select2\/js\/i18n\/ko.js?v=1f1e8152",
+        "\/lib\/select2\/js\/i18n\/ro.min.js": "\/lib\/select2\/js\/i18n\/ro.min.js?v=7158feb8",
+        "\/lib\/select2\/js\/i18n\/hsb.min.js": "\/lib\/select2\/js\/i18n\/hsb.min.js?v=4e3ddb45",
+        "\/lib\/select2\/js\/i18n\/es.js": "\/lib\/select2\/js\/i18n\/es.js?v=603dcc55",
+        "\/lib\/select2\/js\/i18n\/zh-CN.js": "\/lib\/select2\/js\/i18n\/zh-CN.js?v=e7738680",
+        "\/lib\/select2\/js\/i18n\/cs.js": "\/lib\/select2\/js\/i18n\/cs.js?v=96b3b05a",
+        "\/lib\/select2\/js\/i18n\/lv.js": "\/lib\/select2\/js\/i18n\/lv.js?v=b5a67d96",
+        "\/lib\/select2\/js\/i18n\/ar.js": "\/lib\/select2\/js\/i18n\/ar.js?v=8fd97b36",
+        "\/lib\/select2\/js\/i18n\/pt-BR.min.js": "\/lib\/select2\/js\/i18n\/pt-BR.min.js?v=87e9ada9",
+        "\/lib\/select2\/js\/i18n\/pl.js": "\/lib\/select2\/js\/i18n\/pl.js?v=1d7b18a6",
+        "\/lib\/select2\/js\/i18n\/da.js": "\/lib\/select2\/js\/i18n\/da.js?v=95c87ca6",
+        "\/lib\/select2\/js\/i18n\/pt.min.js": "\/lib\/select2\/js\/i18n\/pt.min.js?v=b7adc989",
+        "\/lib\/select2\/js\/i18n\/ro.js": "\/lib\/select2\/js\/i18n\/ro.js?v=6e17cfc7",
+        "\/lib\/select2\/js\/i18n\/zh-TW.min.js": "\/lib\/select2\/js\/i18n\/zh-TW.min.js?v=76ce41b6",
+        "\/lib\/select2\/js\/i18n\/lt.min.js": "\/lib\/select2\/js\/i18n\/lt.min.js?v=97f3b4fa",
+        "\/lib\/select2\/js\/i18n\/tr.min.js": "\/lib\/select2\/js\/i18n\/tr.min.js?v=f60b8412",
+        "\/lib\/select2\/js\/i18n\/pt.js": "\/lib\/select2\/js\/i18n\/pt.js?v=0760ae2d",
+        "\/lib\/select2\/js\/i18n\/sl.min.js": "\/lib\/select2\/js\/i18n\/sl.min.js?v=7c94cc28",
+        "\/lib\/select2\/js\/i18n\/bs.min.js": "\/lib\/select2\/js\/i18n\/bs.min.js?v=1cd315db",
+        "\/lib\/select2\/js\/i18n\/et.min.js": "\/lib\/select2\/js\/i18n\/et.min.js?v=2e69a04b",
+        "\/lib\/select2\/js\/i18n\/ne.min.js": "\/lib\/select2\/js\/i18n\/ne.min.js?v=1f8b11c4",
+        "\/lib\/select2\/js\/i18n\/dsb.js": "\/lib\/select2\/js\/i18n\/dsb.js?v=80e5fda2",
+        "\/lib\/select2\/js\/i18n\/sv.js": "\/lib\/select2\/js\/i18n\/sv.js?v=b602f912",
+        "\/lib\/select2\/js\/i18n\/id.js": "\/lib\/select2\/js\/i18n\/id.js?v=2dbe8418",
+        "\/lib\/select2\/js\/i18n\/ne.js": "\/lib\/select2\/js\/i18n\/ne.js?v=c07c79d8",
+        "\/lib\/select2\/js\/i18n\/zh-TW.js": "\/lib\/select2\/js\/i18n\/zh-TW.js?v=6e5b48fb",
+        "\/lib\/select2\/js\/i18n\/fi.js": "\/lib\/select2\/js\/i18n\/fi.js?v=530c9f7a",
+        "\/lib\/select2\/js\/i18n\/he.min.js": "\/lib\/select2\/js\/i18n\/he.min.js?v=ef0d733f",
+        "\/lib\/select2\/js\/i18n\/sv.min.js": "\/lib\/select2\/js\/i18n\/sv.min.js?v=06eca070",
+        "\/lib\/select2\/js\/i18n\/uk.min.js": "\/lib\/select2\/js\/i18n\/uk.min.js?v=1438aef7",
+        "\/lib\/select2\/js\/i18n\/af.js": "\/lib\/select2\/js\/i18n\/af.js?v=ce6f92de",
+        "\/lib\/select2\/js\/i18n\/bn.min.js": "\/lib\/select2\/js\/i18n\/bn.min.js?v=e9766ee0",
+        "\/lib\/select2\/js\/i18n\/cs.min.js": "\/lib\/select2\/js\/i18n\/cs.min.js?v=6c34d996",
+        "\/lib\/select2\/js\/i18n\/es.min.js": "\/lib\/select2\/js\/i18n\/es.min.js?v=20291c77",
+        "\/lib\/select2\/js\/i18n\/vi.js": "\/lib\/select2\/js\/i18n\/vi.js?v=3b4d387e",
+        "\/lib\/select2\/js\/i18n\/ca.min.js": "\/lib\/select2\/js\/i18n\/ca.min.js?v=c708dba8",
+        "\/lib\/select2\/js\/i18n\/nb.min.js": "\/lib\/select2\/js\/i18n\/nb.min.js?v=5ed447af",
+        "\/lib\/select2\/js\/i18n\/hr.js": "\/lib\/select2\/js\/i18n\/hr.js?v=321b1ca7",
+        "\/lib\/select2\/js\/i18n\/sk.min.js": "\/lib\/select2\/js\/i18n\/sk.min.js?v=d8ceab02",
+        "\/lib\/select2\/js\/i18n\/pl.min.js": "\/lib\/select2\/js\/i18n\/pl.min.js?v=e3c026e1",
+        "\/lib\/select2\/js\/i18n\/ms.js": "\/lib\/select2\/js\/i18n\/ms.js?v=3eaebd4c",
+        "\/lib\/select2\/js\/i18n\/ps.min.js": "\/lib\/select2\/js\/i18n\/ps.min.js?v=50697848",
+        "\/lib\/select2\/js\/i18n\/sr.min.js": "\/lib\/select2\/js\/i18n\/sr.min.js?v=71fb9d86",
+        "\/lib\/select2\/js\/i18n\/hu.min.js": "\/lib\/select2\/js\/i18n\/hu.min.js?v=f638dbf0",
+        "\/lib\/select2\/js\/i18n\/da.min.js": "\/lib\/select2\/js\/i18n\/da.min.js?v=2498fae6",
+        "\/lib\/select2\/js\/i18n\/az.js": "\/lib\/select2\/js\/i18n\/az.js?v=cf512a18",
+        "\/lib\/select2\/js\/i18n\/he.js": "\/lib\/select2\/js\/i18n\/he.js?v=02e61d0e",
+        "\/lib\/select2\/js\/i18n\/th.min.js": "\/lib\/select2\/js\/i18n\/th.min.js?v=0998d1e7",
+        "\/lib\/select2\/js\/i18n\/sl.js": "\/lib\/select2\/js\/i18n\/sl.js?v=3e6af87d",
+        "\/lib\/select2\/js\/i18n\/eu.min.js": "\/lib\/select2\/js\/i18n\/eu.min.js?v=b47838d4",
+        "\/lib\/select2\/js\/i18n\/it.min.js": "\/lib\/select2\/js\/i18n\/it.min.js?v=cf781501",
+        "\/lib\/select2\/js\/i18n\/nl.min.js": "\/lib\/select2\/js\/i18n\/nl.min.js?v=6463e3d5",
+        "\/lib\/select2\/js\/i18n\/nl.js": "\/lib\/select2\/js\/i18n\/nl.js?v=0e454cb7",
+        "\/lib\/select2\/js\/i18n\/ko.min.js": "\/lib\/select2\/js\/i18n\/ko.min.js?v=e0b59f06",
+        "\/lib\/select2\/js\/i18n\/af.min.js": "\/lib\/select2\/js\/i18n\/af.min.js?v=3fbabb64",
+        "\/lib\/select2\/js\/i18n\/hy.min.js": "\/lib\/select2\/js\/i18n\/hy.min.js?v=f06caec6",
+        "\/lib\/select2\/js\/i18n\/mk.js": "\/lib\/select2\/js\/i18n\/mk.js?v=a911d66f",
+        "\/lib\/select2\/js\/i18n\/sr.js": "\/lib\/select2\/js\/i18n\/sr.js?v=ee5d6ae1",
+        "\/lib\/select2\/js\/i18n\/ka.min.js": "\/lib\/select2\/js\/i18n\/ka.min.js?v=1a0c33ef",
+        "\/lib\/select2\/js\/i18n\/hu.js": "\/lib\/select2\/js\/i18n\/hu.js?v=f2742a80",
+        "\/lib\/select2\/js\/i18n\/ru.js": "\/lib\/select2\/js\/i18n\/ru.js?v=17472019",
+        "\/lib\/select2\/js\/i18n\/hsb.js": "\/lib\/select2\/js\/i18n\/hsb.js?v=dffaee04",
+        "\/lib\/select2\/js\/i18n\/km.min.js": "\/lib\/select2\/js\/i18n\/km.min.js?v=ea8513c5",
+        "\/lib\/select2\/js\/i18n\/zh-CN.min.js": "\/lib\/select2\/js\/i18n\/zh-CN.min.js?v=6ac7c5e8",
+        "\/lib\/select2\/js\/i18n\/el.js": "\/lib\/select2\/js\/i18n\/el.js?v=d2ec59f5",
+        "\/lib\/select2\/js\/i18n\/fa.js": "\/lib\/select2\/js\/i18n\/fa.js?v=4736d063",
+        "\/lib\/select2\/js\/i18n\/lv.min.js": "\/lib\/select2\/js\/i18n\/lv.min.js?v=1d2675a4",
+        "\/lib\/select2\/js\/i18n\/th.js": "\/lib\/select2\/js\/i18n\/th.js?v=7e0588ba",
+        "\/lib\/select2\/js\/i18n\/en.js": "\/lib\/select2\/js\/i18n\/en.js?v=16155b35",
+        "\/lib\/select2\/js\/i18n\/az.min.js": "\/lib\/select2\/js\/i18n\/az.min.js?v=4eda41a2",
+        "\/lib\/select2\/js\/i18n\/fr.min.js": "\/lib\/select2\/js\/i18n\/fr.min.js?v=a1d06a97",
+        "\/lib\/select2\/js\/i18n\/sr-Cyrl.js": "\/lib\/select2\/js\/i18n\/sr-Cyrl.js?v=94a7ab39",
+        "\/lib\/select2\/js\/i18n\/el.min.js": "\/lib\/select2\/js\/i18n\/el.min.js?v=3ea04850",
+        "\/lib\/select2\/js\/i18n\/hy.js": "\/lib\/select2\/js\/i18n\/hy.js?v=66b64023",
+        "\/lib\/select2\/js\/i18n\/sq.min.js": "\/lib\/select2\/js\/i18n\/sq.min.js?v=e0cbc9c8",
+        "\/lib\/select2\/js\/i18n\/sk.js": "\/lib\/select2\/js\/i18n\/sk.js?v=e2b8eb13",
+        "\/lib\/select2\/js\/i18n\/dsb.min.js": "\/lib\/select2\/js\/i18n\/dsb.min.js?v=e1183021",
+        "\/lib\/select2\/js\/i18n\/km.js": "\/lib\/select2\/js\/i18n\/km.js?v=36dffe0b",
+        "\/lib\/select2\/js\/i18n\/it.js": "\/lib\/select2\/js\/i18n\/it.js?v=48ce38af",
+        "\/lib\/select2\/js\/i18n\/ps.js": "\/lib\/select2\/js\/i18n\/ps.js?v=f0d82ab5",
+        "\/lib\/select2\/js\/i18n\/ka.js": "\/lib\/select2\/js\/i18n\/ka.js?v=6af7782a",
+        "\/lib\/select2\/js\/i18n\/ja.js": "\/lib\/select2\/js\/i18n\/ja.js?v=9bf7da57",
+        "\/lib\/select2\/js\/i18n\/vi.min.js": "\/lib\/select2\/js\/i18n\/vi.min.js?v=e5306bca",
+        "\/lib\/select2\/js\/i18n\/ja.min.js": "\/lib\/select2\/js\/i18n\/ja.min.js?v=c1d56ee3",
+        "\/lib\/select2\/js\/i18n\/ms.min.js": "\/lib\/select2\/js\/i18n\/ms.min.js?v=259b438d",
+        "\/lib\/select2\/js\/i18n\/de.js": "\/lib\/select2\/js\/i18n\/de.js?v=ee53bf13",
+        "\/lib\/select2\/js\/i18n\/lt.js": "\/lib\/select2\/js\/i18n\/lt.js?v=ee3a35d5",
+        "\/lib\/select2\/js\/i18n\/ru.min.js": "\/lib\/select2\/js\/i18n\/ru.min.js?v=ea6cd581",
+        "\/lib\/select2\/js\/i18n\/nb.js": "\/lib\/select2\/js\/i18n\/nb.js?v=192194c4",
+        "\/lib\/select2\/js\/i18n\/gl.min.js": "\/lib\/select2\/js\/i18n\/gl.min.js?v=222a9d83",
+        "\/lib\/select2\/js\/i18n\/bg.js": "\/lib\/select2\/js\/i18n\/bg.js?v=b1c15434",
+        "\/lib\/select2\/js\/i18n\/bg.min.js": "\/lib\/select2\/js\/i18n\/bg.min.js?v=2184d445",
+        "\/lib\/select2\/js\/i18n\/fi.min.js": "\/lib\/select2\/js\/i18n\/fi.min.js?v=c4bdbf9d",
+        "\/lib\/select2\/js\/i18n\/pt-BR.js": "\/lib\/select2\/js\/i18n\/pt-BR.js?v=99885479",
+        "\/lib\/select2\/js\/i18n\/id.min.js": "\/lib\/select2\/js\/i18n\/id.min.js?v=a00ac770",
+        "\/lib\/select2\/js\/i18n\/ca.js": "\/lib\/select2\/js\/i18n\/ca.js?v=6f88d39a",
+        "\/lib\/select2\/js\/i18n\/sq.js": "\/lib\/select2\/js\/i18n\/sq.js?v=21a0e533",
+        "\/lib\/select2\/js\/i18n\/bs.js": "\/lib\/select2\/js\/i18n\/bs.js?v=839c639f",
+        "\/lib\/select2\/js\/i18n\/hi.js": "\/lib\/select2\/js\/i18n\/hi.js?v=7b3e4bad",
+        "\/lib\/select2\/js\/i18n\/sr-Cyrl.min.js": "\/lib\/select2\/js\/i18n\/sr-Cyrl.min.js?v=8290fdbd",
+        "\/lib\/select2\/js\/i18n\/uk.js": "\/lib\/select2\/js\/i18n\/uk.js?v=8f25b548",
+        "\/lib\/select2\/js\/i18n\/hr.min.js": "\/lib\/select2\/js\/i18n\/hr.min.js?v=49022dea",
+        "\/lib\/select2\/js\/i18n\/mk.min.js": "\/lib\/select2\/js\/i18n\/mk.min.js?v=68caef4a",
+        "\/lib\/json.worker.min.js": "\/lib\/json.worker.min.js?v=507d08e4",
+        "\/lib\/22.min.js": "\/lib\/22.min.js?v=021d8a88",
+        "\/lib\/cytoscape.js": "\/lib\/cytoscape.js?v=161e43d0",
+        "\/lib\/cropper.js": "\/lib\/cropper.js?v=577e9bdf",
+        "\/lib\/leaflet.js": "\/lib\/leaflet.js?v=e2f539c8",
+        "\/lib\/fuzzy.min.js": "\/lib\/fuzzy.min.js?v=14ee41be",
+        "\/lib\/monaco.min.js": "\/lib\/monaco.min.js?v=299ef559",
+        "\/lib\/altcha.min.js": "\/lib\/altcha.min.js?v=c498fbf2",
+        "\/lib\/gridstack.js": "\/lib\/gridstack.js?v=54a806ca",
+        "\/lib\/base.js": "\/lib\/base.js?v=6bfc7a70",
+        "\/lib\/jquery-file-upload.min.js": "\/lib\/jquery-file-upload.min.js?v=bf1d2112",
+        "\/lib\/leaflet.min.js": "\/lib\/leaflet.min.js?v=b76f8357",
+        "\/lib\/tablericons-definitions.min.js": "\/lib\/tablericons-definitions.min.js?v=ef2f0380",
+        "\/lib\/tinymce.min.js": "\/lib\/tinymce.min.js?v=039ade6e",
+        "\/lib\/css.worker.js": "\/lib\/css.worker.js?v=06097bbe",
+        "\/lib\/sortable.js": "\/lib\/sortable.js?v=f9519589",
+        "\/lib\/html.worker.min.js": "\/lib\/html.worker.min.js?v=18eb7f83",
+        "\/lib\/swagger-ui.min.js": "\/lib\/swagger-ui.min.js?v=2a2bcd91",
+        "\/lib\/base.min.js": "\/lib\/base.min.js?v=d75940bb",
+        "\/lib\/fullcalendar\/core\/locales\/et.js": "\/lib\/fullcalendar\/core\/locales\/et.js?v=63804f6c",
+        "\/lib\/fullcalendar\/core\/locales\/eu.js": "\/lib\/fullcalendar\/core\/locales\/eu.js?v=9ff51507",
+        "\/lib\/fullcalendar\/core\/locales\/tr.js": "\/lib\/fullcalendar\/core\/locales\/tr.js?v=87a03001",
+        "\/lib\/fullcalendar\/core\/locales\/is.js": "\/lib\/fullcalendar\/core\/locales\/is.js?v=a428a1ca",
+        "\/lib\/fullcalendar\/core\/locales\/de.min.js": "\/lib\/fullcalendar\/core\/locales\/de.min.js?v=db88ab16",
+        "\/lib\/fullcalendar\/core\/locales\/hi.min.js": "\/lib\/fullcalendar\/core\/locales\/hi.min.js?v=99705de5",
+        "\/lib\/fullcalendar\/core\/locales\/uz.min.js": "\/lib\/fullcalendar\/core\/locales\/uz.min.js?v=6ea41de7",
+        "\/lib\/fullcalendar\/core\/locales\/ar.min.js": "\/lib\/fullcalendar\/core\/locales\/ar.min.js?v=b5daee47",
+        "\/lib\/fullcalendar\/core\/locales\/fr.js": "\/lib\/fullcalendar\/core\/locales\/fr.js?v=c5b4ac11",
+        "\/lib\/fullcalendar\/core\/locales\/gl.js": "\/lib\/fullcalendar\/core\/locales\/gl.js?v=252bb316",
+        "\/lib\/fullcalendar\/core\/locales\/fa.min.js": "\/lib\/fullcalendar\/core\/locales\/fa.min.js?v=d0bfe434",
+        "\/lib\/fullcalendar\/core\/locales\/is.min.js": "\/lib\/fullcalendar\/core\/locales\/is.min.js?v=57fd8b45",
+        "\/lib\/fullcalendar\/core\/locales\/en-au.js": "\/lib\/fullcalendar\/core\/locales\/en-au.js?v=7240482a",
+        "\/lib\/fullcalendar\/core\/locales\/ko.js": "\/lib\/fullcalendar\/core\/locales\/ko.js?v=eeb0d784",
+        "\/lib\/fullcalendar\/core\/locales\/en-nz.min.js": "\/lib\/fullcalendar\/core\/locales\/en-nz.min.js?v=7a6d7917",
+        "\/lib\/fullcalendar\/core\/locales\/lb.min.js": "\/lib\/fullcalendar\/core\/locales\/lb.min.js?v=23ccba2a",
+        "\/lib\/fullcalendar\/core\/locales\/nn.js": "\/lib\/fullcalendar\/core\/locales\/nn.js?v=9a1581aa",
+        "\/lib\/fullcalendar\/core\/locales\/ro.min.js": "\/lib\/fullcalendar\/core\/locales\/ro.min.js?v=8ddc5dd8",
+        "\/lib\/fullcalendar\/core\/locales\/es.js": "\/lib\/fullcalendar\/core\/locales\/es.js?v=dac40e45",
+        "\/lib\/fullcalendar\/core\/locales\/ar-kw.js": "\/lib\/fullcalendar\/core\/locales\/ar-kw.js?v=b08ad248",
+        "\/lib\/fullcalendar\/core\/locales\/es-us.min.js": "\/lib\/fullcalendar\/core\/locales\/es-us.min.js?v=977ca4ac",
+        "\/lib\/fullcalendar\/core\/locales\/sr-cyrl.js": "\/lib\/fullcalendar\/core\/locales\/sr-cyrl.js?v=bd1b6a83",
+        "\/lib\/fullcalendar\/core\/locales\/ug.js": "\/lib\/fullcalendar\/core\/locales\/ug.js?v=88d13b93",
+        "\/lib\/fullcalendar\/core\/locales\/fr-ch.min.js": "\/lib\/fullcalendar\/core\/locales\/fr-ch.min.js?v=9de858f5",
+        "\/lib\/fullcalendar\/core\/locales\/zh-tw.js": "\/lib\/fullcalendar\/core\/locales\/zh-tw.js?v=c38d175c",
+        "\/lib\/fullcalendar\/core\/locales\/cs.js": "\/lib\/fullcalendar\/core\/locales\/cs.js?v=bc16ec1f",
+        "\/lib\/fullcalendar\/core\/locales\/lv.js": "\/lib\/fullcalendar\/core\/locales\/lv.js?v=80499d67",
+        "\/lib\/fullcalendar\/core\/locales\/es-us.js": "\/lib\/fullcalendar\/core\/locales\/es-us.js?v=282c4ef1",
+        "\/lib\/fullcalendar\/core\/locales\/ar-ly.min.js": "\/lib\/fullcalendar\/core\/locales\/ar-ly.min.js?v=fcb42d4e",
+        "\/lib\/fullcalendar\/core\/locales\/ar.js": "\/lib\/fullcalendar\/core\/locales\/ar.js?v=59d91c1d",
+        "\/lib\/fullcalendar\/core\/locales\/nn.min.js": "\/lib\/fullcalendar\/core\/locales\/nn.min.js?v=67a02d86",
+        "\/lib\/fullcalendar\/core\/locales\/pl.js": "\/lib\/fullcalendar\/core\/locales\/pl.js?v=5fb554b2",
+        "\/lib\/fullcalendar\/core\/locales\/da.js": "\/lib\/fullcalendar\/core\/locales\/da.js?v=00e6d4bc",
+        "\/lib\/fullcalendar\/core\/locales\/pt.min.js": "\/lib\/fullcalendar\/core\/locales\/pt.min.js?v=7ac635fc",
+        "\/lib\/fullcalendar\/core\/locales\/ro.js": "\/lib\/fullcalendar\/core\/locales\/ro.js?v=b9877967",
+        "\/lib\/fullcalendar\/core\/locales\/ar-sa.min.js": "\/lib\/fullcalendar\/core\/locales\/ar-sa.min.js?v=6eed896a",
+        "\/lib\/fullcalendar\/core\/locales\/lt.min.js": "\/lib\/fullcalendar\/core\/locales\/lt.min.js?v=a8614053",
+        "\/lib\/fullcalendar\/core\/locales\/tr.min.js": "\/lib\/fullcalendar\/core\/locales\/tr.min.js?v=ca545f25",
+        "\/lib\/fullcalendar\/core\/locales\/pt.js": "\/lib\/fullcalendar\/core\/locales\/pt.js?v=95d75e5b",
+        "\/lib\/fullcalendar\/core\/locales\/sl.min.js": "\/lib\/fullcalendar\/core\/locales\/sl.min.js?v=010d9ed8",
+        "\/lib\/fullcalendar\/core\/locales\/bs.min.js": "\/lib\/fullcalendar\/core\/locales\/bs.min.js?v=ff089fbc",
+        "\/lib\/fullcalendar\/core\/locales\/et.min.js": "\/lib\/fullcalendar\/core\/locales\/et.min.js?v=8fe16f65",
+        "\/lib\/fullcalendar\/core\/locales\/kk.js": "\/lib\/fullcalendar\/core\/locales\/kk.js?v=a13189ed",
+        "\/lib\/fullcalendar\/core\/locales\/sv.js": "\/lib\/fullcalendar\/core\/locales\/sv.js?v=81d21def",
+        "\/lib\/fullcalendar\/core\/locales\/pt-br.min.js": "\/lib\/fullcalendar\/core\/locales\/pt-br.min.js?v=88be0969",
+        "\/lib\/fullcalendar\/core\/locales\/id.js": "\/lib\/fullcalendar\/core\/locales\/id.js?v=381cc157",
+        "\/lib\/fullcalendar\/core\/locales\/sr-cyrl.min.js": "\/lib\/fullcalendar\/core\/locales\/sr-cyrl.min.js?v=bb76c0a7",
+        "\/lib\/fullcalendar\/core\/locales\/fi.js": "\/lib\/fullcalendar\/core\/locales\/fi.js?v=e6d58522",
+        "\/lib\/fullcalendar\/core\/locales\/zh-cn.min.js": "\/lib\/fullcalendar\/core\/locales\/zh-cn.min.js?v=d58eb865",
+        "\/lib\/fullcalendar\/core\/locales\/he.min.js": "\/lib\/fullcalendar\/core\/locales\/he.min.js?v=cfe3ae57",
+        "\/lib\/fullcalendar\/core\/locales\/sv.min.js": "\/lib\/fullcalendar\/core\/locales\/sv.min.js?v=afd0658a",
+        "\/lib\/fullcalendar\/core\/locales\/uk.min.js": "\/lib\/fullcalendar\/core\/locales\/uk.min.js?v=1ffd02b0",
+        "\/lib\/fullcalendar\/core\/locales\/af.js": "\/lib\/fullcalendar\/core\/locales\/af.js?v=9eb81bb7",
+        "\/lib\/fullcalendar\/core\/locales\/ar-dz.min.js": "\/lib\/fullcalendar\/core\/locales\/ar-dz.min.js?v=1962b767",
+        "\/lib\/fullcalendar\/core\/locales\/cs.min.js": "\/lib\/fullcalendar\/core\/locales\/cs.min.js?v=bfd6162b",
+        "\/lib\/fullcalendar\/core\/locales\/fr-ca.js": "\/lib\/fullcalendar\/core\/locales\/fr-ca.js?v=820fdf01",
+        "\/lib\/fullcalendar\/core\/locales\/es.min.js": "\/lib\/fullcalendar\/core\/locales\/es.min.js?v=f9400729",
+        "\/lib\/fullcalendar\/core\/locales\/vi.js": "\/lib\/fullcalendar\/core\/locales\/vi.js?v=4c3186f5",
+        "\/lib\/fullcalendar\/core\/locales\/ca.min.js": "\/lib\/fullcalendar\/core\/locales\/ca.min.js?v=f792663f",
+        "\/lib\/fullcalendar\/core\/locales\/nb.min.js": "\/lib\/fullcalendar\/core\/locales\/nb.min.js?v=42fd4a09",
+        "\/lib\/fullcalendar\/core\/locales\/hr.js": "\/lib\/fullcalendar\/core\/locales\/hr.js?v=61b502e2",
+        "\/lib\/fullcalendar\/core\/locales\/sk.min.js": "\/lib\/fullcalendar\/core\/locales\/sk.min.js?v=b41d4834",
+        "\/lib\/fullcalendar\/core\/locales\/pl.min.js": "\/lib\/fullcalendar\/core\/locales\/pl.min.js?v=6c28d7f4",
+        "\/lib\/fullcalendar\/core\/locales\/ms.js": "\/lib\/fullcalendar\/core\/locales\/ms.js?v=160dd3b3",
+        "\/lib\/fullcalendar\/core\/locales\/sr.min.js": "\/lib\/fullcalendar\/core\/locales\/sr.min.js?v=f0d90333",
+        "\/lib\/fullcalendar\/core\/locales\/ug.min.js": "\/lib\/fullcalendar\/core\/locales\/ug.min.js?v=2e0b1dfb",
+        "\/lib\/fullcalendar\/core\/locales\/hu.min.js": "\/lib\/fullcalendar\/core\/locales\/hu.min.js?v=149f6148",
+        "\/lib\/fullcalendar\/core\/locales\/da.min.js": "\/lib\/fullcalendar\/core\/locales\/da.min.js?v=e386ca32",
+        "\/lib\/fullcalendar\/core\/locales\/az.js": "\/lib\/fullcalendar\/core\/locales\/az.js?v=e1ed1780",
+        "\/lib\/fullcalendar\/core\/locales\/he.js": "\/lib\/fullcalendar\/core\/locales\/he.js?v=912935b3",
+        "\/lib\/fullcalendar\/core\/locales\/th.min.js": "\/lib\/fullcalendar\/core\/locales\/th.min.js?v=b4b0adc0",
+        "\/lib\/fullcalendar\/core\/locales\/sl.js": "\/lib\/fullcalendar\/core\/locales\/sl.js?v=79e0a87a",
+        "\/lib\/fullcalendar\/core\/locales\/eu.min.js": "\/lib\/fullcalendar\/core\/locales\/eu.min.js?v=03d01cb9",
+        "\/lib\/fullcalendar\/core\/locales\/it.min.js": "\/lib\/fullcalendar\/core\/locales\/it.min.js?v=e858f22e",
+        "\/lib\/fullcalendar\/core\/locales\/zh-tw.min.js": "\/lib\/fullcalendar\/core\/locales\/zh-tw.min.js?v=ba63f688",
+        "\/lib\/fullcalendar\/core\/locales\/nl.min.js": "\/lib\/fullcalendar\/core\/locales\/nl.min.js?v=1a0bc0f3",
+        "\/lib\/fullcalendar\/core\/locales\/nl.js": "\/lib\/fullcalendar\/core\/locales\/nl.js?v=c06c7ed6",
+        "\/lib\/fullcalendar\/core\/locales\/ko.min.js": "\/lib\/fullcalendar\/core\/locales\/ko.min.js?v=6a09a43d",
+        "\/lib\/fullcalendar\/core\/locales\/af.min.js": "\/lib\/fullcalendar\/core\/locales\/af.min.js?v=fe52cf86",
+        "\/lib\/fullcalendar\/core\/locales\/mk.js": "\/lib\/fullcalendar\/core\/locales\/mk.js?v=d331a7c8",
+        "\/lib\/fullcalendar\/core\/locales\/sr.js": "\/lib\/fullcalendar\/core\/locales\/sr.js?v=911e65bf",
+        "\/lib\/fullcalendar\/core\/locales\/ka.min.js": "\/lib\/fullcalendar\/core\/locales\/ka.min.js?v=efdf3872",
+        "\/lib\/fullcalendar\/core\/locales\/hu.js": "\/lib\/fullcalendar\/core\/locales\/hu.js?v=b554b809",
+        "\/lib\/fullcalendar\/core\/locales\/kk.min.js": "\/lib\/fullcalendar\/core\/locales\/kk.min.js?v=7fc77ab9",
+        "\/lib\/fullcalendar\/core\/locales\/ru.js": "\/lib\/fullcalendar\/core\/locales\/ru.js?v=d3099a2e",
+        "\/lib\/fullcalendar\/core\/locales\/en-gb.js": "\/lib\/fullcalendar\/core\/locales\/en-gb.js?v=0d4e17d5",
+        "\/lib\/fullcalendar\/core\/locales\/el.js": "\/lib\/fullcalendar\/core\/locales\/el.js?v=458ef541",
+        "\/lib\/fullcalendar\/core\/locales\/ar-dz.js": "\/lib\/fullcalendar\/core\/locales\/ar-dz.js?v=e9164440",
+        "\/lib\/fullcalendar\/core\/locales\/pt-br.js": "\/lib\/fullcalendar\/core\/locales\/pt-br.js?v=44774c4b",
+        "\/lib\/fullcalendar\/core\/locales\/ar-tn.js": "\/lib\/fullcalendar\/core\/locales\/ar-tn.js?v=48e75c7b",
+        "\/lib\/fullcalendar\/core\/locales\/fa.js": "\/lib\/fullcalendar\/core\/locales\/fa.js?v=c4792a69",
+        "\/lib\/fullcalendar\/core\/locales\/lv.min.js": "\/lib\/fullcalendar\/core\/locales\/lv.min.js?v=5866be9a",
+        "\/lib\/fullcalendar\/core\/locales\/th.js": "\/lib\/fullcalendar\/core\/locales\/th.js?v=cd288017",
+        "\/lib\/fullcalendar\/core\/locales\/az.min.js": "\/lib\/fullcalendar\/core\/locales\/az.min.js?v=5b5b83f4",
+        "\/lib\/fullcalendar\/core\/locales\/fr.min.js": "\/lib\/fullcalendar\/core\/locales\/fr.min.js?v=2dda97b4",
+        "\/lib\/fullcalendar\/core\/locales\/ar-tn.min.js": "\/lib\/fullcalendar\/core\/locales\/ar-tn.min.js?v=12342f42",
+        "\/lib\/fullcalendar\/core\/locales\/el.min.js": "\/lib\/fullcalendar\/core\/locales\/el.min.js?v=55eb9b1c",
+        "\/lib\/fullcalendar\/core\/locales\/sq.min.js": "\/lib\/fullcalendar\/core\/locales\/sq.min.js?v=0c94b984",
+        "\/lib\/fullcalendar\/core\/locales\/sk.js": "\/lib\/fullcalendar\/core\/locales\/sk.js?v=313070d4",
+        "\/lib\/fullcalendar\/core\/locales\/uz.js": "\/lib\/fullcalendar\/core\/locales\/uz.js?v=d80a0601",
+        "\/lib\/fullcalendar\/core\/locales\/it.js": "\/lib\/fullcalendar\/core\/locales\/it.js?v=0185dee5",
+        "\/lib\/fullcalendar\/core\/locales\/en-au.min.js": "\/lib\/fullcalendar\/core\/locales\/en-au.min.js?v=f49885db",
+        "\/lib\/fullcalendar\/core\/locales\/ka.js": "\/lib\/fullcalendar\/core\/locales\/ka.js?v=7cb38612",
+        "\/lib\/fullcalendar\/core\/locales\/ja.js": "\/lib\/fullcalendar\/core\/locales\/ja.js?v=1d4e0128",
+        "\/lib\/fullcalendar\/core\/locales\/en-gb.min.js": "\/lib\/fullcalendar\/core\/locales\/en-gb.min.js?v=0c829e2e",
+        "\/lib\/fullcalendar\/core\/locales\/lb.js": "\/lib\/fullcalendar\/core\/locales\/lb.js?v=43ee0e7b",
+        "\/lib\/fullcalendar\/core\/locales\/vi.min.js": "\/lib\/fullcalendar\/core\/locales\/vi.min.js?v=a90186e7",
+        "\/lib\/fullcalendar\/core\/locales\/ja.min.js": "\/lib\/fullcalendar\/core\/locales\/ja.min.js?v=17779757",
+        "\/lib\/fullcalendar\/core\/locales\/ms.min.js": "\/lib\/fullcalendar\/core\/locales\/ms.min.js?v=f792f9e9",
+        "\/lib\/fullcalendar\/core\/locales\/de.js": "\/lib\/fullcalendar\/core\/locales\/de.js?v=3b73c27a",
+        "\/lib\/fullcalendar\/core\/locales\/lt.js": "\/lib\/fullcalendar\/core\/locales\/lt.js?v=62f62edc",
+        "\/lib\/fullcalendar\/core\/locales\/ru.min.js": "\/lib\/fullcalendar\/core\/locales\/ru.min.js?v=7c034e8f",
+        "\/lib\/fullcalendar\/core\/locales\/nb.js": "\/lib\/fullcalendar\/core\/locales\/nb.js?v=9e4cc643",
+        "\/lib\/fullcalendar\/core\/locales\/gl.min.js": "\/lib\/fullcalendar\/core\/locales\/gl.min.js?v=913eb673",
+        "\/lib\/fullcalendar\/core\/locales\/fr-ca.min.js": "\/lib\/fullcalendar\/core\/locales\/fr-ca.min.js?v=30990746",
+        "\/lib\/fullcalendar\/core\/locales\/bg.js": "\/lib\/fullcalendar\/core\/locales\/bg.js?v=793e3196",
+        "\/lib\/fullcalendar\/core\/locales\/ar-ma.min.js": "\/lib\/fullcalendar\/core\/locales\/ar-ma.min.js?v=e9aec498",
+        "\/lib\/fullcalendar\/core\/locales\/zh-cn.js": "\/lib\/fullcalendar\/core\/locales\/zh-cn.js?v=4c4d86fa",
+        "\/lib\/fullcalendar\/core\/locales\/bg.min.js": "\/lib\/fullcalendar\/core\/locales\/bg.min.js?v=21bfe195",
+        "\/lib\/fullcalendar\/core\/locales\/fi.min.js": "\/lib\/fullcalendar\/core\/locales\/fi.min.js?v=227aa1d8",
+        "\/lib\/fullcalendar\/core\/locales\/id.min.js": "\/lib\/fullcalendar\/core\/locales\/id.min.js?v=709286fa",
+        "\/lib\/fullcalendar\/core\/locales\/ca.js": "\/lib\/fullcalendar\/core\/locales\/ca.js?v=9137d3e7",
+        "\/lib\/fullcalendar\/core\/locales\/sq.js": "\/lib\/fullcalendar\/core\/locales\/sq.js?v=9f591eda",
+        "\/lib\/fullcalendar\/core\/locales\/bs.js": "\/lib\/fullcalendar\/core\/locales\/bs.js?v=2e021e8b",
+        "\/lib\/fullcalendar\/core\/locales\/ar-sa.js": "\/lib\/fullcalendar\/core\/locales\/ar-sa.js?v=9c63a9e1",
+        "\/lib\/fullcalendar\/core\/locales\/ar-ma.js": "\/lib\/fullcalendar\/core\/locales\/ar-ma.js?v=dbbc7df1",
+        "\/lib\/fullcalendar\/core\/locales\/en-nz.js": "\/lib\/fullcalendar\/core\/locales\/en-nz.js?v=6688c170",
+        "\/lib\/fullcalendar\/core\/locales\/hi.js": "\/lib\/fullcalendar\/core\/locales\/hi.js?v=534629c9",
+        "\/lib\/fullcalendar\/core\/locales\/ar-kw.min.js": "\/lib\/fullcalendar\/core\/locales\/ar-kw.min.js?v=11ff1c86",
+        "\/lib\/fullcalendar\/core\/locales\/ar-ly.js": "\/lib\/fullcalendar\/core\/locales\/ar-ly.js?v=cf17a905",
+        "\/lib\/fullcalendar\/core\/locales\/uk.js": "\/lib\/fullcalendar\/core\/locales\/uk.js?v=b9a2402d",
+        "\/lib\/fullcalendar\/core\/locales\/hr.min.js": "\/lib\/fullcalendar\/core\/locales\/hr.min.js?v=e9908b01",
+        "\/lib\/fullcalendar\/core\/locales\/mk.min.js": "\/lib\/fullcalendar\/core\/locales\/mk.min.js?v=1aded3a8",
+        "\/lib\/fullcalendar\/core\/locales\/fr-ch.js": "\/lib\/fullcalendar\/core\/locales\/fr-ch.js?v=3712f098",
+        "\/lib\/25.js": "\/lib\/25.js?v=c08c1c51",
+        "\/lib\/jquery.rateit.js": "\/lib\/jquery.rateit.js?v=1568f4d6",
+        "\/lib\/tinymce-i18n\/langs6\/et.js": "\/lib\/tinymce-i18n\/langs6\/et.js?v=5b534e59",
+        "\/lib\/tinymce-i18n\/langs6\/eu.js": "\/lib\/tinymce-i18n\/langs6\/eu.js?v=398bb6aa",
+        "\/lib\/tinymce-i18n\/langs6\/sv_SE.min.js": "\/lib\/tinymce-i18n\/langs6\/sv_SE.min.js?v=7e3eb4e5",
+        "\/lib\/tinymce-i18n\/langs6\/oc.min.js": "\/lib\/tinymce-i18n\/langs6\/oc.min.js?v=8449c1ae",
+        "\/lib\/tinymce-i18n\/langs6\/tr.js": "\/lib\/tinymce-i18n\/langs6\/tr.js?v=ece0788b",
+        "\/lib\/tinymce-i18n\/langs6\/de.min.js": "\/lib\/tinymce-i18n\/langs6\/de.min.js?v=488c396b",
+        "\/lib\/tinymce-i18n\/langs6\/ka_GE.min.js": "\/lib\/tinymce-i18n\/langs6\/ka_GE.min.js?v=9386e421",
+        "\/lib\/tinymce-i18n\/langs6\/hi.min.js": "\/lib\/tinymce-i18n\/langs6\/hi.min.js?v=95110a52",
+        "\/lib\/tinymce-i18n\/langs6\/ga.min.js": "\/lib\/tinymce-i18n\/langs6\/ga.min.js?v=15946b1e",
+        "\/lib\/tinymce-i18n\/langs6\/uz.min.js": "\/lib\/tinymce-i18n\/langs6\/uz.min.js?v=0a733c1d",
+        "\/lib\/tinymce-i18n\/langs6\/th_TH.min.js": "\/lib\/tinymce-i18n\/langs6\/th_TH.min.js?v=e8662447",
+        "\/lib\/tinymce-i18n\/langs6\/ar.min.js": "\/lib\/tinymce-i18n\/langs6\/ar.min.js?v=eccbbb70",
+        "\/lib\/tinymce-i18n\/langs6\/sv_SE.js": "\/lib\/tinymce-i18n\/langs6\/sv_SE.js?v=1d1daa02",
+        "\/lib\/tinymce-i18n\/langs6\/gl.js": "\/lib\/tinymce-i18n\/langs6\/gl.js?v=443494d7",
+        "\/lib\/tinymce-i18n\/langs6\/bn_BD.min.js": "\/lib\/tinymce-i18n\/langs6\/bn_BD.min.js?v=7a9f0f2a",
+        "\/lib\/tinymce-i18n\/langs6\/fa.min.js": "\/lib\/tinymce-i18n\/langs6\/fa.min.js?v=51b25f87",
+        "\/lib\/tinymce-i18n\/langs6\/zh_SG.js": "\/lib\/tinymce-i18n\/langs6\/zh_SG.js?v=62f10bde",
+        "\/lib\/tinymce-i18n\/langs6\/oc.js": "\/lib\/tinymce-i18n\/langs6\/oc.js?v=c422288a",
+        "\/lib\/tinymce-i18n\/langs6\/pt_BR.js": "\/lib\/tinymce-i18n\/langs6\/pt_BR.js?v=1b088a4e",
+        "\/lib\/tinymce-i18n\/langs6\/eo.js": "\/lib\/tinymce-i18n\/langs6\/eo.js?v=72490501",
+        "\/lib\/tinymce-i18n\/langs6\/zh-Hans.js": "\/lib\/tinymce-i18n\/langs6\/zh-Hans.js?v=3d63149c",
+        "\/lib\/tinymce-i18n\/langs6\/sl_SI.min.js": "\/lib\/tinymce-i18n\/langs6\/sl_SI.min.js?v=89650b93",
+        "\/lib\/tinymce-i18n\/langs6\/ro.min.js": "\/lib\/tinymce-i18n\/langs6\/ro.min.js?v=91af6282",
+        "\/lib\/tinymce-i18n\/langs6\/zh-Hant.js": "\/lib\/tinymce-i18n\/langs6\/zh-Hant.js?v=00f7f23a",
+        "\/lib\/tinymce-i18n\/langs6\/es.js": "\/lib\/tinymce-i18n\/langs6\/es.js?v=ff82b84a",
+        "\/lib\/tinymce-i18n\/langs6\/tg.min.js": "\/lib\/tinymce-i18n\/langs6\/tg.min.js?v=c4524e0c",
+        "\/lib\/tinymce-i18n\/langs6\/ug.js": "\/lib\/tinymce-i18n\/langs6\/ug.js?v=ea835a26",
+        "\/lib\/tinymce-i18n\/langs6\/ka_GE.js": "\/lib\/tinymce-i18n\/langs6\/ka_GE.js?v=a0aeb252",
+        "\/lib\/tinymce-i18n\/langs6\/cs.js": "\/lib\/tinymce-i18n\/langs6\/cs.js?v=a452906a",
+        "\/lib\/tinymce-i18n\/langs6\/lv.js": "\/lib\/tinymce-i18n\/langs6\/lv.js?v=68f9a456",
+        "\/lib\/tinymce-i18n\/langs6\/be.js": "\/lib\/tinymce-i18n\/langs6\/be.js?v=4ebeb4c4",
+        "\/lib\/tinymce-i18n\/langs6\/ta.js": "\/lib\/tinymce-i18n\/langs6\/ta.js?v=15b15c45",
+        "\/lib\/tinymce-i18n\/langs6\/zh_HK.js": "\/lib\/tinymce-i18n\/langs6\/zh_HK.js?v=6aa1e3f4",
+        "\/lib\/tinymce-i18n\/langs6\/nb_NO.min.js": "\/lib\/tinymce-i18n\/langs6\/nb_NO.min.js?v=d63dca43",
+        "\/lib\/tinymce-i18n\/langs6\/ar.js": "\/lib\/tinymce-i18n\/langs6\/ar.js?v=d5160d2e",
+        "\/lib\/tinymce-i18n\/langs6\/pl.js": "\/lib\/tinymce-i18n\/langs6\/pl.js?v=4e7332df",
+        "\/lib\/tinymce-i18n\/langs6\/da.js": "\/lib\/tinymce-i18n\/langs6\/da.js?v=fb63bb4d",
+        "\/lib\/tinymce-i18n\/langs6\/ro.js": "\/lib\/tinymce-i18n\/langs6\/ro.js?v=36373c21",
+        "\/lib\/tinymce-i18n\/langs6\/lt.min.js": "\/lib\/tinymce-i18n\/langs6\/lt.min.js?v=e8fb9c96",
+        "\/lib\/tinymce-i18n\/langs6\/tr.min.js": "\/lib\/tinymce-i18n\/langs6\/tr.min.js?v=9e1d5115",
+        "\/lib\/tinymce-i18n\/langs6\/hu_HU.min.js": "\/lib\/tinymce-i18n\/langs6\/hu_HU.min.js?v=25d79955",
+        "\/lib\/tinymce-i18n\/langs6\/zh_MO.js": "\/lib\/tinymce-i18n\/langs6\/zh_MO.js?v=a3be7901",
+        "\/lib\/tinymce-i18n\/langs6\/bn_BD.js": "\/lib\/tinymce-i18n\/langs6\/bn_BD.js?v=d0580fd6",
+        "\/lib\/tinymce-i18n\/langs6\/nl_BE.js": "\/lib\/tinymce-i18n\/langs6\/nl_BE.js?v=0d628f8f",
+        "\/lib\/tinymce-i18n\/langs6\/nb_NO.js": "\/lib\/tinymce-i18n\/langs6\/nb_NO.js?v=1df9cc75",
+        "\/lib\/tinymce-i18n\/langs6\/et.min.js": "\/lib\/tinymce-i18n\/langs6\/et.min.js?v=fda73293",
+        "\/lib\/tinymce-i18n\/langs6\/kk.js": "\/lib\/tinymce-i18n\/langs6\/kk.js?v=6b2116af",
+        "\/lib\/tinymce-i18n\/langs6\/ne.min.js": "\/lib\/tinymce-i18n\/langs6\/ne.min.js?v=8a7c979d",
+        "\/lib\/tinymce-i18n\/langs6\/zh_MO.min.js": "\/lib\/tinymce-i18n\/langs6\/zh_MO.min.js?v=c50c92f4",
+        "\/lib\/tinymce-i18n\/langs6\/hu_HU.js": "\/lib\/tinymce-i18n\/langs6\/hu_HU.js?v=9150badd",
+        "\/lib\/tinymce-i18n\/langs6\/id.js": "\/lib\/tinymce-i18n\/langs6\/id.js?v=3645a6d7",
+        "\/lib\/tinymce-i18n\/langs6\/ne.js": "\/lib\/tinymce-i18n\/langs6\/ne.js?v=2f4e0503",
+        "\/lib\/tinymce-i18n\/langs6\/ku.js": "\/lib\/tinymce-i18n\/langs6\/ku.js?v=71a92fbf",
+        "\/lib\/tinymce-i18n\/langs6\/dv.min.js": "\/lib\/tinymce-i18n\/langs6\/dv.min.js?v=14f7270b",
+        "\/lib\/tinymce-i18n\/langs6\/es_MX.min.js": "\/lib\/tinymce-i18n\/langs6\/es_MX.min.js?v=b7aa8e1e",
+        "\/lib\/tinymce-i18n\/langs6\/fi.js": "\/lib\/tinymce-i18n\/langs6\/fi.js?v=55aa9840",
+        "\/lib\/tinymce-i18n\/langs6\/uk.min.js": "\/lib\/tinymce-i18n\/langs6\/uk.min.js?v=62e0c851",
+        "\/lib\/tinymce-i18n\/langs6\/he_IL.min.js": "\/lib\/tinymce-i18n\/langs6\/he_IL.min.js?v=229be7d2",
+        "\/lib\/tinymce-i18n\/langs6\/fr_FR.min.js": "\/lib\/tinymce-i18n\/langs6\/fr_FR.min.js?v=d67da496",
+        "\/lib\/tinymce-i18n\/langs6\/cy.js": "\/lib\/tinymce-i18n\/langs6\/cy.js?v=c7a7ad6c",
+        "\/lib\/tinymce-i18n\/langs6\/cs.min.js": "\/lib\/tinymce-i18n\/langs6\/cs.min.js?v=7103953a",
+        "\/lib\/tinymce-i18n\/langs6\/fr_FR.js": "\/lib\/tinymce-i18n\/langs6\/fr_FR.js?v=5e6a6b92",
+        "\/lib\/tinymce-i18n\/langs6\/zh-Hant.min.js": "\/lib\/tinymce-i18n\/langs6\/zh-Hant.min.js?v=bc458c81",
+        "\/lib\/tinymce-i18n\/langs6\/ga.js": "\/lib\/tinymce-i18n\/langs6\/ga.js?v=7a507341",
+        "\/lib\/tinymce-i18n\/langs6\/es.min.js": "\/lib\/tinymce-i18n\/langs6\/es.min.js?v=49b6b8a0",
+        "\/lib\/tinymce-i18n\/langs6\/bg_BG.js": "\/lib\/tinymce-i18n\/langs6\/bg_BG.js?v=a702cf71",
+        "\/lib\/tinymce-i18n\/langs6\/vi.js": "\/lib\/tinymce-i18n\/langs6\/vi.js?v=6c6246a1",
+        "\/lib\/tinymce-i18n\/langs6\/ar_SA.js": "\/lib\/tinymce-i18n\/langs6\/ar_SA.js?v=897333de",
+        "\/lib\/tinymce-i18n\/langs6\/cy.min.js": "\/lib\/tinymce-i18n\/langs6\/cy.min.js?v=ee1b61fa",
+        "\/lib\/tinymce-i18n\/langs6\/ca.min.js": "\/lib\/tinymce-i18n\/langs6\/ca.min.js?v=9cbe0a8f",
+        "\/lib\/tinymce-i18n\/langs6\/hr.js": "\/lib\/tinymce-i18n\/langs6\/hr.js?v=769ffb62",
+        "\/lib\/tinymce-i18n\/langs6\/sk.min.js": "\/lib\/tinymce-i18n\/langs6\/sk.min.js?v=bd355351",
+        "\/lib\/tinymce-i18n\/langs6\/kab.js": "\/lib\/tinymce-i18n\/langs6\/kab.js?v=2b8c443d",
+        "\/lib\/tinymce-i18n\/langs6\/ko_KR.js": "\/lib\/tinymce-i18n\/langs6\/ko_KR.js?v=da2ed007",
+        "\/lib\/tinymce-i18n\/langs6\/pl.min.js": "\/lib\/tinymce-i18n\/langs6\/pl.min.js?v=8d52b99f",
+        "\/lib\/tinymce-i18n\/langs6\/sr.min.js": "\/lib\/tinymce-i18n\/langs6\/sr.min.js?v=884964c4",
+        "\/lib\/tinymce-i18n\/langs6\/ug.min.js": "\/lib\/tinymce-i18n\/langs6\/ug.min.js?v=6fdd28dc",
+        "\/lib\/tinymce-i18n\/langs6\/da.min.js": "\/lib\/tinymce-i18n\/langs6\/da.min.js?v=8ae287af",
+        "\/lib\/tinymce-i18n\/langs6\/az.js": "\/lib\/tinymce-i18n\/langs6\/az.js?v=a6882b60",
+        "\/lib\/tinymce-i18n\/langs6\/kab.min.js": "\/lib\/tinymce-i18n\/langs6\/kab.min.js?v=7e45cb70",
+        "\/lib\/tinymce-i18n\/langs6\/dv.js": "\/lib\/tinymce-i18n\/langs6\/dv.js?v=d2430643",
+        "\/lib\/tinymce-i18n\/langs6\/eu.min.js": "\/lib\/tinymce-i18n\/langs6\/eu.min.js?v=b2f85058",
+        "\/lib\/tinymce-i18n\/langs6\/it.min.js": "\/lib\/tinymce-i18n\/langs6\/it.min.js?v=7914cd7e",
+        "\/lib\/tinymce-i18n\/langs6\/bg_BG.min.js": "\/lib\/tinymce-i18n\/langs6\/bg_BG.min.js?v=a0f5a5a8",
+        "\/lib\/tinymce-i18n\/langs6\/zh-Hans.min.js": "\/lib\/tinymce-i18n\/langs6\/zh-Hans.min.js?v=31b8524d",
+        "\/lib\/tinymce-i18n\/langs6\/nl.min.js": "\/lib\/tinymce-i18n\/langs6\/nl.min.js?v=666115ad",
+        "\/lib\/tinymce-i18n\/langs6\/nl.js": "\/lib\/tinymce-i18n\/langs6\/nl.js?v=058eb0da",
+        "\/lib\/tinymce-i18n\/langs6\/hy.min.js": "\/lib\/tinymce-i18n\/langs6\/hy.min.js?v=3e836975",
+        "\/lib\/tinymce-i18n\/langs6\/sr.js": "\/lib\/tinymce-i18n\/langs6\/sr.js?v=5fe60c6b",
+        "\/lib\/tinymce-i18n\/langs6\/ar_SA.min.js": "\/lib\/tinymce-i18n\/langs6\/ar_SA.min.js?v=2e92ee4b",
+        "\/lib\/tinymce-i18n\/langs6\/kk.min.js": "\/lib\/tinymce-i18n\/langs6\/kk.min.js?v=fa4a3952",
+        "\/lib\/tinymce-i18n\/langs6\/ru.js": "\/lib\/tinymce-i18n\/langs6\/ru.js?v=bedfe7a7",
+        "\/lib\/tinymce-i18n\/langs6\/zh_SG.min.js": "\/lib\/tinymce-i18n\/langs6\/zh_SG.min.js?v=1efc220b",
+        "\/lib\/tinymce-i18n\/langs6\/el.js": "\/lib\/tinymce-i18n\/langs6\/el.js?v=0ed1d0b7",
+        "\/lib\/tinymce-i18n\/langs6\/sl_SI.js": "\/lib\/tinymce-i18n\/langs6\/sl_SI.js?v=0751c4eb",
+        "\/lib\/tinymce-i18n\/langs6\/fa.js": "\/lib\/tinymce-i18n\/langs6\/fa.js?v=d9e4596a",
+        "\/lib\/tinymce-i18n\/langs6\/lv.min.js": "\/lib\/tinymce-i18n\/langs6\/lv.min.js?v=a30023d8",
+        "\/lib\/tinymce-i18n\/langs6\/az.min.js": "\/lib\/tinymce-i18n\/langs6\/az.min.js?v=50e17555",
+        "\/lib\/tinymce-i18n\/langs6\/is_IS.js": "\/lib\/tinymce-i18n\/langs6\/is_IS.js?v=231c88a7",
+        "\/lib\/tinymce-i18n\/langs6\/el.min.js": "\/lib\/tinymce-i18n\/langs6\/el.min.js?v=e2ebe22c",
+        "\/lib\/tinymce-i18n\/langs6\/hy.js": "\/lib\/tinymce-i18n\/langs6\/hy.js?v=994ca3ff",
+        "\/lib\/tinymce-i18n\/langs6\/sq.min.js": "\/lib\/tinymce-i18n\/langs6\/sq.min.js?v=b1105e46",
+        "\/lib\/tinymce-i18n\/langs6\/sk.js": "\/lib\/tinymce-i18n\/langs6\/sk.js?v=62f390b7",
+        "\/lib\/tinymce-i18n\/langs6\/eo.min.js": "\/lib\/tinymce-i18n\/langs6\/eo.min.js?v=00005af4",
+        "\/lib\/tinymce-i18n\/langs6\/uz.js": "\/lib\/tinymce-i18n\/langs6\/uz.js?v=de7221c3",
+        "\/lib\/tinymce-i18n\/langs6\/it.js": "\/lib\/tinymce-i18n\/langs6\/it.js?v=550831e7",
+        "\/lib\/tinymce-i18n\/langs6\/th_TH.js": "\/lib\/tinymce-i18n\/langs6\/th_TH.js?v=43a2f9ad",
+        "\/lib\/tinymce-i18n\/langs6\/ko_KR.min.js": "\/lib\/tinymce-i18n\/langs6\/ko_KR.min.js?v=a50b638b",
+        "\/lib\/tinymce-i18n\/langs6\/be.min.js": "\/lib\/tinymce-i18n\/langs6\/be.min.js?v=60d0ac85",
+        "\/lib\/tinymce-i18n\/langs6\/ja.js": "\/lib\/tinymce-i18n\/langs6\/ja.js?v=fe6b3e9f",
+        "\/lib\/tinymce-i18n\/langs6\/nl_BE.min.js": "\/lib\/tinymce-i18n\/langs6\/nl_BE.min.js?v=23e27b3c",
+        "\/lib\/tinymce-i18n\/langs6\/vi.min.js": "\/lib\/tinymce-i18n\/langs6\/vi.min.js?v=565bcfb1",
+        "\/lib\/tinymce-i18n\/langs6\/is_IS.min.js": "\/lib\/tinymce-i18n\/langs6\/is_IS.min.js?v=e30dbe76",
+        "\/lib\/tinymce-i18n\/langs6\/ja.min.js": "\/lib\/tinymce-i18n\/langs6\/ja.min.js?v=c8654a77",
+        "\/lib\/tinymce-i18n\/langs6\/de.js": "\/lib\/tinymce-i18n\/langs6\/de.js?v=7ae0f452",
+        "\/lib\/tinymce-i18n\/langs6\/he_IL.js": "\/lib\/tinymce-i18n\/langs6\/he_IL.js?v=7d646840",
+        "\/lib\/tinymce-i18n\/langs6\/lt.js": "\/lib\/tinymce-i18n\/langs6\/lt.js?v=c2423002",
+        "\/lib\/tinymce-i18n\/langs6\/ru.min.js": "\/lib\/tinymce-i18n\/langs6\/ru.min.js?v=130d04a3",
+        "\/lib\/tinymce-i18n\/langs6\/gl.min.js": "\/lib\/tinymce-i18n\/langs6\/gl.min.js?v=00c54ffd",
+        "\/lib\/tinymce-i18n\/langs6\/fi.min.js": "\/lib\/tinymce-i18n\/langs6\/fi.min.js?v=7f9d03dd",
+        "\/lib\/tinymce-i18n\/langs6\/ta.min.js": "\/lib\/tinymce-i18n\/langs6\/ta.min.js?v=d1289526",
+        "\/lib\/tinymce-i18n\/langs6\/id.min.js": "\/lib\/tinymce-i18n\/langs6\/id.min.js?v=1fd8713d",
+        "\/lib\/tinymce-i18n\/langs6\/tg.js": "\/lib\/tinymce-i18n\/langs6\/tg.js?v=50a46517",
+        "\/lib\/tinymce-i18n\/langs6\/ca.js": "\/lib\/tinymce-i18n\/langs6\/ca.js?v=4875a0dd",
+        "\/lib\/tinymce-i18n\/langs6\/sq.js": "\/lib\/tinymce-i18n\/langs6\/sq.js?v=8f43ec2c",
+        "\/lib\/tinymce-i18n\/langs6\/pt_BR.min.js": "\/lib\/tinymce-i18n\/langs6\/pt_BR.min.js?v=d4515c0c",
+        "\/lib\/tinymce-i18n\/langs6\/es_MX.js": "\/lib\/tinymce-i18n\/langs6\/es_MX.js?v=e220ff21",
+        "\/lib\/tinymce-i18n\/langs6\/hi.js": "\/lib\/tinymce-i18n\/langs6\/hi.js?v=f29d0010",
+        "\/lib\/tinymce-i18n\/langs6\/uk.js": "\/lib\/tinymce-i18n\/langs6\/uk.js?v=42eeb9d1",
+        "\/lib\/tinymce-i18n\/langs6\/hr.min.js": "\/lib\/tinymce-i18n\/langs6\/hr.min.js?v=2e08bc24",
+        "\/lib\/tinymce-i18n\/langs6\/ku.min.js": "\/lib\/tinymce-i18n\/langs6\/ku.min.js?v=f8f3979d",
+        "\/lib\/tinymce-i18n\/langs6\/zh_HK.min.js": "\/lib\/tinymce-i18n\/langs6\/zh_HK.min.js?v=e28a12bb",
+        "\/lib\/cropper.min.js": "\/lib\/cropper.min.js?v=de065ea6",
+        "\/lib\/swagger-ui.js": "\/lib\/swagger-ui.js?v=3bdeb022",
+        "\/lib\/monaco.js": "\/lib\/monaco.js?v=3ee02eda",
+        "\/lib\/photoswipe.js": "\/lib\/photoswipe.js?v=4ea8f1bf",
+        "\/lib\/echarts.min.js": "\/lib\/echarts.min.js?v=70030a50",
+        "\/lib\/fullcalendar.min.js": "\/lib\/fullcalendar.min.js?v=03950275",
+        "\/lib\/25.min.js": "\/lib\/25.min.js?v=97e7e335",
+        "\/lib\/22.js": "\/lib\/22.js?v=db9046ae",
+        "\/lib\/flatpickr\/l10n\/et.js": "\/lib\/flatpickr\/l10n\/et.js?v=acc8bcf7",
+        "\/lib\/flatpickr\/l10n\/tr.js": "\/lib\/flatpickr\/l10n\/tr.js?v=8298d830",
+        "\/lib\/flatpickr\/l10n\/is.js": "\/lib\/flatpickr\/l10n\/is.js?v=15f84a71",
+        "\/lib\/flatpickr\/l10n\/si.min.js": "\/lib\/flatpickr\/l10n\/si.min.js?v=767b8dee",
+        "\/lib\/flatpickr\/l10n\/de.min.js": "\/lib\/flatpickr\/l10n\/de.min.js?v=939cb810",
+        "\/lib\/flatpickr\/l10n\/hi.min.js": "\/lib\/flatpickr\/l10n\/hi.min.js?v=b47de99b",
+        "\/lib\/flatpickr\/l10n\/ga.min.js": "\/lib\/flatpickr\/l10n\/ga.min.js?v=08217a2f",
+        "\/lib\/flatpickr\/l10n\/bn.js": "\/lib\/flatpickr\/l10n\/bn.js?v=94cbc02a",
+        "\/lib\/flatpickr\/l10n\/uz.min.js": "\/lib\/flatpickr\/l10n\/uz.min.js?v=fb45e8c7",
+        "\/lib\/flatpickr\/l10n\/ar.min.js": "\/lib\/flatpickr\/l10n\/ar.min.js?v=f7352480",
+        "\/lib\/flatpickr\/l10n\/fr.js": "\/lib\/flatpickr\/l10n\/fr.js?v=ad4f8d71",
+        "\/lib\/flatpickr\/l10n\/ckb.min.js": "\/lib\/flatpickr\/l10n\/ckb.min.js?v=1611a0a0",
+        "\/lib\/flatpickr\/l10n\/fa.min.js": "\/lib\/flatpickr\/l10n\/fa.min.js?v=272e495b",
+        "\/lib\/flatpickr\/l10n\/is.min.js": "\/lib\/flatpickr\/l10n\/is.min.js?v=8ccf98d8",
+        "\/lib\/flatpickr\/l10n\/ko.js": "\/lib\/flatpickr\/l10n\/ko.js?v=fe16ffc3",
+        "\/lib\/flatpickr\/l10n\/eo.js": "\/lib\/flatpickr\/l10n\/eo.js?v=35f592e0",
+        "\/lib\/flatpickr\/l10n\/gr.js": "\/lib\/flatpickr\/l10n\/gr.js?v=d1e1fc47",
+        "\/lib\/flatpickr\/l10n\/nn.js": "\/lib\/flatpickr\/l10n\/nn.js?v=418124a4",
+        "\/lib\/flatpickr\/l10n\/ro.min.js": "\/lib\/flatpickr\/l10n\/ro.min.js?v=29e28585",
+        "\/lib\/flatpickr\/l10n\/es.js": "\/lib\/flatpickr\/l10n\/es.js?v=5995b6ae",
+        "\/lib\/flatpickr\/l10n\/mn.js": "\/lib\/flatpickr\/l10n\/mn.js?v=bc66783d",
+        "\/lib\/flatpickr\/l10n\/sr-cyr.js": "\/lib\/flatpickr\/l10n\/sr-cyr.js?v=76fcff4d",
+        "\/lib\/flatpickr\/l10n\/zh-tw.js": "\/lib\/flatpickr\/l10n\/zh-tw.js?v=5e9b6d0e",
+        "\/lib\/flatpickr\/l10n\/pa.js": "\/lib\/flatpickr\/l10n\/pa.js?v=05f0ee26",
+        "\/lib\/flatpickr\/l10n\/cs.js": "\/lib\/flatpickr\/l10n\/cs.js?v=872e218c",
+        "\/lib\/flatpickr\/l10n\/lv.js": "\/lib\/flatpickr\/l10n\/lv.js?v=ffd996b9",
+        "\/lib\/flatpickr\/l10n\/be.js": "\/lib\/flatpickr\/l10n\/be.js?v=df68a0ef",
+        "\/lib\/flatpickr\/l10n\/ar.js": "\/lib\/flatpickr\/l10n\/ar.js?v=9c055503",
+        "\/lib\/flatpickr\/l10n\/nn.min.js": "\/lib\/flatpickr\/l10n\/nn.min.js?v=f0a24d32",
+        "\/lib\/flatpickr\/l10n\/pl.js": "\/lib\/flatpickr\/l10n\/pl.js?v=1684963b",
+        "\/lib\/flatpickr\/l10n\/da.js": "\/lib\/flatpickr\/l10n\/da.js?v=5960e019",
+        "\/lib\/flatpickr\/l10n\/pt.min.js": "\/lib\/flatpickr\/l10n\/pt.min.js?v=c8d79048",
+        "\/lib\/flatpickr\/l10n\/ro.js": "\/lib\/flatpickr\/l10n\/ro.js?v=03d76b3c",
+        "\/lib\/flatpickr\/l10n\/lt.min.js": "\/lib\/flatpickr\/l10n\/lt.min.js?v=d6677103",
+        "\/lib\/flatpickr\/l10n\/tr.min.js": "\/lib\/flatpickr\/l10n\/tr.min.js?v=4c4402bb",
+        "\/lib\/flatpickr\/l10n\/pt.js": "\/lib\/flatpickr\/l10n\/pt.js?v=2aee7fa6",
+        "\/lib\/flatpickr\/l10n\/sl.min.js": "\/lib\/flatpickr\/l10n\/sl.min.js?v=49a1c134",
+        "\/lib\/flatpickr\/l10n\/bs.min.js": "\/lib\/flatpickr\/l10n\/bs.min.js?v=50ffa60b",
+        "\/lib\/flatpickr\/l10n\/si.js": "\/lib\/flatpickr\/l10n\/si.js?v=a42b825a",
+        "\/lib\/flatpickr\/l10n\/et.min.js": "\/lib\/flatpickr\/l10n\/et.min.js?v=792ae7e4",
+        "\/lib\/flatpickr\/l10n\/gr.min.js": "\/lib\/flatpickr\/l10n\/gr.min.js?v=e595bbef",
+        "\/lib\/flatpickr\/l10n\/sv.js": "\/lib\/flatpickr\/l10n\/sv.js?v=813795a6",
+        "\/lib\/flatpickr\/l10n\/pa.min.js": "\/lib\/flatpickr\/l10n\/pa.min.js?v=4dd6ca18",
+        "\/lib\/flatpickr\/l10n\/id.js": "\/lib\/flatpickr\/l10n\/id.js?v=520b632e",
+        "\/lib\/flatpickr\/l10n\/my.min.js": "\/lib\/flatpickr\/l10n\/my.min.js?v=1110c144",
+        "\/lib\/flatpickr\/l10n\/vn.js": "\/lib\/flatpickr\/l10n\/vn.js?v=4aec524d",
+        "\/lib\/flatpickr\/l10n\/fi.js": "\/lib\/flatpickr\/l10n\/fi.js?v=8487e910",
+        "\/lib\/flatpickr\/l10n\/he.min.js": "\/lib\/flatpickr\/l10n\/he.min.js?v=bcb06ca7",
+        "\/lib\/flatpickr\/l10n\/sv.min.js": "\/lib\/flatpickr\/l10n\/sv.min.js?v=31ae731a",
+        "\/lib\/flatpickr\/l10n\/uk.min.js": "\/lib\/flatpickr\/l10n\/uk.min.js?v=f6ff1670",
+        "\/lib\/flatpickr\/l10n\/cy.js": "\/lib\/flatpickr\/l10n\/cy.js?v=a41b02bb",
+        "\/lib\/flatpickr\/l10n\/bn.min.js": "\/lib\/flatpickr\/l10n\/bn.min.js?v=fcc5cdd3",
+        "\/lib\/flatpickr\/l10n\/sr-cyr.min.js": "\/lib\/flatpickr\/l10n\/sr-cyr.min.js?v=6241713d",
+        "\/lib\/flatpickr\/l10n\/ar-dz.min.js": "\/lib\/flatpickr\/l10n\/ar-dz.min.js?v=b2103764",
+        "\/lib\/flatpickr\/l10n\/cs.min.js": "\/lib\/flatpickr\/l10n\/cs.min.js?v=afc55c67",
+        "\/lib\/flatpickr\/l10n\/ga.js": "\/lib\/flatpickr\/l10n\/ga.js?v=93eed5a5",
+        "\/lib\/flatpickr\/l10n\/es.min.js": "\/lib\/flatpickr\/l10n\/es.min.js?v=7debb11d",
+        "\/lib\/flatpickr\/l10n\/at.js": "\/lib\/flatpickr\/l10n\/at.js?v=f9373a04",
+        "\/lib\/flatpickr\/l10n\/cy.min.js": "\/lib\/flatpickr\/l10n\/cy.min.js?v=9213b843",
+        "\/lib\/flatpickr\/l10n\/ca.min.js": "\/lib\/flatpickr\/l10n\/ca.min.js?v=cc8d4145",
+        "\/lib\/flatpickr\/l10n\/zh.min.js": "\/lib\/flatpickr\/l10n\/zh.min.js?v=a0f8f11e",
+        "\/lib\/flatpickr\/l10n\/hr.js": "\/lib\/flatpickr\/l10n\/hr.js?v=10256a01",
+        "\/lib\/flatpickr\/l10n\/sk.min.js": "\/lib\/flatpickr\/l10n\/sk.min.js?v=b106b94c",
+        "\/lib\/flatpickr\/l10n\/fo.js": "\/lib\/flatpickr\/l10n\/fo.js?v=01d637e4",
+        "\/lib\/flatpickr\/l10n\/pl.min.js": "\/lib\/flatpickr\/l10n\/pl.min.js?v=8d2373d9",
+        "\/lib\/flatpickr\/l10n\/ms.js": "\/lib\/flatpickr\/l10n\/ms.js?v=0ac456df",
+        "\/lib\/flatpickr\/l10n\/sr.min.js": "\/lib\/flatpickr\/l10n\/sr.min.js?v=50151286",
+        "\/lib\/flatpickr\/l10n\/hu.min.js": "\/lib\/flatpickr\/l10n\/hu.min.js?v=8d249592",
+        "\/lib\/flatpickr\/l10n\/da.min.js": "\/lib\/flatpickr\/l10n\/da.min.js?v=5e99000f",
+        "\/lib\/flatpickr\/l10n\/az.js": "\/lib\/flatpickr\/l10n\/az.js?v=dbc1f760",
+        "\/lib\/flatpickr\/l10n\/uz_latn.min.js": "\/lib\/flatpickr\/l10n\/uz_latn.min.js?v=b3f442d1",
+        "\/lib\/flatpickr\/l10n\/cat.js": "\/lib\/flatpickr\/l10n\/cat.js?v=5729660d",
+        "\/lib\/flatpickr\/l10n\/index.js": "\/lib\/flatpickr\/l10n\/index.js?v=711a4489",
+        "\/lib\/flatpickr\/l10n\/he.js": "\/lib\/flatpickr\/l10n\/he.js?v=8345a0c5",
+        "\/lib\/flatpickr\/l10n\/no.min.js": "\/lib\/flatpickr\/l10n\/no.min.js?v=d3813bf2",
+        "\/lib\/flatpickr\/l10n\/th.min.js": "\/lib\/flatpickr\/l10n\/th.min.js?v=04df5c7f",
+        "\/lib\/flatpickr\/l10n\/sl.js": "\/lib\/flatpickr\/l10n\/sl.js?v=d0d8d1e1",
+        "\/lib\/flatpickr\/l10n\/it.min.js": "\/lib\/flatpickr\/l10n\/it.min.js?v=0a84d566",
+        "\/lib\/flatpickr\/l10n\/zh-tw.min.js": "\/lib\/flatpickr\/l10n\/zh-tw.min.js?v=308c150e",
+        "\/lib\/flatpickr\/l10n\/nl.min.js": "\/lib\/flatpickr\/l10n\/nl.min.js?v=db2e79c1",
+        "\/lib\/flatpickr\/l10n\/index.min.js": "\/lib\/flatpickr\/l10n\/index.min.js?v=b6744599",
+        "\/lib\/flatpickr\/l10n\/nl.js": "\/lib\/flatpickr\/l10n\/nl.js?v=cfe678c2",
+        "\/lib\/flatpickr\/l10n\/ko.min.js": "\/lib\/flatpickr\/l10n\/ko.min.js?v=3801e988",
+        "\/lib\/flatpickr\/l10n\/hy.min.js": "\/lib\/flatpickr\/l10n\/hy.min.js?v=85b8cc48",
+        "\/lib\/flatpickr\/l10n\/uz_latn.js": "\/lib\/flatpickr\/l10n\/uz_latn.js?v=60427659",
+        "\/lib\/flatpickr\/l10n\/mk.js": "\/lib\/flatpickr\/l10n\/mk.js?v=4a163994",
+        "\/lib\/flatpickr\/l10n\/sr.js": "\/lib\/flatpickr\/l10n\/sr.js?v=c82383ae",
+        "\/lib\/flatpickr\/l10n\/ka.min.js": "\/lib\/flatpickr\/l10n\/ka.min.js?v=ff06247e",
+        "\/lib\/flatpickr\/l10n\/hu.js": "\/lib\/flatpickr\/l10n\/hu.js?v=50415fe9",
+        "\/lib\/flatpickr\/l10n\/ru.js": "\/lib\/flatpickr\/l10n\/ru.js?v=9168c2ee",
+        "\/lib\/flatpickr\/l10n\/ckb.js": "\/lib\/flatpickr\/l10n\/ckb.js?v=0e7cfdf5",
+        "\/lib\/flatpickr\/l10n\/km.min.js": "\/lib\/flatpickr\/l10n\/km.min.js?v=94083e2b",
+        "\/lib\/flatpickr\/l10n\/default.min.js": "\/lib\/flatpickr\/l10n\/default.min.js?v=301f3ba6",
+        "\/lib\/flatpickr\/l10n\/ar-dz.js": "\/lib\/flatpickr\/l10n\/ar-dz.js?v=f7cff73d",
+        "\/lib\/flatpickr\/l10n\/fa.js": "\/lib\/flatpickr\/l10n\/fa.js?v=0435118f",
+        "\/lib\/flatpickr\/l10n\/lv.min.js": "\/lib\/flatpickr\/l10n\/lv.min.js?v=8e3ca534",
+        "\/lib\/flatpickr\/l10n\/th.js": "\/lib\/flatpickr\/l10n\/th.js?v=1e6d973d",
+        "\/lib\/flatpickr\/l10n\/at.min.js": "\/lib\/flatpickr\/l10n\/at.min.js?v=01b58032",
+        "\/lib\/flatpickr\/l10n\/az.min.js": "\/lib\/flatpickr\/l10n\/az.min.js?v=2dc03292",
+        "\/lib\/flatpickr\/l10n\/fr.min.js": "\/lib\/flatpickr\/l10n\/fr.min.js?v=8949424f",
+        "\/lib\/flatpickr\/l10n\/hy.js": "\/lib\/flatpickr\/l10n\/hy.js?v=1e8088f9",
+        "\/lib\/flatpickr\/l10n\/sq.min.js": "\/lib\/flatpickr\/l10n\/sq.min.js?v=6bb4695c",
+        "\/lib\/flatpickr\/l10n\/sk.js": "\/lib\/flatpickr\/l10n\/sk.js?v=9dd96012",
+        "\/lib\/flatpickr\/l10n\/eo.min.js": "\/lib\/flatpickr\/l10n\/eo.min.js?v=837c6f80",
+        "\/lib\/flatpickr\/l10n\/km.js": "\/lib\/flatpickr\/l10n\/km.js?v=9206b25b",
+        "\/lib\/flatpickr\/l10n\/uz.js": "\/lib\/flatpickr\/l10n\/uz.js?v=88edf3da",
+        "\/lib\/flatpickr\/l10n\/zh.js": "\/lib\/flatpickr\/l10n\/zh.js?v=62468357",
+        "\/lib\/flatpickr\/l10n\/it.js": "\/lib\/flatpickr\/l10n\/it.js?v=f4d85b3e",
+        "\/lib\/flatpickr\/l10n\/kz.js": "\/lib\/flatpickr\/l10n\/kz.js?v=bd189666",
+        "\/lib\/flatpickr\/l10n\/be.min.js": "\/lib\/flatpickr\/l10n\/be.min.js?v=ff8b7c66",
+        "\/lib\/flatpickr\/l10n\/my.js": "\/lib\/flatpickr\/l10n\/my.js?v=02b20e5e",
+        "\/lib\/flatpickr\/l10n\/ka.js": "\/lib\/flatpickr\/l10n\/ka.js?v=9e2595e7",
+        "\/lib\/flatpickr\/l10n\/ja.js": "\/lib\/flatpickr\/l10n\/ja.js?v=67a929b4",
+        "\/lib\/flatpickr\/l10n\/ja.min.js": "\/lib\/flatpickr\/l10n\/ja.min.js?v=81c7b4a1",
+        "\/lib\/flatpickr\/l10n\/ms.min.js": "\/lib\/flatpickr\/l10n\/ms.min.js?v=d00a5594",
+        "\/lib\/flatpickr\/l10n\/de.js": "\/lib\/flatpickr\/l10n\/de.js?v=5e725e19",
+        "\/lib\/flatpickr\/l10n\/lt.js": "\/lib\/flatpickr\/l10n\/lt.js?v=51b67210",
+        "\/lib\/flatpickr\/l10n\/ru.min.js": "\/lib\/flatpickr\/l10n\/ru.min.js?v=f10b949e",
+        "\/lib\/flatpickr\/l10n\/default.js": "\/lib\/flatpickr\/l10n\/default.js?v=46d2d26c",
+        "\/lib\/flatpickr\/l10n\/bg.js": "\/lib\/flatpickr\/l10n\/bg.js?v=b2e0dbee",
+        "\/lib\/flatpickr\/l10n\/bg.min.js": "\/lib\/flatpickr\/l10n\/bg.min.js?v=f3da229f",
+        "\/lib\/flatpickr\/l10n\/fi.min.js": "\/lib\/flatpickr\/l10n\/fi.min.js?v=c387191e",
+        "\/lib\/flatpickr\/l10n\/id.min.js": "\/lib\/flatpickr\/l10n\/id.min.js?v=325a64c4",
+        "\/lib\/flatpickr\/l10n\/ca.js": "\/lib\/flatpickr\/l10n\/ca.js?v=5729660d",
+        "\/lib\/flatpickr\/l10n\/sq.js": "\/lib\/flatpickr\/l10n\/sq.js?v=78ce1bd2",
+        "\/lib\/flatpickr\/l10n\/bs.js": "\/lib\/flatpickr\/l10n\/bs.js?v=610007bb",
+        "\/lib\/flatpickr\/l10n\/no.js": "\/lib\/flatpickr\/l10n\/no.js?v=58683af6",
+        "\/lib\/flatpickr\/l10n\/hi.js": "\/lib\/flatpickr\/l10n\/hi.js?v=6bd76dd4",
+        "\/lib\/flatpickr\/l10n\/kz.min.js": "\/lib\/flatpickr\/l10n\/kz.min.js?v=73739818",
+        "\/lib\/flatpickr\/l10n\/mn.min.js": "\/lib\/flatpickr\/l10n\/mn.min.js?v=f2436d0f",
+        "\/lib\/flatpickr\/l10n\/fo.min.js": "\/lib\/flatpickr\/l10n\/fo.min.js?v=e21f1ae9",
+        "\/lib\/flatpickr\/l10n\/vn.min.js": "\/lib\/flatpickr\/l10n\/vn.min.js?v=28848919",
+        "\/lib\/flatpickr\/l10n\/uk.js": "\/lib\/flatpickr\/l10n\/uk.js?v=610010b8",
+        "\/lib\/flatpickr\/l10n\/hr.min.js": "\/lib\/flatpickr\/l10n\/hr.min.js?v=8763bc0b",
+        "\/lib\/flatpickr\/l10n\/mk.min.js": "\/lib\/flatpickr\/l10n\/mk.min.js?v=18c8fda4",
+        "\/lib\/flatpickr\/l10n\/cat.min.js": "\/lib\/flatpickr\/l10n\/cat.min.js?v=cc8d4145",
+        "\/lib\/altcha.js": "\/lib\/altcha.js?v=76301e68",
+        "\/lib\/editor.worker.min.js": "\/lib\/editor.worker.min.js?v=202931f2",
+        "\/lib\/jquery-prettytextdiff.min.js": "\/lib\/jquery-prettytextdiff.min.js?v=0c4045d7",
+        "\/lib\/sortable.min.js": "\/lib\/sortable.min.js?v=36dc0ddb",
+        "\/lib\/jquery-prettytextdiff.js": "\/lib\/jquery-prettytextdiff.js?v=929f7099",
+        "\/lib\/tinycolor.js": "\/lib\/tinycolor.js?v=d660d947",
+        "\/lib\/flatpickr.js": "\/lib\/flatpickr.js?v=08937c56",
+        "\/lib\/jquery.rateit.min.js": "\/lib\/jquery.rateit.min.js?v=63983992",
+        "\/lib\/tinymce\/skins\/content\/tinymce-5\/content.js": "\/lib\/tinymce\/skins\/content\/tinymce-5\/content.js?v=e64ed7d9",
+        "\/lib\/tinymce\/skins\/content\/tinymce-5\/content.min.js": "\/lib\/tinymce\/skins\/content\/tinymce-5\/content.min.js?v=1f91ef28",
+        "\/lib\/tinymce\/skins\/content\/default\/content.js": "\/lib\/tinymce\/skins\/content\/default\/content.js?v=e554996c",
+        "\/lib\/tinymce\/skins\/content\/default\/content.min.js": "\/lib\/tinymce\/skins\/content\/default\/content.min.js?v=a57d6f62",
+        "\/lib\/tinymce\/skins\/content\/dark\/content.js": "\/lib\/tinymce\/skins\/content\/dark\/content.js?v=862a422d",
+        "\/lib\/tinymce\/skins\/content\/dark\/content.min.js": "\/lib\/tinymce\/skins\/content\/dark\/content.min.js?v=9859636f",
+        "\/lib\/tinymce\/skins\/content\/tinymce-5-dark\/content.js": "\/lib\/tinymce\/skins\/content\/tinymce-5-dark\/content.js?v=e9f454b0",
+        "\/lib\/tinymce\/skins\/content\/tinymce-5-dark\/content.min.js": "\/lib\/tinymce\/skins\/content\/tinymce-5-dark\/content.min.js?v=2dc1a8e9",
+        "\/lib\/tinymce\/skins\/content\/writer\/content.js": "\/lib\/tinymce\/skins\/content\/writer\/content.js?v=3e5c8837",
+        "\/lib\/tinymce\/skins\/content\/writer\/content.min.js": "\/lib\/tinymce\/skins\/content\/writer\/content.min.js?v=bbed40e1",
+        "\/lib\/tinymce\/skins\/content\/document\/content.js": "\/lib\/tinymce\/skins\/content\/document\/content.js?v=409e24fd",
+        "\/lib\/tinymce\/skins\/content\/document\/content.min.js": "\/lib\/tinymce\/skins\/content\/document\/content.min.js?v=12ebe25f",
+        "\/lib\/tinymce\/skins\/ui\/tinymce-5\/content.js": "\/lib\/tinymce\/skins\/ui\/tinymce-5\/content.js?v=e776d71f",
+        "\/lib\/tinymce\/skins\/ui\/tinymce-5\/skin.js": "\/lib\/tinymce\/skins\/ui\/tinymce-5\/skin.js?v=48a4ba34",
+        "\/lib\/tinymce\/skins\/ui\/tinymce-5\/content.min.js": "\/lib\/tinymce\/skins\/ui\/tinymce-5\/content.min.js?v=56e080d6",
+        "\/lib\/tinymce\/skins\/ui\/tinymce-5\/skin.shadowdom.min.js": "\/lib\/tinymce\/skins\/ui\/tinymce-5\/skin.shadowdom.min.js?v=245aab25",
+        "\/lib\/tinymce\/skins\/ui\/tinymce-5\/content.inline.js": "\/lib\/tinymce\/skins\/ui\/tinymce-5\/content.inline.js?v=ce2a5581",
+        "\/lib\/tinymce\/skins\/ui\/tinymce-5\/skin.min.js": "\/lib\/tinymce\/skins\/ui\/tinymce-5\/skin.min.js?v=dd6ba5ca",
+        "\/lib\/tinymce\/skins\/ui\/tinymce-5\/content.inline.min.js": "\/lib\/tinymce\/skins\/ui\/tinymce-5\/content.inline.min.js?v=c485af7a",
+        "\/lib\/tinymce\/skins\/ui\/tinymce-5\/skin.shadowdom.js": "\/lib\/tinymce\/skins\/ui\/tinymce-5\/skin.shadowdom.js?v=853601c0",
+        "\/lib\/tinymce\/skins\/ui\/oxide\/content.js": "\/lib\/tinymce\/skins\/ui\/oxide\/content.js?v=f36e753c",
+        "\/lib\/tinymce\/skins\/ui\/oxide\/skin.js": "\/lib\/tinymce\/skins\/ui\/oxide\/skin.js?v=04bed58e",
+        "\/lib\/tinymce\/skins\/ui\/oxide\/content.min.js": "\/lib\/tinymce\/skins\/ui\/oxide\/content.min.js?v=b6ff93f5",
+        "\/lib\/tinymce\/skins\/ui\/oxide\/skin.shadowdom.min.js": "\/lib\/tinymce\/skins\/ui\/oxide\/skin.shadowdom.min.js?v=3dba5ac9",
+        "\/lib\/tinymce\/skins\/ui\/oxide\/content.inline.js": "\/lib\/tinymce\/skins\/ui\/oxide\/content.inline.js?v=46eba10a",
+        "\/lib\/tinymce\/skins\/ui\/oxide\/skin.min.js": "\/lib\/tinymce\/skins\/ui\/oxide\/skin.min.js?v=3206283e",
+        "\/lib\/tinymce\/skins\/ui\/oxide\/content.inline.min.js": "\/lib\/tinymce\/skins\/ui\/oxide\/content.inline.min.js?v=eda7b122",
+        "\/lib\/tinymce\/skins\/ui\/oxide\/skin.shadowdom.js": "\/lib\/tinymce\/skins\/ui\/oxide\/skin.shadowdom.js?v=5400fa37",
+        "\/lib\/tinymce\/skins\/ui\/oxide-dark\/content.js": "\/lib\/tinymce\/skins\/ui\/oxide-dark\/content.js?v=79a38243",
+        "\/lib\/tinymce\/skins\/ui\/oxide-dark\/skin.js": "\/lib\/tinymce\/skins\/ui\/oxide-dark\/skin.js?v=4af4921f",
+        "\/lib\/tinymce\/skins\/ui\/oxide-dark\/content.min.js": "\/lib\/tinymce\/skins\/ui\/oxide-dark\/content.min.js?v=5cf85678",
+        "\/lib\/tinymce\/skins\/ui\/oxide-dark\/skin.shadowdom.min.js": "\/lib\/tinymce\/skins\/ui\/oxide-dark\/skin.shadowdom.min.js?v=9e12c8a2",
+        "\/lib\/tinymce\/skins\/ui\/oxide-dark\/content.inline.js": "\/lib\/tinymce\/skins\/ui\/oxide-dark\/content.inline.js?v=e926efcf",
+        "\/lib\/tinymce\/skins\/ui\/oxide-dark\/skin.min.js": "\/lib\/tinymce\/skins\/ui\/oxide-dark\/skin.min.js?v=46b35740",
+        "\/lib\/tinymce\/skins\/ui\/oxide-dark\/content.inline.min.js": "\/lib\/tinymce\/skins\/ui\/oxide-dark\/content.inline.min.js?v=1ab683c1",
+        "\/lib\/tinymce\/skins\/ui\/oxide-dark\/skin.shadowdom.js": "\/lib\/tinymce\/skins\/ui\/oxide-dark\/skin.shadowdom.js?v=9dd3e79e",
+        "\/lib\/tinymce\/skins\/ui\/tinymce-5-dark\/content.js": "\/lib\/tinymce\/skins\/ui\/tinymce-5-dark\/content.js?v=870199fd",
+        "\/lib\/tinymce\/skins\/ui\/tinymce-5-dark\/skin.js": "\/lib\/tinymce\/skins\/ui\/tinymce-5-dark\/skin.js?v=b76e75fc",
+        "\/lib\/tinymce\/skins\/ui\/tinymce-5-dark\/content.min.js": "\/lib\/tinymce\/skins\/ui\/tinymce-5-dark\/content.min.js?v=6bc41563",
+        "\/lib\/tinymce\/skins\/ui\/tinymce-5-dark\/skin.shadowdom.min.js": "\/lib\/tinymce\/skins\/ui\/tinymce-5-dark\/skin.shadowdom.min.js?v=ff1c4830",
+        "\/lib\/tinymce\/skins\/ui\/tinymce-5-dark\/content.inline.js": "\/lib\/tinymce\/skins\/ui\/tinymce-5-dark\/content.inline.js?v=3961dfce",
+        "\/lib\/tinymce\/skins\/ui\/tinymce-5-dark\/skin.min.js": "\/lib\/tinymce\/skins\/ui\/tinymce-5-dark\/skin.min.js?v=12847fc1",
+        "\/lib\/tinymce\/skins\/ui\/tinymce-5-dark\/content.inline.min.js": "\/lib\/tinymce\/skins\/ui\/tinymce-5-dark\/content.inline.min.js?v=e3d15250",
+        "\/lib\/tinymce\/skins\/ui\/tinymce-5-dark\/skin.shadowdom.js": "\/lib\/tinymce\/skins\/ui\/tinymce-5-dark\/skin.shadowdom.js?v=c3197e9f",
+        "\/lib\/echarts.js": "\/lib\/echarts.js?v=2667526c",
+        "\/lib\/css.worker.min.js": "\/lib\/css.worker.min.js?v=d5e6416c",
+        "\/lib\/json.worker.js": "\/lib\/json.worker.js?v=1f32ebb3",
+        "\/lib\/tinycolor.min.js": "\/lib\/tinycolor.min.js?v=d33d4d4d",
+        "\/lib\/flatpickr.min.js": "\/lib\/flatpickr.min.js?v=48b0f2b2",
+        "\/lib\/23.min.js": "\/lib\/23.min.js?v=04a3b6b8",
+        "\/lib\/editor.worker.js": "\/lib\/editor.worker.js?v=e2e9e1fd",
+        "\/lib\/24.js": "\/lib\/24.js?v=8c9a2623",
+        "\/lib\/fuzzy.js": "\/lib\/fuzzy.js?v=b71c1cc7",
+        "\/build\/vue\/vue-sfc\/Debug-Widget-RequestSummary-vue-5cd81e588dd2db77da91.min.js": "\/build\/vue\/vue-sfc\/Debug-Widget-RequestSummary-vue-5cd81e588dd2db77da91.min.js?v=b606a360",
+        "\/build\/vue\/vue-sfc\/Kanban-AddItemForm-vue-15a3dff341be7c8a1e7f.js": "\/build\/vue\/vue-sfc\/Kanban-AddItemForm-vue-15a3dff341be7c8a1e7f.js?v=d4adec0e",
+        "\/build\/vue\/vue-sfc\/Kanban-Column-vue-1b3a2645e4e4320b1755.js": "\/build\/vue\/vue-sfc\/Kanban-Column-vue-1b3a2645e4e4320b1755.js?v=59da5588",
+        "\/build\/vue\/vue-sfc\/Kanban-Card-vue-46c41bb9c4420e7a3491.js": "\/build\/vue\/vue-sfc\/Kanban-Card-vue-46c41bb9c4420e7a3491.js?v=59ff4995",
+        "\/build\/vue\/vue-sfc\/CustomObject-FieldPreview-Sidebar-vue-4966d0cce2255ee87773.js": "\/build\/vue\/vue-sfc\/CustomObject-FieldPreview-Sidebar-vue-4966d0cce2255ee87773.js?v=71c92634",
+        "\/build\/vue\/vue-sfc\/FuzzySearch-Modal-vue-3ed0ef93b7b5ab7dcb9d.js": "\/build\/vue\/vue-sfc\/FuzzySearch-Modal-vue-3ed0ef93b7b5ab7dcb9d.js?v=67ac75df",
+        "\/build\/vue\/vue-sfc\/Debug-Widget-RequestTimeline-vue-9b0af6ecbf9a18dbd824.min.js": "\/build\/vue\/vue-sfc\/Debug-Widget-RequestTimeline-vue-9b0af6ecbf9a18dbd824.min.js?v=c4310796",
+        "\/build\/vue\/vue-sfc\/Debug-WidgetButton-vue-664b9fd1951115d0bbd1.js": "\/build\/vue\/vue-sfc\/Debug-WidgetButton-vue-664b9fd1951115d0bbd1.js?v=17ffa72a",
+        "\/build\/vue\/vue-sfc\/CustomObject-FieldPreview-FieldDisplay-vue-b153bae6a0c0bbb4bc92.min.js": "\/build\/vue\/vue-sfc\/CustomObject-FieldPreview-FieldDisplay-vue-b153bae6a0c0bbb4bc92.min.js?v=9268bbb1",
+        "\/build\/vue\/vue-sfc\/CustomObject-FieldPreview-Sidebar-vue-4966d0cce2255ee87773.min.js": "\/build\/vue\/vue-sfc\/CustomObject-FieldPreview-Sidebar-vue-4966d0cce2255ee87773.min.js?v=cde7be7e",
+        "\/build\/vue\/vue-sfc\/CustomObject-FieldPreview-FieldDisplay-vue-b153bae6a0c0bbb4bc92.js": "\/build\/vue\/vue-sfc\/CustomObject-FieldPreview-FieldDisplay-vue-b153bae6a0c0bbb4bc92.js?v=77c4e3cd",
+        "\/build\/vue\/vue-sfc\/Debug-Widget-ThemeSwitcher-vue-267d5221d6ea687aff47.js": "\/build\/vue\/vue-sfc\/Debug-Widget-ThemeSwitcher-vue-267d5221d6ea687aff47.js?v=0585a784",
+        "\/build\/vue\/vue-sfc\/Debug-Widget-Globals-vue-75befcb97f7051c1c453.min.js": "\/build\/vue\/vue-sfc\/Debug-Widget-Globals-vue-75befcb97f7051c1c453.min.js?v=92871531",
+        "\/build\/vue\/vue-sfc\/CustomObject-FieldPreview-Field-vue-9b9c4c9a4cad1772989b.min.js": "\/build\/vue\/vue-sfc\/CustomObject-FieldPreview-Field-vue-9b9c4c9a4cad1772989b.min.js?v=16a73f83",
+        "\/build\/vue\/vue-sfc\/Kanban-Kanban-vue-591e6f73c460914ce80c.min.js": "\/build\/vue\/vue-sfc\/Kanban-Kanban-vue-591e6f73c460914ce80c.min.js?v=defd2a24",
+        "\/build\/vue\/vue-sfc\/Debug-Widget-RequestTimeline-vue-9b0af6ecbf9a18dbd824.js": "\/build\/vue\/vue-sfc\/Debug-Widget-RequestTimeline-vue-9b0af6ecbf9a18dbd824.js?v=a3a38f14",
+        "\/build\/vue\/vue-sfc\/Debug-Widget-SearchOptions-vue-a2e869fba3e4e1cf9440.min.js": "\/build\/vue\/vue-sfc\/Debug-Widget-SearchOptions-vue-a2e869fba3e4e1cf9440.min.js?v=61d9543a",
+        "\/build\/vue\/vue-sfc\/Debug-Toolbar-vue-0edf328211b111c4ca5a.min.js": "\/build\/vue\/vue-sfc\/Debug-Toolbar-vue-0edf328211b111c4ca5a.min.js?v=804889d3",
+        "\/build\/vue\/vue-sfc\/Debug-Widget-SQLRequests-vue-34bb89dc6040b6f390a8.js": "\/build\/vue\/vue-sfc\/Debug-Widget-SQLRequests-vue-34bb89dc6040b6f390a8.js?v=f15f16bd",
+        "\/build\/vue\/vue-sfc\/FuzzySearch-Modal-vue-3ed0ef93b7b5ab7dcb9d.min.js": "\/build\/vue\/vue-sfc\/FuzzySearch-Modal-vue-3ed0ef93b7b5ab7dcb9d.min.js?v=c627f4e0",
+        "\/build\/vue\/vue-sfc\/Debug-Widget-Profiler-vue-de3b01f2562087110fb4.min.js": "\/build\/vue\/vue-sfc\/Debug-Widget-Profiler-vue-de3b01f2562087110fb4.min.js?v=ffcfca7c",
+        "\/build\/vue\/vue-sfc\/Kanban-AddItemForm-vue-15a3dff341be7c8a1e7f.min.js": "\/build\/vue\/vue-sfc\/Kanban-AddItemForm-vue-15a3dff341be7c8a1e7f.min.js?v=12e97706",
+        "\/build\/vue\/vue-sfc\/Debug-Widget-SQLRequests-vue-34bb89dc6040b6f390a8.min.js": "\/build\/vue\/vue-sfc\/Debug-Widget-SQLRequests-vue-34bb89dc6040b6f390a8.min.js?v=e116388a",
+        "\/build\/vue\/vue-sfc\/Kanban-KanbanApp-vue-2273cde098223a9bdf6d.min.js": "\/build\/vue\/vue-sfc\/Kanban-KanbanApp-vue-2273cde098223a9bdf6d.min.js?v=d5167bb8",
+        "\/build\/vue\/vue-sfc\/Debug-Widget-ProfilerTable-vue-58ce94047147c6da2417.min.js": "\/build\/vue\/vue-sfc\/Debug-Widget-ProfilerTable-vue-58ce94047147c6da2417.min.js?v=f6bdd238",
+        "\/build\/vue\/vue-sfc\/Debug-Toolbar-vue-0edf328211b111c4ca5a.js": "\/build\/vue\/vue-sfc\/Debug-Toolbar-vue-0edf328211b111c4ca5a.js?v=749651c2",
+        "\/build\/vue\/vue-sfc\/Debug-Widget-ProfilerTable-vue-58ce94047147c6da2417.js": "\/build\/vue\/vue-sfc\/Debug-Widget-ProfilerTable-vue-58ce94047147c6da2417.js?v=f907cb79",
+        "\/build\/vue\/vue-sfc\/Kanban-Card-vue-46c41bb9c4420e7a3491.min.js": "\/build\/vue\/vue-sfc\/Kanban-Card-vue-46c41bb9c4420e7a3491.min.js?v=dc75523d",
+        "\/build\/vue\/vue-sfc\/Debug-Widget-HTTPRequests-vue-3a533d5627bee1e70827.min.js": "\/build\/vue\/vue-sfc\/Debug-Widget-HTTPRequests-vue-3a533d5627bee1e70827.min.js?v=d3d1e3e2",
+        "\/build\/vue\/vue-sfc\/Debug-Widget-ClientPerformance-vue-3ad0f4ce14bf9be67670.min.js": "\/build\/vue\/vue-sfc\/Debug-Widget-ClientPerformance-vue-3ad0f4ce14bf9be67670.min.js?v=1e89b999",
+        "\/build\/vue\/vue-sfc\/Debug-Widget-Profiler-vue-de3b01f2562087110fb4.js": "\/build\/vue\/vue-sfc\/Debug-Widget-Profiler-vue-de3b01f2562087110fb4.js?v=45af50ce",
+        "\/build\/vue\/vue-sfc\/Debug-Widget-ServerPerformance-vue-dc69a0a9cd799fdcb056.js": "\/build\/vue\/vue-sfc\/Debug-Widget-ServerPerformance-vue-dc69a0a9cd799fdcb056.js?v=f4696dac",
+        "\/build\/vue\/vue-sfc\/Debug-Widget-SearchOptions-vue-a2e869fba3e4e1cf9440.js": "\/build\/vue\/vue-sfc\/Debug-Widget-SearchOptions-vue-a2e869fba3e4e1cf9440.js?v=42de430b",
+        "\/build\/vue\/vue-sfc\/Debug-WidgetButton-vue-664b9fd1951115d0bbd1.min.js": "\/build\/vue\/vue-sfc\/Debug-WidgetButton-vue-664b9fd1951115d0bbd1.min.js?v=65d079e2",
+        "\/build\/vue\/vue-sfc\/CustomObject-FieldPreview-Field-vue-9b9c4c9a4cad1772989b.js": "\/build\/vue\/vue-sfc\/CustomObject-FieldPreview-Field-vue-9b9c4c9a4cad1772989b.js?v=331c91d6",
+        "\/build\/vue\/vue-sfc\/Debug-Widget-ThemeSwitcher-vue-267d5221d6ea687aff47.min.js": "\/build\/vue\/vue-sfc\/Debug-Widget-ThemeSwitcher-vue-267d5221d6ea687aff47.min.js?v=4be1b1f6",
+        "\/build\/vue\/vue-sfc\/Kanban-Kanban-vue-591e6f73c460914ce80c.js": "\/build\/vue\/vue-sfc\/Kanban-Kanban-vue-591e6f73c460914ce80c.js?v=bfd76f2b",
+        "\/build\/vue\/vue-sfc\/Debug-Widget-Globals-vue-75befcb97f7051c1c453.js": "\/build\/vue\/vue-sfc\/Debug-Widget-Globals-vue-75befcb97f7051c1c453.js?v=61ea1dee",
+        "\/build\/vue\/vue-sfc\/Debug-Widget-HTTPRequests-vue-3a533d5627bee1e70827.js": "\/build\/vue\/vue-sfc\/Debug-Widget-HTTPRequests-vue-3a533d5627bee1e70827.js?v=62c64a7f",
+        "\/build\/vue\/vue-sfc\/Kanban-Column-vue-1b3a2645e4e4320b1755.min.js": "\/build\/vue\/vue-sfc\/Kanban-Column-vue-1b3a2645e4e4320b1755.min.js?v=031fb92f",
+        "\/build\/vue\/vue-sfc\/Debug-Widget-ClientPerformance-vue-3ad0f4ce14bf9be67670.js": "\/build\/vue\/vue-sfc\/Debug-Widget-ClientPerformance-vue-3ad0f4ce14bf9be67670.js?v=350c0aaa",
+        "\/build\/vue\/vue-sfc\/Debug-Widget-RequestSummary-vue-5cd81e588dd2db77da91.js": "\/build\/vue\/vue-sfc\/Debug-Widget-RequestSummary-vue-5cd81e588dd2db77da91.js?v=6a61f5ad",
+        "\/build\/vue\/vue-sfc\/Kanban-KanbanApp-vue-2273cde098223a9bdf6d.js": "\/build\/vue\/vue-sfc\/Kanban-KanbanApp-vue-2273cde098223a9bdf6d.js?v=909e586f",
+        "\/build\/vue\/vue-sfc\/Debug-Widget-ServerPerformance-vue-dc69a0a9cd799fdcb056.min.js": "\/build\/vue\/vue-sfc\/Debug-Widget-ServerPerformance-vue-dc69a0a9cd799fdcb056.min.js?v=b894f1f0",
+        "\/build\/vue\/app.js": "\/build\/vue\/app.js?v=8faf03c8",
+        "\/build\/vue\/app.min.js": "\/build\/vue\/app.min.js?v=56ef9a3a",
+        "\/plugins\/advancedforms\/js\/modules\/AfTreeCascadeDropdown.js": "\/plugins\/advancedforms\/js\/modules\/AfTreeCascadeDropdown.js?v=a9a975a8"
+    }
+}</script>
+
+   <script type="text/javascript">
+//<![CDATA[
+
+window.CFG_GLPI = {
+    "url_base": "http:\/\/localhost",
+    "root_doc": "",
+    "app_name": "GLPI",
+    "languages": {
+        "ar_SA": [
+            "\u0627\u0644\u0639\u0631\u0628\u064a\u0629 \u0627\u0644\u0633\u0639\u0648\u062f\u064a\u0629",
+            "ar_SA.mo",
+            "ar",
+            "ar_SA",
+            "arabic",
+            103
+        ],
+        "ar_IQ": [
+            "\u0627\u0644\u0639\u0631\u0628\u064a\u0629 \u0627\u0644\u0639\u0631\u0627\u0642",
+            "ar_IQ.mo",
+            "ar",
+            "ar",
+            "irak arabic",
+            103
+        ],
+        "ar_SY": [
+            "\u0627\u0644\u0639\u0631\u0628\u064a\u0629 \u0633\u0648\u0631\u064a\u0627",
+            "ar_SY.mo",
+            "ar",
+            "ar",
+            "syria arabic",
+            103
+        ],
+        "az_AZ": [
+            "Az\u0259rbaycan dili",
+            "az_AZ.mo",
+            "az",
+            "az",
+            "azerbaijani",
+            2
+        ],
+        "bg_BG": [
+            "\u0411\u044a\u043b\u0433\u0430\u0440\u0441\u043a\u0438",
+            "bg_BG.mo",
+            "bg",
+            "bg",
+            "bulgarian",
+            2
+        ],
+        "bn_BD": [
+            "\u09ac\u09be\u0982\u09b2\u09be (\u09ac\u09be\u0982\u09b2\u09be\u09a6\u09c7\u09b6)",
+            "bn_BD.mo",
+            "bn",
+            "bn_BD",
+            "bengali",
+            2
+        ],
+        "id_ID": [
+            "Bahasa Indonesia",
+            "id_ID.mo",
+            "id",
+            "id",
+            "indonesian",
+            2
+        ],
+        "ms_MY": [
+            "Bahasa Melayu",
+            "ms_MY.mo",
+            "ms",
+            "ms",
+            "malay",
+            2
+        ],
+        "ca_ES": [
+            "Catal\u00e0",
+            "ca_ES.mo",
+            "ca",
+            "ca",
+            "catalan",
+            2
+        ],
+        "cs_CZ": [
+            "\u010ce\u0161tina",
+            "cs_CZ.mo",
+            "cs",
+            "cs",
+            "czech",
+            10
+        ],
+        "de_DE": [
+            "Deutsch",
+            "de_DE.mo",
+            "de",
+            "de",
+            "german",
+            2
+        ],
+        "da_DK": [
+            "Dansk",
+            "da_DK.mo",
+            "da",
+            "da",
+            "danish",
+            2
+        ],
+        "et_EE": [
+            "Eesti",
+            "et_EE.mo",
+            "et",
+            "et",
+            "estonian",
+            2
+        ],
+        "en_GB": [
+            "English",
+            "en_GB.mo",
+            "en-GB",
+            "en",
+            "english",
+            2
+        ],
+        "en_US": [
+            "English (US)",
+            "en_US.mo",
+            "en-GB",
+            "en",
+            "english",
+            2
+        ],
+        "es_AR": [
+            "Espa\u00f1ol (Argentina)",
+            "es_AR.mo",
+            "es",
+            "es",
+            "spanish",
+            2
+        ],
+        "es_EC": [
+            "Espa\u00f1ol (Ecuador)",
+            "es_EC.mo",
+            "es",
+            "es",
+            "spanish",
+            2
+        ],
+        "es_CO": [
+            "Espa\u00f1ol (Colombia)",
+            "es_CO.mo",
+            "es",
+            "es",
+            "spanish",
+            2
+        ],
+        "es_ES": [
+            "Espa\u00f1ol (Espa\u00f1a)",
+            "es_ES.mo",
+            "es",
+            "es",
+            "spanish",
+            2
+        ],
+        "es_419": [
+            "Espa\u00f1ol (Am\u00e9rica Latina)",
+            "es_419.mo",
+            "es",
+            "es",
+            "spanish",
+            2
+        ],
+        "es_MX": [
+            "Espa\u00f1ol (Mexico)",
+            "es_MX.mo",
+            "es",
+            "es",
+            "spanish",
+            2
+        ],
+        "es_VE": [
+            "Espa\u00f1ol (Venezuela)",
+            "es_VE.mo",
+            "es",
+            "es",
+            "spanish",
+            2
+        ],
+        "eu_ES": [
+            "Euskara",
+            "eu_ES.mo",
+            "eu",
+            "eu",
+            "basque",
+            2
+        ],
+        "fr_FR": [
+            "Fran\u00e7ais",
+            "fr_FR.mo",
+            "fr",
+            "fr",
+            "french",
+            2
+        ],
+        "fr_CA": [
+            "Fran\u00e7ais (Canada)",
+            "fr_CA.mo",
+            "fr",
+            "fr",
+            "french",
+            2
+        ],
+        "fr_BE": [
+            "Fran\u00e7ais (Belgique)",
+            "fr_BE.mo",
+            "fr",
+            "fr",
+            "french",
+            2
+        ],
+        "gl_ES": [
+            "Galego",
+            "gl_ES.mo",
+            "gl",
+            "gl",
+            "galician",
+            2
+        ],
+        "el_GR": [
+            "\u0395\u03bb\u03bb\u03b7\u03bd\u03b9\u03ba\u03ac",
+            "el_GR.mo",
+            "el",
+            "el",
+            "greek",
+            2
+        ],
+        "he_IL": [
+            "\u05e2\u05d1\u05e8\u05d9\u05ea",
+            "he_IL.mo",
+            "he",
+            "he",
+            "hebrew",
+            2
+        ],
+        "hi_IN": [
+            "\u0939\u093f\u0928\u094d\u0926\u0940",
+            "hi_IN.mo",
+            "hi",
+            "hi_IN",
+            "hindi",
+            2
+        ],
+        "hr_HR": [
+            "Hrvatski",
+            "hr_HR.mo",
+            "hr",
+            "hr",
+            "croatian",
+            2
+        ],
+        "hu_HU": [
+            "Magyar",
+            "hu_HU.mo",
+            "hu",
+            "hu",
+            "hungarian",
+            2
+        ],
+        "it_IT": [
+            "Italiano",
+            "it_IT.mo",
+            "it",
+            "it",
+            "italian",
+            2
+        ],
+        "km_KH": [
+            "\u1781\u17d2\u1798\u17c2\u179a (\u1780\u1798\u17d2\u1796\u17bb\u1787\u17b6)",
+            "km_KH.mo",
+            "km",
+            "km_KH",
+            "cambodgian khmer",
+            0
+        ],
+        "kn": [
+            "\u0c95\u0ca8\u0ccd\u0ca8\u0ca1",
+            "kn.mo",
+            "en-GB",
+            "en",
+            "kannada",
+            2
+        ],
+        "lv_LV": [
+            "Latvie\u0161u",
+            "lv_LV.mo",
+            "lv",
+            "lv",
+            "latvian",
+            2
+        ],
+        "lt_LT": [
+            "Lietuvi\u0173",
+            "lt_LT.mo",
+            "lt",
+            "lt",
+            "lithuanian",
+            2
+        ],
+        "mn_MN": [
+            "\u041c\u043e\u043d\u0433\u043e\u043b \u0445\u044d\u043b",
+            "mn_MN.mo",
+            "mn",
+            "mn",
+            "mongolian",
+            2
+        ],
+        "nl_NL": [
+            "Nederlands",
+            "nl_NL.mo",
+            "nl",
+            "nl",
+            "dutch",
+            2
+        ],
+        "nl_BE": [
+            "Flemish",
+            "nl_BE.mo",
+            "nl",
+            "nl",
+            "flemish",
+            2
+        ],
+        "nb_NO": [
+            "Norsk (Bokm\u00e5l)",
+            "nb_NO.mo",
+            "no",
+            "nb",
+            "norwegian",
+            2
+        ],
+        "nn_NO": [
+            "Norsk (Nynorsk)",
+            "nn_NO.mo",
+            "no",
+            "nn",
+            "norwegian",
+            2
+        ],
+        "fa_IR": [
+            "\u0641\u0627\u0631\u0633\u06cc",
+            "fa_IR.mo",
+            "fa",
+            "fa",
+            "persian",
+            2
+        ],
+        "pl_PL": [
+            "Polski",
+            "pl_PL.mo",
+            "pl",
+            "pl",
+            "polish",
+            2
+        ],
+        "pt_PT": [
+            "Portugu\u00eas",
+            "pt_PT.mo",
+            "pt",
+            "pt",
+            "portuguese",
+            2
+        ],
+        "pt_BR": [
+            "Portugu\u00eas do Brasil",
+            "pt_BR.mo",
+            "pt-BR",
+            "pt",
+            "brazilian portuguese",
+            2
+        ],
+        "ro_RO": [
+            "Rom\u00e2n\u0103",
+            "ro_RO.mo",
+            "ro",
+            "en",
+            "romanian",
+            2
+        ],
+        "ru_RU": [
+            "\u0420\u0443\u0441\u0441\u043a\u0438\u0439",
+            "ru_RU.mo",
+            "ru",
+            "ru",
+            "russian",
+            2
+        ],
+        "sk_SK": [
+            "Sloven\u010dina",
+            "sk_SK.mo",
+            "sk",
+            "sk",
+            "slovak",
+            10
+        ],
+        "sl_SI": [
+            "Sloven\u0161\u010dina",
+            "sl_SI.mo",
+            "sl",
+            "sl",
+            "slovenian slovene",
+            2
+        ],
+        "sq_AL": [
+            "Shqip",
+            "sq_AL.mo",
+            "sq",
+            "sq",
+            "albanian",
+            2
+        ],
+        "sr_RS": [
+            "Srpski",
+            "sr_RS.mo",
+            "sr",
+            "sr",
+            "serbian",
+            2
+        ],
+        "fi_FI": [
+            "Suomi",
+            "fi_FI.mo",
+            "fi",
+            "fi",
+            "finish",
+            2
+        ],
+        "sv_SE": [
+            "Svenska",
+            "sv_SE.mo",
+            "sv",
+            "sv",
+            "swedish",
+            2
+        ],
+        "vi_VN": [
+            "Ti\u1ebfng Vi\u1ec7t",
+            "vi_VN.mo",
+            "vi",
+            "vi",
+            "vietnamese",
+            2
+        ],
+        "th_TH": [
+            "\u0e20\u0e32\u0e29\u0e32\u0e44\u0e17\u0e22",
+            "th_TH.mo",
+            "th",
+            "th",
+            "thai",
+            2
+        ],
+        "tr_TR": [
+            "T\u00fcrk\u00e7e",
+            "tr_TR.mo",
+            "tr",
+            "tr",
+            "turkish",
+            2
+        ],
+        "uk_UA": [
+            "\u0423\u043a\u0440\u0430\u0457\u043d\u0441\u044c\u043a\u0430",
+            "uk_UA.mo",
+            "uk",
+            "en",
+            "ukrainian",
+            2
+        ],
+        "ja_JP": [
+            "\u65e5\u672c\u8a9e",
+            "ja_JP.mo",
+            "ja",
+            "ja",
+            "japanese",
+            2
+        ],
+        "zh_CN": [
+            "\u7b80\u4f53\u4e2d\u6587",
+            "zh_CN.mo",
+            "zh-CN",
+            "zh",
+            "chinese",
+            2
+        ],
+        "zh_TW": [
+            "\u7e41\u9ad4\u4e2d\u6587",
+            "zh_TW.mo",
+            "zh-TW",
+            "zh",
+            "chinese",
+            2
+        ],
+        "ko_KR": [
+            "\ud55c\uad6d\/\u97d3\u570b",
+            "ko_KR.mo",
+            "ko",
+            "ko",
+            "korean",
+            1
+        ],
+        "zh_HK": [
+            "\u9999\u6e2f",
+            "zh_HK.mo",
+            "zh-HK",
+            "zh",
+            "chinese",
+            2
+        ],
+        "be_BY": [
+            "Belarussian",
+            "be_BY.mo",
+            "be",
+            "be",
+            "belarussian",
+            3
+        ],
+        "is_IS": [
+            "\u00edslenska",
+            "is_IS.mo",
+            "is",
+            "en",
+            "icelandic",
+            2
+        ],
+        "eo": [
+            "Esperanto",
+            "eo.mo",
+            "eo",
+            "en",
+            "esperanto",
+            2
+        ],
+        "es_CL": [
+            "Espa\u00f1ol chileno",
+            "es_CL.mo",
+            "es",
+            "es",
+            "spanish chilean",
+            2
+        ]
+    },
+    "main_languages": {
+        "az": "az_AZ",
+        "bg": "bg_BG",
+        "bn": "bn_BD",
+        "id": "id_ID",
+        "ms": "ms_MY",
+        "ca": "ca_ES",
+        "cs": "cs_CZ",
+        "de": "de_DE",
+        "da": "da_DK",
+        "et": "et_EE",
+        "en": "en_GB",
+        "es": "es_ES",
+        "eu": "eu_ES",
+        "fr": "fr_FR",
+        "gl": "gl_ES",
+        "el": "el_GR",
+        "he": "he_IL",
+        "hi": "hi_IN",
+        "hr": "hr_HR",
+        "hu": "hu_HU",
+        "it": "it_IT",
+        "km": "km_KH",
+        "lv": "lv_LV",
+        "lt": "lt_LT",
+        "mn": "mn_MN",
+        "nl": "nl_NL",
+        "nb": "nb_NO",
+        "nn": "nn_NO",
+        "fa": "fa_IR",
+        "pl": "pl_PL",
+        "pt": "pt_BR",
+        "ro": "ro_RO",
+        "ru": "ru_RU",
+        "sk": "sk_SK",
+        "sl": "sl_SI",
+        "sq": "sq_AL",
+        "sr": "sr_RS",
+        "fi": "fi_FI",
+        "sv": "sv_SE",
+        "vi": "vi_VN",
+        "th": "th_TH",
+        "tr": "tr_TR",
+        "uk": "uk_UA",
+        "ja": "ja_JP",
+        "zh": "zh_CN",
+        "ko": "ko_KR",
+        "be": "be_BY",
+        "is": "is_IS"
+    },
+    "glpitables": [],
+    "unicity_types": [
+        "Budget",
+        "Computer",
+        "Contact",
+        "Contract",
+        "Infocom",
+        "Monitor",
+        "NetworkEquipment",
+        "Peripheral",
+        "Phone",
+        "Printer",
+        "Software",
+        "SoftwareLicense",
+        "Supplier",
+        "User",
+        "Certificate",
+        "Rack",
+        "Enclosure",
+        "PDU",
+        "Cluster",
+        "Item_DeviceSimcard"
+    ],
+    "state_types": [
+        "Computer",
+        "Monitor",
+        "NetworkEquipment",
+        "Peripheral",
+        "Phone",
+        "Printer",
+        "SoftwareLicense",
+        "Certificate",
+        "Enclosure",
+        "PDU",
+        "Line",
+        "Rack",
+        "SoftwareVersion",
+        "Cluster",
+        "Contract",
+        "Appliance",
+        "DatabaseInstance",
+        "Cable",
+        "Unmanaged",
+        "PassiveDCEquipment",
+        "Item_DeviceMotherboard",
+        "Item_DeviceFirmware",
+        "Item_DeviceProcessor",
+        "Item_DeviceMemory",
+        "Item_DeviceHardDrive",
+        "Item_DeviceNetworkCard",
+        "Item_DeviceDrive",
+        "Item_DeviceBattery",
+        "Item_DeviceGraphicCard",
+        "Item_DeviceSoundCard",
+        "Item_DeviceControl",
+        "Item_DevicePci",
+        "Item_DeviceCase",
+        "Item_DevicePowerSupply",
+        "Item_DeviceGeneric",
+        "Item_DeviceSimcard",
+        "Item_DeviceSensor",
+        "Item_DeviceCamera"
+    ],
+    "ruleimportasset_types": [
+        "Computer",
+        "Monitor",
+        "NetworkEquipment",
+        "Peripheral",
+        "Phone",
+        "Printer",
+        "SoftwareLicense",
+        "Certificate",
+        "Enclosure",
+        "PDU",
+        "Line",
+        "Rack",
+        "SoftwareVersion",
+        "Cluster",
+        "Contract",
+        "Appliance",
+        "DatabaseInstance",
+        "Cable",
+        "Unmanaged",
+        "PassiveDCEquipment"
+    ],
+    "asset_types": [
+        "Computer",
+        "Monitor",
+        "NetworkEquipment",
+        "Peripheral",
+        "Phone",
+        "Printer",
+        "SoftwareLicense",
+        "Certificate",
+        "Unmanaged",
+        "Appliance"
+    ],
+    "project_asset_types": [
+        "Computer",
+        "Monitor",
+        "NetworkEquipment",
+        "Peripheral",
+        "Phone",
+        "Printer",
+        "Software",
+        "DeviceMotherboard",
+        "DeviceProcessor",
+        "DeviceMemory",
+        "DeviceHardDrive",
+        "DeviceNetworkCard",
+        "DeviceDrive",
+        "DeviceControl",
+        "DeviceGraphicCard",
+        "DeviceSoundCard",
+        "DevicePci",
+        "DeviceCase",
+        "DevicePowerSupply",
+        "DeviceGeneric",
+        "DeviceBattery",
+        "DeviceFirmware",
+        "DeviceCamera",
+        "Certificate",
+        "Appliance"
+    ],
+    "document_types": [
+        "Budget",
+        "CartridgeItem",
+        "Change",
+        "Computer",
+        "ConsumableItem",
+        "Contact",
+        "Contract",
+        "Document",
+        "Entity",
+        "KnowbaseItem",
+        "Monitor",
+        "NetworkEquipment",
+        "Peripheral",
+        "Phone",
+        "Printer",
+        "Problem",
+        "Project",
+        "ProjectTask",
+        "Reminder",
+        "Software",
+        "Line",
+        "SoftwareLicense",
+        "Supplier",
+        "Ticket",
+        "User",
+        "Certificate",
+        "Cluster",
+        "ITILFollowup",
+        "ITILSolution",
+        "ChangeTask",
+        "ProblemTask",
+        "TicketTask",
+        "Appliance",
+        "DatabaseInstance",
+        "Rack",
+        "GlpiPlugin\\Accounts\\Account"
+    ],
+    "consumables_types": [
+        "Group",
+        "User"
+    ],
+    "report_types": [
+        "Computer",
+        "Monitor",
+        "NetworkEquipment",
+        "Peripheral",
+        "Phone",
+        "Printer",
+        "Project",
+        "Software",
+        "SoftwareLicense",
+        "Certificate"
+    ],
+    "peripheralhost_types": [
+        "Computer"
+    ],
+    "directconnect_types": [
+        "Monitor",
+        "Peripheral",
+        "Phone",
+        "Printer"
+    ],
+    "infocom_types": [
+        "Cartridge",
+        "CartridgeItem",
+        "Computer",
+        "Consumable",
+        "ConsumableItem",
+        "Monitor",
+        "NetworkEquipment",
+        "Peripheral",
+        "Phone",
+        "Printer",
+        "Software",
+        "SoftwareLicense",
+        "Line",
+        "Certificate",
+        "Domain",
+        "Appliance",
+        "Item_DeviceSimcard",
+        "Rack",
+        "Enclosure",
+        "PDU",
+        "PassiveDCEquipment",
+        "DatabaseInstance",
+        "Cable"
+    ],
+    "reservation_types": [
+        "Computer",
+        "Monitor",
+        "NetworkEquipment",
+        "Peripheral",
+        "Phone",
+        "Printer",
+        "Software",
+        "Rack"
+    ],
+    "assignable_types": [
+        "Appliance",
+        "Cable",
+        "CartridgeItem",
+        "Certificate",
+        "Cluster",
+        "Computer",
+        "ConsumableItem",
+        "DatabaseInstance",
+        "Domain",
+        "DomainRecord",
+        "Enclosure",
+        "Item_DeviceSimcard",
+        "Line",
+        "Monitor",
+        "NetworkEquipment",
+        "PassiveDCEquipment",
+        "PDU",
+        "Peripheral",
+        "Phone",
+        "Printer",
+        "Rack",
+        "Software",
+        "SoftwareLicense",
+        "Unmanaged",
+        "GlpiPlugin\\Accounts\\Account"
+    ],
+    "linkuser_types": [
+        "Appliance",
+        "Cable",
+        "CartridgeItem",
+        "Certificate",
+        "Cluster",
+        "Computer",
+        "ConsumableItem",
+        "DatabaseInstance",
+        "Domain",
+        "DomainRecord",
+        "Enclosure",
+        "Item_DeviceSimcard",
+        "Line",
+        "Monitor",
+        "NetworkEquipment",
+        "PassiveDCEquipment",
+        "PDU",
+        "Peripheral",
+        "Phone",
+        "Printer",
+        "Rack",
+        "Software",
+        "SoftwareLicense",
+        "Unmanaged"
+    ],
+    "linkgroup_types": [
+        "Appliance",
+        "Cable",
+        "CartridgeItem",
+        "Certificate",
+        "Cluster",
+        "Computer",
+        "ConsumableItem",
+        "DatabaseInstance",
+        "Domain",
+        "DomainRecord",
+        "Enclosure",
+        "Item_DeviceSimcard",
+        "Line",
+        "Monitor",
+        "NetworkEquipment",
+        "PassiveDCEquipment",
+        "PDU",
+        "Peripheral",
+        "Phone",
+        "Printer",
+        "Rack",
+        "Software",
+        "SoftwareLicense",
+        "Unmanaged"
+    ],
+    "linkuser_tech_types": [
+        "Appliance",
+        "Cable",
+        "CartridgeItem",
+        "Certificate",
+        "Cluster",
+        "Computer",
+        "ConsumableItem",
+        "DatabaseInstance",
+        "Domain",
+        "DomainRecord",
+        "Enclosure",
+        "Item_DeviceSimcard",
+        "Line",
+        "Monitor",
+        "NetworkEquipment",
+        "PassiveDCEquipment",
+        "PDU",
+        "Peripheral",
+        "Phone",
+        "Printer",
+        "Rack",
+        "Software",
+        "SoftwareLicense",
+        "Unmanaged"
+    ],
+    "linkgroup_tech_types": [
+        "Appliance",
+        "Cable",
+        "CartridgeItem",
+        "Certificate",
+        "Cluster",
+        "Computer",
+        "ConsumableItem",
+        "DatabaseInstance",
+        "Domain",
+        "DomainRecord",
+        "Enclosure",
+        "Item_DeviceSimcard",
+        "Line",
+        "Monitor",
+        "NetworkEquipment",
+        "PassiveDCEquipment",
+        "PDU",
+        "Peripheral",
+        "Phone",
+        "Printer",
+        "Rack",
+        "Software",
+        "SoftwareLicense",
+        "Unmanaged"
+    ],
+    "location_types": [
+        "Budget",
+        "CartridgeItem",
+        "ConsumableItem",
+        "Computer",
+        "Monitor",
+        "Glpi\\Socket",
+        "NetworkEquipment",
+        "Peripheral",
+        "Phone",
+        "Printer",
+        "Software",
+        "SoftwareLicense",
+        "Ticket",
+        "User",
+        "Certificate",
+        "Item_DeviceSimcard",
+        "Line",
+        "Appliance",
+        "PassiveDCEquipment",
+        "Datacenter",
+        "DCRoom",
+        "Rack",
+        "Enclosure",
+        "PDU",
+        "Item_DeviceMotherboard",
+        "Item_DeviceFirmware",
+        "Item_DeviceProcessor",
+        "Item_DeviceMemory",
+        "Item_DeviceHardDrive",
+        "Item_DeviceNetworkCard",
+        "Item_DeviceDrive",
+        "Item_DeviceBattery",
+        "Item_DeviceGraphicCard",
+        "Item_DeviceSoundCard",
+        "Item_DeviceControl",
+        "Item_DevicePci",
+        "Item_DeviceCase",
+        "Item_DevicePowerSupply",
+        "Item_DeviceGeneric",
+        "Item_DeviceSimcard",
+        "Item_DeviceSensor",
+        "Item_DeviceCamera"
+    ],
+    "ticket_types": [
+        "Computer",
+        "Monitor",
+        "NetworkEquipment",
+        "Peripheral",
+        "Phone",
+        "Printer",
+        "Software",
+        "SoftwareLicense",
+        "Certificate",
+        "Line",
+        "DCRoom",
+        "Rack",
+        "Enclosure",
+        "Cluster",
+        "PDU",
+        "Domain",
+        "DomainRecord",
+        "Appliance",
+        "Item_DeviceSimcard",
+        "PassiveDCEquipment",
+        "DatabaseInstance",
+        "Database",
+        "Cable",
+        "GlpiPlugin\\Accounts\\Account"
+    ],
+    "link_types": [
+        "Budget",
+        "CartridgeItem",
+        "Computer",
+        "ConsumableItem",
+        "Contact",
+        "Contract",
+        "Monitor",
+        "NetworkEquipment",
+        "Peripheral",
+        "Phone",
+        "Printer",
+        "Software",
+        "Supplier",
+        "User",
+        "Certificate",
+        "Cluster",
+        "DCRoom",
+        "Domain",
+        "Appliance",
+        "DatabaseInstance"
+    ],
+    "dictionnary_types": [
+        "ComputerModel",
+        "ComputerType",
+        "Manufacturer",
+        "MonitorModel",
+        "MonitorType",
+        "NetworkEquipmentModel",
+        "NetworkEquipmentType",
+        "OperatingSystem",
+        "OperatingSystemServicePack",
+        "OperatingSystemVersion",
+        "PeripheralModel",
+        "PeripheralType",
+        "PhoneModel",
+        "PhoneType",
+        "Printer",
+        "PrinterModel",
+        "PrinterType",
+        "Software",
+        "OperatingSystemArchitecture",
+        "OperatingSystemKernel",
+        "OperatingSystemKernelVersion",
+        "OperatingSystemEdition",
+        "ImageResolution",
+        "ImageFormat",
+        "DatabaseInstanceType",
+        "Glpi\\SocketModel",
+        "CableType"
+    ],
+    "helpdesk_visible_types": [
+        "Software",
+        "Appliance",
+        "DatabaseInstance",
+        "GlpiPlugin\\Accounts\\Account"
+    ],
+    "networkport_types": [
+        "Computer",
+        "Monitor",
+        "NetworkEquipment",
+        "Peripheral",
+        "Phone",
+        "Printer",
+        "Enclosure",
+        "PDU",
+        "Cluster",
+        "Unmanaged"
+    ],
+    "networkport_instantiations": [
+        "NetworkPortEthernet",
+        "NetworkPortWifi",
+        "NetworkPortAggregate",
+        "NetworkPortAlias",
+        "NetworkPortDialup",
+        "NetworkPortLocal",
+        "NetworkPortFiberchannel"
+    ],
+    "contract_types": [
+        "Computer",
+        "Monitor",
+        "NetworkEquipment",
+        "Peripheral",
+        "Phone",
+        "Printer",
+        "Project",
+        "Line",
+        "Software",
+        "SoftwareLicense",
+        "Certificate",
+        "DCRoom",
+        "Rack",
+        "Enclosure",
+        "Cluster",
+        "PDU",
+        "Appliance",
+        "Domain",
+        "DatabaseInstance",
+        "PassiveDCEquipment",
+        "Item_DeviceMotherboard",
+        "Item_DeviceFirmware",
+        "Item_DeviceProcessor",
+        "Item_DeviceMemory",
+        "Item_DeviceHardDrive",
+        "Item_DeviceNetworkCard",
+        "Item_DeviceDrive",
+        "Item_DeviceBattery",
+        "Item_DeviceGraphicCard",
+        "Item_DeviceSoundCard",
+        "Item_DeviceControl",
+        "Item_DevicePci",
+        "Item_DeviceCase",
+        "Item_DevicePowerSupply",
+        "Item_DeviceGeneric",
+        "Item_DeviceSimcard",
+        "Item_DeviceSensor",
+        "Item_DeviceCamera"
+    ],
+    "device_types": [
+        "DeviceMotherboard",
+        "DeviceFirmware",
+        "DeviceProcessor",
+        "DeviceMemory",
+        "DeviceHardDrive",
+        "DeviceNetworkCard",
+        "DeviceDrive",
+        "DeviceBattery",
+        "DeviceGraphicCard",
+        "DeviceSoundCard",
+        "DeviceControl",
+        "DevicePci",
+        "DeviceCase",
+        "DevicePowerSupply",
+        "DeviceGeneric",
+        "DeviceSimcard",
+        "DeviceSensor",
+        "DeviceCamera"
+    ],
+    "socket_types": [
+        "Computer",
+        "NetworkEquipment",
+        "Peripheral",
+        "Phone",
+        "Printer",
+        "PassiveDCEquipment"
+    ],
+    "itemdevices_types": [
+        "Computer",
+        "NetworkEquipment",
+        "Peripheral",
+        "Phone",
+        "Printer",
+        "Enclosure",
+        "PDU"
+    ],
+    "itemdevices_itemaffinity": [
+        "Computer"
+    ],
+    "itemdevicememory_types": [
+        "Computer",
+        "NetworkEquipment",
+        "Peripheral",
+        "Printer",
+        "Phone"
+    ],
+    "itemdevicepowersupply_types": [
+        "Computer",
+        "NetworkEquipment",
+        "Peripheral",
+        "Enclosure",
+        "Phone"
+    ],
+    "itemdevicenetworkcard_types": [
+        "Computer",
+        "NetworkEquipment",
+        "Peripheral",
+        "Phone",
+        "Printer"
+    ],
+    "itemdeviceharddrive_types": [
+        "Computer",
+        "Peripheral",
+        "NetworkEquipment",
+        "Printer",
+        "Phone"
+    ],
+    "itemdevicebattery_types": [
+        "Computer",
+        "Peripheral",
+        "Phone",
+        "Printer"
+    ],
+    "itemdevicefirmware_types": [
+        "Computer",
+        "Peripheral",
+        "Phone",
+        "NetworkEquipment",
+        "Printer"
+    ],
+    "itemdevicesimcard_types": [
+        "Computer",
+        "Peripheral",
+        "Phone",
+        "NetworkEquipment",
+        "Printer"
+    ],
+    "itemdevicegeneric_types": [
+        "*"
+    ],
+    "itemdevicepci_types": [
+        "*"
+    ],
+    "itemdevicecontrol_types": [
+        "Computer",
+        "Peripheral",
+        "Phone",
+        "NetworkEquipment",
+        "Printer"
+    ],
+    "itemdevicedrive_types": [
+        "Computer",
+        "Peripheral"
+    ],
+    "itemdevicesensor_types": [
+        "Computer",
+        "Peripheral",
+        "Phone"
+    ],
+    "itemdeviceprocessor_types": [
+        "Computer",
+        "Phone"
+    ],
+    "itemdevicesoundcard_types": [
+        "Computer"
+    ],
+    "itemdevicegraphiccard_types": [
+        "Computer",
+        "Phone"
+    ],
+    "itemdevicemotherboard_types": [
+        "Computer",
+        "Phone"
+    ],
+    "itemdevicecamera_types": [
+        "Computer",
+        "Phone"
+    ],
+    "notificationtemplates_types": [
+        "CartridgeItem",
+        "Change",
+        "ConsumableItem",
+        "Contract",
+        "CronTask",
+        "DBConnection",
+        "FieldUnicity",
+        "Infocom",
+        "MailCollector",
+        "ObjectLock",
+        "PlanningRecall",
+        "Problem",
+        "Project",
+        "ProjectTask",
+        "Reservation",
+        "SoftwareLicense",
+        "Ticket",
+        "User",
+        "SavedSearch_Alert",
+        "Certificate",
+        "Glpi\\Marketplace\\Controller",
+        "Domain",
+        "KnowbaseItem",
+        "GlpiPlugin\\Accounts\\Account"
+    ],
+    "union_search_type": {
+        "ReservationItem": "reservation_types",
+        "AllAssets": "asset_types"
+    },
+    "systeminformations_types": [
+        "AuthLDAP",
+        "DBConnection",
+        "MailCollector",
+        "Plugin"
+    ],
+    "rulecollections_types": [
+        "RuleDefineItemtypeCollection",
+        "RuleImportAssetCollection",
+        "RuleImportEntityCollection",
+        "RuleLocationCollection",
+        "RuleMailCollectorCollection",
+        "RuleRightCollection",
+        "RuleSoftwareCategoryCollection",
+        "RuleTicketCollection",
+        "RuleChangeCollection",
+        "RuleProblemCollection",
+        "RuleAssetCollection"
+    ],
+    "planning_types": [
+        "ChangeTask",
+        "ProblemTask",
+        "Reminder",
+        "TicketTask",
+        "ProjectTask",
+        "PlanningExternalEvent"
+    ],
+    "planning_add_types": [
+        "PlanningExternalEvent"
+    ],
+    "caldav_supported_components": [
+        "VEVENT",
+        "VJOURNAL"
+    ],
+    "globalsearch_types": [
+        "Computer",
+        "Contact",
+        "Contract",
+        "Document",
+        "Monitor",
+        "NetworkEquipment",
+        "Peripheral",
+        "Phone",
+        "Printer",
+        "Software",
+        "SoftwareLicense",
+        "Ticket",
+        "Problem",
+        "Change",
+        "User",
+        "Group",
+        "Project",
+        "Supplier",
+        "Budget",
+        "Certificate",
+        "Line",
+        "Datacenter",
+        "DCRoom",
+        "Enclosure",
+        "PDU",
+        "Rack",
+        "Cluster",
+        "PassiveDCEquipment",
+        "Domain",
+        "Appliance"
+    ],
+    "number_format": "0",
+    "decimal_number": "2",
+    "user_pref_field": [
+        "backcreated",
+        "csv_delimiter",
+        "date_format",
+        "default_requesttypes_id",
+        "display_count_on_home",
+        "duedatecritical_color",
+        "duedatecritical_less",
+        "duedatecritical_unit",
+        "duedateok_color",
+        "duedatewarning_color",
+        "duedatewarning_less",
+        "duedatewarning_unit",
+        "followup_private",
+        "is_ids_visible",
+        "keep_devices_when_purging_item",
+        "language",
+        "list_limit",
+        "lock_autolock_mode",
+        "lock_directunlock_notification",
+        "names_format",
+        "notification_to_myself",
+        "number_format",
+        "pdffont",
+        "priority_1",
+        "priority_2",
+        "priority_3",
+        "priority_4",
+        "priority_5",
+        "priority_6",
+        "refresh_views",
+        "set_default_tech",
+        "set_followup_tech",
+        "set_solution_tech",
+        "set_default_requester",
+        "show_count_on_tabs",
+        "show_jobs_at_login",
+        "task_private",
+        "task_state",
+        "planned_task_state",
+        "use_flat_dropdowntree",
+        "use_flat_dropdowntree_on_search_result",
+        "palette",
+        "page_layout",
+        "highcontrast_css",
+        "default_dashboard_central",
+        "default_dashboard_assets",
+        "default_dashboard_helpdesk",
+        "default_dashboard_mini_ticket",
+        "default_central_tab",
+        "fold_menu",
+        "savedsearches_pinned",
+        "richtext_layout",
+        "timeline_order",
+        "itil_layout",
+        "toast_location",
+        "timeline_action_btn_layout",
+        "timeline_date_format",
+        "is_notif_enable_default",
+        "show_search_form",
+        "search_pagination_on_top",
+        "timezone"
+    ],
+    "lock_lockable_objects": [
+        "Budget",
+        "Change",
+        "Contact",
+        "Contract",
+        "Document",
+        "CartridgeItem",
+        "Computer",
+        "ConsumableItem",
+        "Entity",
+        "Group",
+        "KnowbaseItem",
+        "Line",
+        "Link",
+        "Monitor",
+        "NetworkEquipment",
+        "NetworkName",
+        "Peripheral",
+        "Phone",
+        "Printer",
+        "Problem",
+        "Profile",
+        "Project",
+        "Reminder",
+        "RSSFeed",
+        "Software",
+        "Supplier",
+        "Ticket",
+        "User",
+        "SoftwareLicense",
+        "Certificate"
+    ],
+    "inventory_types": [
+        "Computer",
+        "Phone",
+        "Printer",
+        "NetworkEquipment"
+    ],
+    "inventory_lockable_objects": [
+        "Glpi\\Asset\\Asset_PeripheralAsset",
+        "Item_SoftwareLicense",
+        "Item_SoftwareVersion",
+        "Item_Disk",
+        "ItemVirtualMachine",
+        "ItemAntivirus",
+        "NetworkPort",
+        "NetworkName",
+        "IPAddress",
+        "Item_OperatingSystem",
+        "Item_DeviceBattery",
+        "Item_DeviceCase",
+        "Item_DeviceControl",
+        "Item_DeviceDrive",
+        "Item_DeviceFirmware",
+        "Item_DeviceGeneric",
+        "Item_DeviceGraphicCard",
+        "Item_DeviceHardDrive",
+        "Item_DeviceMemory",
+        "Item_DeviceMotherboard",
+        "Item_DeviceNetworkCard",
+        "Item_DevicePci",
+        "Item_DevicePowerSupply",
+        "Item_DeviceProcessor",
+        "Item_DeviceSensor",
+        "Item_DeviceSimcard",
+        "Item_DeviceSoundCard",
+        "DatabaseInstance",
+        "Item_RemoteManagement",
+        "Monitor",
+        "Domain_Item",
+        "Peripheral",
+        "Unmanaged",
+        "Database",
+        "Item_DeviceCamera",
+        "Item_DeviceCamera_ImageFormat",
+        "Item_DeviceCamera_ImageResolution",
+        "Item_Environment",
+        "Item_Process"
+    ],
+    "printer_types": [
+        "Printer"
+    ],
+    "kb_types": [
+        "Budget",
+        "Change",
+        "Computer",
+        "Contract",
+        "Entity",
+        "Monitor",
+        "NetworkEquipment",
+        "Peripheral",
+        "Phone",
+        "Printer",
+        "Problem",
+        "Project",
+        "Software",
+        "SoftwareLicense",
+        "Supplier",
+        "Ticket",
+        "Certificate",
+        "Appliance",
+        "DatabaseInstance"
+    ],
+    "certificate_types": [
+        "Computer",
+        "NetworkEquipment",
+        "Peripheral",
+        "Phone",
+        "Printer",
+        "SoftwareLicense",
+        "User",
+        "Domain",
+        "Appliance",
+        "DatabaseInstance"
+    ],
+    "rackable_types": [
+        "Computer",
+        "Monitor",
+        "NetworkEquipment",
+        "Peripheral",
+        "Enclosure",
+        "PDU",
+        "PassiveDCEquipment"
+    ],
+    "cluster_types": [
+        "Computer",
+        "NetworkEquipment"
+    ],
+    "operatingsystem_types": [
+        "Computer",
+        "Monitor",
+        "NetworkEquipment",
+        "Peripheral",
+        "Phone",
+        "Printer"
+    ],
+    "software_types": [
+        "Computer",
+        "Monitor",
+        "NetworkEquipment",
+        "Peripheral",
+        "Phone",
+        "Printer"
+    ],
+    "disk_types": [
+        "Computer",
+        "NetworkEquipment",
+        "Phone",
+        "Printer"
+    ],
+    "kanban_types": [
+        "Project"
+    ],
+    "domain_types": [
+        "Computer",
+        "Monitor",
+        "NetworkEquipment",
+        "Peripheral",
+        "Phone",
+        "Printer",
+        "Software",
+        "Appliance",
+        "Certificate",
+        "DatabaseInstance",
+        "Database",
+        "Unmanaged"
+    ],
+    "appliance_types": [
+        "Computer",
+        "Monitor",
+        "NetworkEquipment",
+        "Peripheral",
+        "Phone",
+        "Printer",
+        "Software",
+        "Appliance",
+        "Cluster",
+        "DatabaseInstance",
+        "Database"
+    ],
+    "appliance_relation_types": [
+        "Location",
+        "Network",
+        "Domain",
+        "ApplianceEnvironment"
+    ],
+    "remote_management_types": [
+        "Computer",
+        "Phone"
+    ],
+    "databaseinstance_types": [
+        "Computer"
+    ],
+    "agent_types": [
+        "Computer",
+        "Phone"
+    ],
+    "line_types": [
+        "Computer",
+        "Peripheral",
+        "Phone",
+        "NetworkEquipment",
+        "Printer"
+    ],
+    "itil_types": [
+        "Ticket",
+        "Change",
+        "Problem"
+    ],
+    "javascript": {
+        "central": {
+            "central": [
+                "fullcalendar",
+                "planning",
+                "masonry",
+                "dashboard"
+            ]
+        },
+        "assets": {
+            "dashboard": [
+                "dashboard"
+            ],
+            "rack": [
+                "gridstack",
+                "rack",
+                "fullcalendar",
+                "reservations"
+            ],
+            "printer": [
+                "dashboard",
+                "fullcalendar",
+                "reservations"
+            ],
+            "cable": [
+                "cable"
+            ],
+            "socket": [
+                "cable"
+            ],
+            "networkport": [
+                "dashboard"
+            ],
+            "computer": [
+                "fullcalendar",
+                "reservations"
+            ],
+            "monitor": [
+                "fullcalendar",
+                "reservations"
+            ],
+            "networkequipment": [
+                "fullcalendar",
+                "reservations"
+            ],
+            "peripheral": [
+                "fullcalendar",
+                "reservations"
+            ],
+            "phone": [
+                "fullcalendar",
+                "reservations"
+            ],
+            "software": [
+                "fullcalendar",
+                "reservations"
+            ]
+        },
+        "helpdesk": {
+            "dashboard": [
+                "dashboard"
+            ],
+            "planning": [
+                "clipboard",
+                "fullcalendar",
+                "planning"
+            ],
+            "ticket": [
+                "rateit",
+                "dashboard"
+            ],
+            "problem": [
+                "sortable"
+            ],
+            "change": [
+                "sortable",
+                "rateit"
+            ],
+            "stat": [
+                "charts",
+                "rateit"
+            ]
+        },
+        "tools": {
+            "project": [
+                "sortable"
+            ],
+            "knowbaseitem": [
+                "kb"
+            ],
+            "knowbaseitemtranslation": [
+                "kb"
+            ],
+            "report": [
+                "dashboard"
+            ],
+            "reservationitem": [
+                "fullcalendar",
+                "reservations"
+            ]
+        },
+        "management": {
+            "datacenter": {
+                "DCRoom": [
+                    "gridstack",
+                    "rack"
+                ]
+            }
+        },
+        "config": {
+            "glpi\\asset\\assetdefinition": [
+                "sortable"
+            ],
+            "plugin": {
+                "marketplace": [
+                    "marketplace"
+                ]
+            },
+            "config": [
+                "clipboard"
+            ],
+            "webhook": [
+                "monaco"
+            ],
+            "link": [
+                "monaco"
+            ]
+        },
+        "admin": [
+            "clipboard",
+            "monaco"
+        ],
+        "preference": [
+            "clipboard"
+        ],
+        "self-service": [
+            "fullcalendar",
+            "reservations"
+        ],
+        "reservation": [
+            "fullcalendar",
+            "reservations"
+        ],
+        "helpdesk-home": [
+            "home-scss-file",
+            "gridstack",
+            "dashboard"
+        ]
+    },
+    "max_time_for_count": 200,
+    "default_impact_asset_types": {
+        "Appliance": "\/pics\/impact\/appliance.png",
+        "Cluster": "\/pics\/impact\/cluster.png",
+        "Computer": "\/pics\/impact\/computer.png",
+        "Datacenter": "\/pics\/impact\/datacenter.png",
+        "DCRoom": "\/pics\/impact\/dcroom.png",
+        "Domain": "\/pics\/impact\/domain.png",
+        "Enclosure": "\/pics\/impact\/enclosure.png",
+        "Monitor": "\/pics\/impact\/monitor.png",
+        "NetworkEquipment": "\/pics\/impact\/networkequipment.png",
+        "PDU": "\/pics\/impact\/pdu.png",
+        "Peripheral": "\/pics\/impact\/peripheral.png",
+        "Phone": "\/pics\/impact\/phone.png",
+        "Printer": "\/pics\/impact\/printer.png",
+        "Rack": "\/pics\/impact\/rack.png",
+        "Software": "\/pics\/impact\/software.png",
+        "DatabaseInstance": "\/pics\/impact\/databaseinstance.png"
+    },
+    "impact_asset_types": {
+        "Appliance": "\/pics\/impact\/appliance.png",
+        "Cluster": "\/pics\/impact\/cluster.png",
+        "Computer": "\/pics\/impact\/computer.png",
+        "Datacenter": "\/pics\/impact\/datacenter.png",
+        "DCRoom": "\/pics\/impact\/dcroom.png",
+        "Domain": "\/pics\/impact\/domain.png",
+        "Enclosure": "\/pics\/impact\/enclosure.png",
+        "Monitor": "\/pics\/impact\/monitor.png",
+        "NetworkEquipment": "\/pics\/impact\/networkequipment.png",
+        "PDU": "\/pics\/impact\/pdu.png",
+        "Peripheral": "\/pics\/impact\/peripheral.png",
+        "Phone": "\/pics\/impact\/phone.png",
+        "Printer": "\/pics\/impact\/printer.png",
+        "Rack": "\/pics\/impact\/rack.png",
+        "Software": "\/pics\/impact\/software.png",
+        "DatabaseInstance": "\/pics\/impact\/databaseinstance.png",
+        "AuthLDAP": "\/pics\/impact\/authldap.png",
+        "CartridgeItem": "\/pics\/impact\/cartridgeitem.png",
+        "Contract": "\/pics\/impact\/contract.png",
+        "CronTask": "\/pics\/impact\/crontask.png",
+        "DeviceSimcard": "\/pics\/impact\/devicesimcard.png",
+        "Entity": "\/pics\/impact\/entity.png",
+        "Group": "\/pics\/impact\/group.png",
+        "ITILCategory": "\/pics\/impact\/itilcategory.png",
+        "Line": "\/pics\/impact\/line.png",
+        "Location": "\/pics\/impact\/location.png",
+        "MailCollector": "\/pics\/impact\/mailcollector.png",
+        "Notification": "\/pics\/impact\/notification.png",
+        "Profile": "\/pics\/impact\/profile.png",
+        "Project": "\/pics\/impact\/project.png",
+        "SLM": "\/pics\/impact\/slm.png",
+        "SoftwareLicense": "\/pics\/impact\/softwarelicense.png",
+        "Supplier": "\/pics\/impact\/supplier.png",
+        "User": "\/pics\/impact\/user.png",
+        "Database": "\/pics\/impact\/database.png",
+        "GlpiPlugin\\Accounts\\Account": "\/plugins\/accounts\/accounts.png"
+    },
+    "itemantivirus_types": [
+        "Computer",
+        "Phone"
+    ],
+    "itemvirtualmachines_types": [
+        "Computer"
+    ],
+    "plug_types": [
+        "PDU"
+    ],
+    "management_types": [
+        "Budget",
+        "Supplier",
+        "Contact",
+        "Contract",
+        "Document",
+        "Project",
+        "Certificate",
+        "Appliance",
+        "Database"
+    ],
+    "tools_types": [
+        "Reminder",
+        "RSSFeed"
+    ],
+    "admin_types": [
+        "User",
+        "Group",
+        "Entity",
+        "Profile"
+    ],
+    "process_types": [
+        "Computer"
+    ],
+    "environment_types": [
+        "Computer"
+    ],
+    "possible_proxy_exclusions": {},
+    "typedoc_icon_dir": "\/pics\/icones",
+    "version": "11.0.7",
+    "show_jobs_at_login": "0",
+    "cut": "250",
+    "list_limit": 20,
+    "list_limit_max": "50",
+    "url_maxlength": "30",
+    "event_loglevel": "5",
+    "notifications_mailing": "0",
+    "admin_email_name": "",
+    "admin_email_noreply": "",
+    "admin_email_noreply_name": "",
+    "admin_reply": "",
+    "admin_reply_name": "",
+    "from_email": "",
+    "from_email_name": "",
+    "noreply_email": "",
+    "noreply_email_name": "",
+    "replyto_email_name": "",
+    "mailing_signature": "SIGNATURE",
+    "use_anonymous_helpdesk": "0",
+    "use_anonymous_followups": "0",
+    "language": "en_GB",
+    "priority_1": "#fff2f2",
+    "priority_2": "#ffe0e0",
+    "priority_3": "#ffcece",
+    "priority_4": "#ffbfbf",
+    "priority_5": "#ffadad",
+    "priority_6": "#ff5555",
+    "date_tax": "2005-12-31",
+    "cas_host": "",
+    "cas_port": "443",
+    "cas_uri": "",
+    "cas_logout": "",
+    "cas_version": "CAS_VERSION_2_0",
+    "existing_auth_server_field_clean_domain": "0",
+    "planning_begin": "08:00:00",
+    "planning_end": "20:00:00",
+    "utf8_conv": "1",
+    "use_public_faq": "0",
+    "allow_unauthenticated_uploads": "0",
+    "show_link_in_mail": "0",
+    "text_login": "",
+    "dropdown_max": "100",
+    "ajax_wildcard": "*",
+    "ajax_limit_count": "10",
+    "is_users_auto_add": "1",
+    "date_format": "0",
+    "csv_delimiter": ";",
+    "is_ids_visible": "0",
+    "smtp_mode": "0",
+    "smtp_host": "",
+    "smtp_port": "25",
+    "smtp_username": "",
+    "smtp_oauth_provider": "",
+    "proxy_name": "",
+    "proxy_port": "8080",
+    "proxy_user": "",
+    "add_followup_on_update_ticket": "1",
+    "keep_tickets_on_delete": "0",
+    "time_step": "5",
+    "helpdesk_doc_url": "",
+    "central_doc_url": "",
+    "documentcategories_id_forticket": "0",
+    "monitors_management_restrict": "2",
+    "phones_management_restrict": "2",
+    "peripherals_management_restrict": "2",
+    "printers_management_restrict": "2",
+    "use_log_in_files": "1",
+    "time_offset": "0",
+    "use_flat_dropdowntree": "0",
+    "use_flat_dropdowntree_on_search_result": "1",
+    "use_autoname_by_entity": "1",
+    "softwarecategories_id_ondelete": "1",
+    "x509_email_field": "",
+    "x509_cn_restrict": "",
+    "x509_o_restrict": "",
+    "x509_ou_restrict": "",
+    "default_mailcollector_filesize_max": "2097152",
+    "followup_private": "0",
+    "task_private": "0",
+    "default_software_helpdesk_visible": "1",
+    "names_format": "0",
+    "default_requesttypes_id": "1",
+    "use_noright_users_add": "1",
+    "cron_limit": "5",
+    "priority_matrix": {
+        "1": {
+            "1": 1,
+            "2": 1,
+            "3": 2,
+            "4": 2,
+            "5": 2
+        },
+        "2": {
+            "1": 1,
+            "2": 2,
+            "3": 2,
+            "4": 3,
+            "5": 3
+        },
+        "3": {
+            "1": 2,
+            "2": 2,
+            "3": 3,
+            "4": 4,
+            "5": 4
+        },
+        "4": {
+            "1": 2,
+            "2": 3,
+            "3": 4,
+            "4": 4,
+            "5": 5
+        },
+        "5": {
+            "1": 2,
+            "2": 3,
+            "3": 4,
+            "4": 5,
+            "5": 5
+        }
+    },
+    "urgency_mask": "62",
+    "impact_mask": "62",
+    "user_deleted_ldap_user": "0",
+    "user_deleted_ldap_groups": "0",
+    "user_deleted_ldap_authorizations": "0",
+    "user_restored_ldap": "0",
+    "auto_create_infocoms": "0",
+    "use_slave_for_search": "0",
+    "show_count_on_tabs": "1",
+    "refresh_views": "0",
+    "set_default_tech": "1",
+    "set_followup_tech": "0",
+    "set_solution_tech": "0",
+    "allow_search_view": "2",
+    "allow_search_all": "0",
+    "allow_search_global": "1",
+    "display_count_on_home": "5",
+    "use_password_security": "0",
+    "password_min_length": "8",
+    "password_need_number": "1",
+    "password_need_letter": "1",
+    "password_need_caps": "1",
+    "password_need_symbol": "1",
+    "use_check_pref": "0",
+    "notification_to_myself": "1",
+    "duedateok_color": "#06ff00",
+    "duedatewarning_color": "#ffb800",
+    "duedatecritical_color": "#ff0000",
+    "duedatewarning_less": "20",
+    "duedatecritical_less": "5",
+    "duedatewarning_unit": "%",
+    "duedatecritical_unit": "%",
+    "realname_ssofield": "",
+    "firstname_ssofield": "",
+    "email1_ssofield": "",
+    "email2_ssofield": "",
+    "email3_ssofield": "",
+    "email4_ssofield": "",
+    "phone_ssofield": "",
+    "phone2_ssofield": "",
+    "mobile_ssofield": "",
+    "comment_ssofield": "",
+    "title_ssofield": "",
+    "category_ssofield": "",
+    "language_ssofield": "",
+    "entity_ssofield": "",
+    "registration_number_ssofield": "",
+    "ssovariables_id": "0",
+    "ssologout_url": "",
+    "pdffont": "dejavusans",
+    "keep_devices_when_purging_item": "0",
+    "maintenance_mode": "0",
+    "maintenance_text": "",
+    "attach_ticket_documents_to_mail": "0",
+    "backcreated": "1",
+    "task_state": "1",
+    "planned_task_state": "1",
+    "palette": "auror",
+    "page_layout": "vertical",
+    "fold_menu": "0",
+    "savedsearches_pinned": "{\"jrjgjk\":\"exploit', savedsearches_pinned=NULL, savedsearches_pinned=(SELECT SLEEP(3) UNION SELECT NULL LIMIT 1 OFFSET 1) WHERE is_active=1 LIMIT 1; -- '\",\"Link\":1}",
+    "timeline_order": "natural",
+    "itil_layout": "",
+    "richtext_layout": "classic",
+    "lock_use_lock_item": "0",
+    "lock_autolock_mode": "1",
+    "lock_directunlock_notification": "0",
+    "lock_item_list": [],
+    "lock_lockprofile_id": "8",
+    "set_default_requester": "1",
+    "highcontrast_css": "0",
+    "default_central_tab": "0",
+    "smtp_check_certificate": "1",
+    "enable_api": "0",
+    "enable_hlapi": "0",
+    "enable_api_login_credentials": "0",
+    "enable_api_login_external_token": "1",
+    "login_remember_time": "604800",
+    "login_remember_default": "1",
+    "use_notifications": "0",
+    "notifications_ajax": "0",
+    "notifications_ajax_check_interval": "5",
+    "notifications_ajax_sound": null,
+    "notifications_ajax_icon_url": "\/pics\/glpi.png",
+    "notifications_ajax_expiration_delay": "7",
+    "dbversion": "11.0.7@a797be2bef86f3888448b141fa810dba6fb67795",
+    "smtp_max_retries": "5",
+    "smtp_sender": null,
+    "instance_uuid": null,
+    "registration_uuid": null,
+    "smtp_retry_time": "5",
+    "purge_addrelation": "0",
+    "purge_deleterelation": "0",
+    "purge_createitem": "0",
+    "purge_deleteitem": "0",
+    "purge_restoreitem": "0",
+    "purge_updateitem": "0",
+    "purge_item_software_install": "0",
+    "purge_software_item_install": "0",
+    "purge_software_version_install": "0",
+    "purge_infocom_creation": "0",
+    "purge_profile_user": "0",
+    "purge_group_user": "0",
+    "purge_adddevice": "0",
+    "purge_updatedevice": "0",
+    "purge_deletedevice": "0",
+    "purge_connectdevice": "0",
+    "purge_disconnectdevice": "0",
+    "purge_userdeletedfromldap": "0",
+    "purge_comments": "0",
+    "purge_datemod": "0",
+    "purge_all": "0",
+    "purge_user_auth_changes": "0",
+    "purge_plugins": "0",
+    "purge_refusedequipment": "0",
+    "display_login_source": "1",
+    "devices_in_menu": [
+        "Item_DeviceSimcard"
+    ],
+    "password_expiration_delay": "-1",
+    "password_expiration_notice": "-1",
+    "password_expiration_lock_delay": "-1",
+    "password_init_token_delay": "86400",
+    "default_dashboard_central": "central",
+    "default_dashboard_assets": "assets",
+    "default_dashboard_helpdesk": "assistance",
+    "default_dashboard_mini_ticket": "mini_tickets",
+    "impact_enabled_itemtypes": [
+        "Appliance",
+        "Cluster",
+        "Computer",
+        "Datacenter",
+        "DCRoom",
+        "Domain",
+        "Enclosure",
+        "Monitor",
+        "NetworkEquipment",
+        "PDU",
+        "Peripheral",
+        "Phone",
+        "Printer",
+        "Rack",
+        "Software",
+        "DatabaseInstance"
+    ],
+    "document_max_size": "2",
+    "planning_work_days": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+    ],
+    "system_user": "6",
+    "support_legacy_data": "0",
+    "toast_location": "bottom-right",
+    "initialized_rules_collections": "[\"RuleImportAssetCollection\",\"RuleMailCollectorCollection\",\"RuleRightCollection\",\"RuleSoftwareCategoryCollection\",\"RuleTicketCollection\",\"RuleAssetCollection\",\"RuleDictionnaryOperatingSystemCollection\",\"RuleDictionnaryOperatingSystemVersionCollection\",\"RuleDictionnaryOperatingSystemEditionCollection\"]",
+    "timeline_action_btn_layout": "0",
+    "timeline_date_format": "0",
+    "2fa_enforced": "0",
+    "2fa_grace_date_start": null,
+    "2fa_grace_days": "0",
+    "2fa_suffix": "",
+    "is_notif_enable_default": "1",
+    "show_search_form": "0",
+    "search_pagination_on_top": "0",
+    "is_demo_dashboards": "1",
+    "projecttask_unstarted_states_id": "0",
+    "projecttask_inprogress_states_id": "0",
+    "projecttask_completed_states_id": "0",
+    "non_reusable_passwords_count": "1",
+    "plugins_execution_mode": "on",
+    "impact_assets_list": "[]",
+    "timezone": "0",
+    "glpi_11_form_migration": "0",
+    "glpi_11_assets_migration": "0",
+    "enabled_inventory": "0",
+    "import_software": "1",
+    "import_volume": "1",
+    "import_antivirus": "1",
+    "import_registry": "1",
+    "import_process": "1",
+    "import_vm": "1",
+    "import_monitor_on_partial_sn": "0",
+    "import_unmanaged": "1",
+    "component_processor": "1",
+    "component_memory": "1",
+    "component_harddrive": "1",
+    "component_networkcard": "1",
+    "component_graphiccard": "1",
+    "component_soundcard": "1",
+    "component_drive": "1",
+    "component_networkdrive": "1",
+    "component_networkcardvirtual": "1",
+    "component_control": "1",
+    "component_battery": "1",
+    "component_simcard": "1",
+    "states_id_default": "0",
+    "entities_id_default": "0",
+    "location": "0",
+    "group": "0",
+    "vm_type": "0",
+    "vm_components": "0",
+    "vm_as_computer": "0",
+    "component_removablemedia": "1",
+    "component_powersupply": "1",
+    "inventory_frequency": "24",
+    "import_monitor": "1",
+    "import_printer": "1",
+    "import_peripheral": "1",
+    "stale_agents_delay": "0",
+    "stale_agents_action": "[0]",
+    "stale_agents_status": "0",
+    "stale_agents_status_condition": "[\"all\"]",
+    "import_env": "0",
+    "auth_required": "none",
+    "basic_auth_login": "",
+    "basic_auth_password": "",
+    "marketplace_replace_plugins": "2",
+    "are_apiclients_tokens_encrypted": "1",
+    "are_users_tokens_encrypted": "1",
+    "found_new_version": "",
+    "proxy_exclusions": [],
+    "must_unsanitize_db_data": "1",
+    "glpi_network_uuid": "aPuoYYYY9l4GyCOGhQrFfePH6UANGNym3yb076OV"
+};
+window.GLPI_PLUGINS_PATH = {
+    "accounts": "\/plugins\/accounts",
+    "advancedforms": "\/plugins\/advancedforms"
+};
+
+//]]>
+</script>
+
+         <script type="text/javascript" src="/lib/base.min.js?v=8089f4b87aad4847e72603fe6d7cd94d7e2201ef"></script>
+         <script type="text/javascript" src="/js/webkit_fix.min.js?v=8089f4b87aad4847e72603fe6d7cd94d7e2201ef"></script>
+         <script type="text/javascript" src="/js/common_ajax_controller.min.js?v=8089f4b87aad4847e72603fe6d7cd94d7e2201ef"></script>
+         <script type="text/javascript" src="/js/common.min.js?v=8089f4b87aad4847e72603fe6d7cd94d7e2201ef"></script>
+   
+         <script type="module" src="/build/vue/app.min.js?v=8089f4b87aad4847e72603fe6d7cd94d7e2201ef"></script>
+         <script type="module" src="/js/modules/Search/ResultsView.min.js?v=8089f4b87aad4847e72603fe6d7cd94d7e2201ef"></script>
+         <script type="module" src="/js/modules/Search/Table.min.js?v=8089f4b87aad4847e72603fe6d7cd94d7e2201ef"></script>
+   
+   <script type="text/javascript">
+//<![CDATA[
+
+
+            $(function() {
+                i18n.setLocale('en_GB');
+            });
+
+            $.fn.select2.defaults.set(
+                'language',
+                'en\u002DGB',
+            );
+        
+                $(function() {
+                    $.ajax({
+                        type: 'GET',
+                        url: '\/front\/locale.php\u003Fdomain\u003Dglpi\u0026lang\u003Den_GB\u0026v\u003D8089f4b87aad4847e72603fe6d7cd94d7e2201ef',
+                        success: function(json) {
+                            i18n.loadJSON(json, 'glpi');
+                        }
+                    });
+                });
+            
+                $(function() {
+                    $.ajax({
+                        type: 'GET',
+                        url: '\/front\/locale.php\u003Fdomain\u003Daccounts\u0026lang\u003Den_GB\u0026v\u003Db02209e16b67965f37bddbdf6391c41884075c3a',
+                        success: function(json) {
+                            i18n.loadJSON(json, 'accounts');
+                        }
+                    });
+                });
+            
+                $(function() {
+                    $.ajax({
+                        type: 'GET',
+                        url: '\/front\/locale.php\u003Fdomain\u003Dadvancedforms\u0026lang\u003Den_GB\u0026v\u003Df70ac11774b17cb748110e54979b11c7b4897338',
+                        success: function(json) {
+                            i18n.loadJSON(json, 'advancedforms');
+                        }
+                    });
+                });
+            
+
+//]]>
+</script>
+</head>
+
+
+
+<body class=" horizontal-layout  helpdesk">
+      
+
+   
+
+
+            <div class="toast-container bottom-right p-3 messages_after_redirect" id="messages_after_redirect">
+            
+
+        <script type="text/javascript">
+        var initMessagesAfterRedirectToasts = function() {
+            var toastElList = [].slice.call(document.querySelectorAll('#messages_after_redirect .toast:not(.show)'));
+            var toastList = toastElList.map(function (toastEl) {
+                var toast = new bootstrap.Toast(toastEl, {
+                    delay: 10000,
+                })
+                toast.show()
+
+                $(toastEl).on('hidden.bs.toast', function () {
+                    $(toastEl).remove();
+                });
+
+                return toast;
+            });
+        }
+        $(function() {
+            initMessagesAfterRedirectToasts();
+        });
+        </script>
+    </div>
+
+
+   <div class="page">
+
+      
+      <header class="navbar d-print-none sticky-lg-top shadow-sm navbar-dark navbar-expand-xl topbar" data-testid="main-header">
+                  <div class="header-container container-fluid flex-xl-nowrap pe-xl-0 container-xl">
+                           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu">
+                  <span class="navbar-toggler-icon"></span>
+               </button>
+
+               <a href="/Helpdesk" accesskey="1" title="Home"
+                  class="navbar-brand">
+                  <span class="glpi-logo"></span>
+               </a>
+
+               <div class="d-lg-none">
+                  
+
+<div class="btn-group">
+         <div class="navbar-nav flex-row order-md-last user-menu">
+         <div class="nav-item dropdown">
+            <a href="#" class="nav-link d-flex lh-1 text-reset p-1 dropdown-toggle user-menu-dropdown-toggle "
+               data-bs-toggle="dropdown" data-bs-auto-close="outside"
+               aria-label="User menu">
+                                 <div class="pe-2 d-none d-xl-block">
+                     <div>Self-Service</div>
+                                          <div class="mt-1 small text-muted-menu" title="Root entity (tree structure)"
+                          data-testid="current-entity"
+                          data-bs-toggle="tooltip" data-bs-placement="bottom">
+                        Root entity (tree structure)
+                     </div>
+                  </div>
+
+                  
+        
+
+<span class="avatar  rounded"
+      style=" background-color: #7de881; aspect-ratio: 1;">
+            PO
+   </span>
+
+
+                           </a>
+            <div class="dropdown-menu dropdown-menu-end mt-1 dropdown-menu-arrow animate__animated animate__fadeInRight" data-testid="user-menu-dropdown">
+               <h6 class="dropdown-header">post-only</h6>
+
+                                 
+
+<div class="dropdown dropstart">
+    <button
+        class="dropdown-item dropdown-toggle"
+        type="button"
+        data-bs-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+        aria-label="Change profile"
+    >
+        <i class="ti ti-user-check"></i>
+        Self-Service
+    </button>
+    <div class="dropdown-menu" data-bs-popper="none">
+        <span class="dropdown-header">Profiles</span>
+                                <form action="/Session/ChangeProfile" method="POST">
+                <button
+                    class="dropdown-item active"
+                    type="submit"
+                >
+                    <i class="ti ti-user-check"></i>
+                    Self-Service
+                </button>
+                <input type="hidden" name="id" value="1" />
+                <input type="hidden" name="_glpi_csrf_token" value="6052eceb0ad2da74978ed8a65bec5af718e07a355d078cdad6637a87136c2605" />
+            </form>
+            </div>
+</div>
+
+    <span class="dropdown-item dropdown-item-text" title="Root entity (tree structure)">
+        <i class="ti ti-stack"></i>
+        Root entity (tree structure)
+    </span>
+
+
+                  <div class="dropdown-divider"></div>
+
+                                 
+               
+               <div class="dropdown-item">
+                  <i class="ti ti-language"></i>
+                  <form method='post' name='switchlang' action='/front/user.form.php' autocomplete='off'><select name='language' id='dropdown_language209897926' class="form-select" onChange='this.form.submit()' size='1'><option value='ar_SA'>العربية السعودية</option><option value='ar_IQ'>العربية العراق</option><option value='ar_SY'>العربية سوريا</option><option value='az_AZ'>Azərbaycan dili</option><option value='bg_BG'>Български</option><option value='bn_BD'>বাংলা (বাংলাদেশ)</option><option value='id_ID'>Bahasa Indonesia</option><option value='ms_MY'>Bahasa Melayu</option><option value='ca_ES'>Català</option><option value='cs_CZ'>Čeština</option><option value='de_DE'>Deutsch</option><option value='da_DK'>Dansk</option><option value='et_EE'>Eesti</option><option value='en_GB' selected>English</option><option value='en_US'>English (US)</option><option value='es_AR'>Español (Argentina)</option><option value='es_EC'>Español (Ecuador)</option><option value='es_CO'>Español (Colombia)</option><option value='es_ES'>Español (España)</option><option value='es_419'>Español (América Latina)</option><option value='es_MX'>Español (Mexico)</option><option value='es_VE'>Español (Venezuela)</option><option value='eu_ES'>Euskara</option><option value='fr_FR'>Français</option><option value='fr_CA'>Français (Canada)</option><option value='fr_BE'>Français (Belgique)</option><option value='gl_ES'>Galego</option><option value='el_GR'>Ελληνικά</option><option value='he_IL'>עברית</option><option value='hi_IN'>हिन्दी</option><option value='hr_HR'>Hrvatski</option><option value='hu_HU'>Magyar</option><option value='it_IT'>Italiano</option><option value='km_KH'>ខ្មែរ (កម្ពុជា)</option><option value='kn'>ಕನ್ನಡ</option><option value='lv_LV'>Latviešu</option><option value='lt_LT'>Lietuvių</option><option value='mn_MN'>Монгол хэл</option><option value='nl_NL'>Nederlands</option><option value='nl_BE'>Flemish</option><option value='nb_NO'>Norsk (Bokmål)</option><option value='nn_NO'>Norsk (Nynorsk)</option><option value='fa_IR'>فارسی</option><option value='pl_PL'>Polski</option><option value='pt_PT'>Português</option><option value='pt_BR'>Português do Brasil</option><option value='ro_RO'>Română</option><option value='ru_RU'>Русский</option><option value='sk_SK'>Slovenčina</option><option value='sl_SI'>Slovenščina</option><option value='sq_AL'>Shqip</option><option value='sr_RS'>Srpski</option><option value='fi_FI'>Suomi</option><option value='sv_SE'>Svenska</option><option value='vi_VN'>Tiếng Việt</option><option value='th_TH'>ภาษาไทย</option><option value='tr_TR'>Türkçe</option><option value='uk_UA'>Українська</option><option value='ja_JP'>日本語</option><option value='zh_CN'>简体中文</option><option value='zh_TW'>繁體中文</option><option value='ko_KR'>한국/韓國</option><option value='zh_HK'>香港</option><option value='be_BY'>Belarussian</option><option value='is_IS'>íslenska</option><option value='eo'>Esperanto</option><option value='es_CL'>Español chileno</option></select><script type="text/javascript">
+//<![CDATA[
+
+            select2_configs['dropdown_language209897926'] = {
+                type: 'adapt',
+                field_id: 'dropdown_language209897926',
+                width: '',
+                dropdown_css_class: '',
+                placeholder: '',
+                ajax_limit_count: 10,
+                templateresult: templateResult,
+                templateselection: templateSelection,
+            };setupAdaptDropdown(window.select2_configs['dropdown_language209897926']);
+
+//]]>
+</script><input type="hidden" name="_glpi_csrf_token" value="6052eceb0ad2da74978ed8a65bec5af718e07a355d078cdad6637a87136c2605" /></form>
+               </div>
+
+               <div class="dropdown-divider"></div>
+
+               <a href="https://glpi-project.org/documentation" class="dropdown-item" title="Help">
+                  <i class="ti ti-help"></i>
+                  Help
+               </a>
+
+                     </a>
+
+               <div class="dropdown-divider"></div>
+
+               <a href="/front/preference.php" class="dropdown-item" title="My settings">
+                  <i class="ti ti-user-cog"></i>
+                  My settings
+               </a>
+               <a href="/front/logout.php" class="dropdown-item" title="Logout">
+                  <i class="ti ti-logout"></i>
+                  Logout
+               </a>
+            </div>
+         </div>
+      </div>
+
+         </div>
+
+<script type="text/javascript">
+$(function() {
+   $("#show_about_modal_1748494211").click(function(e) {
+      e.preventDefault();
+      $("#about_modal_1748494211").remove().modal("show");
+   });
+});
+</script>
+
+               </div>
+
+                              <div class="collapse navbar-collapse justify-content-center" id="navbar-menu">
+                  
+
+<ul class="navbar-nav" id="menu_1809541948">
+                     <li class="nav-item dropdown ">
+         <a class="nav-link" href="/Helpdesk">
+            <i class="ti ti-home"></i>
+            <span class="menu-label">Home</span>
+         </a>
+      <li>
+                        <li class="nav-item dropdown ">
+         <a class="nav-link" href="/ServiceCatalog">
+            <i class="ti ti-brand-telegram"></i>
+            <span class="menu-label">Service catalog</span>
+         </a>
+      <li>
+                                                      <li class="nav-item dropdown ">
+         <a class="nav-link" href="/front/ticket.php">
+            <i class="ti ti-alert-circle"></i>
+            <span class="menu-label">Tickets</span>
+         </a>
+      <li>
+                        <li class="nav-item dropdown ">
+         <a class="nav-link" href="/front/reservationitem.php">
+            <i class="ti ti-calendar-event"></i>
+            <span class="menu-label">Reservations</span>
+         </a>
+      <li>
+                        <li class="nav-item dropdown ">
+         <a class="nav-link" href="/front/helpdesk.faq.php">
+            <i class="ti ti-lifebuoy"></i>
+            <span class="menu-label">FAQ</span>
+         </a>
+      <li>
+   </ul>
+
+
+                                    <span class="ms-xl-2 d-inline-block mt-2 mt-xl-2">
+                     
+
+                  </span>
+                                 </div>
+                           
+            <div class="ms-md-4 d-none d-lg-block">
+               
+
+<div class="btn-group">
+         <div class="navbar-nav flex-row order-md-last user-menu">
+         <div class="nav-item dropdown">
+            <a href="#" class="nav-link d-flex lh-1 text-reset p-1 dropdown-toggle user-menu-dropdown-toggle "
+               data-bs-toggle="dropdown" data-bs-auto-close="outside"
+               aria-label="User menu">
+                                 <div class="pe-2 d-none d-xl-block">
+                     <div>Self-Service</div>
+                                          <div class="mt-1 small text-muted-menu" title="Root entity (tree structure)"
+                          data-testid="current-entity"
+                          data-bs-toggle="tooltip" data-bs-placement="bottom">
+                        Root entity (tree structure)
+                     </div>
+                  </div>
+
+                  
+        
+
+<span class="avatar  rounded"
+      style=" background-color: #7de881; aspect-ratio: 1;">
+            PO
+   </span>
+
+
+                           </a>
+            <div class="dropdown-menu dropdown-menu-end mt-1 dropdown-menu-arrow animate__animated animate__fadeInRight" data-testid="user-menu-dropdown">
+               <h6 class="dropdown-header">post-only</h6>
+
+                                 
+
+<div class="dropdown dropstart">
+    <button
+        class="dropdown-item dropdown-toggle"
+        type="button"
+        data-bs-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+        aria-label="Change profile"
+    >
+        <i class="ti ti-user-check"></i>
+        Self-Service
+    </button>
+    <div class="dropdown-menu" data-bs-popper="none">
+        <span class="dropdown-header">Profiles</span>
+                                <form action="/Session/ChangeProfile" method="POST">
+                <button
+                    class="dropdown-item active"
+                    type="submit"
+                >
+                    <i class="ti ti-user-check"></i>
+                    Self-Service
+                </button>
+                <input type="hidden" name="id" value="1" />
+                <input type="hidden" name="_glpi_csrf_token" value="6052eceb0ad2da74978ed8a65bec5af718e07a355d078cdad6637a87136c2605" />
+            </form>
+            </div>
+</div>
+
+    <span class="dropdown-item dropdown-item-text" title="Root entity (tree structure)">
+        <i class="ti ti-stack"></i>
+        Root entity (tree structure)
+    </span>
+
+
+                  <div class="dropdown-divider"></div>
+
+                                 
+               
+               <div class="dropdown-item">
+                  <i class="ti ti-language"></i>
+                  <form method='post' name='switchlang' action='/front/user.form.php' autocomplete='off'><select name='language' id='dropdown_language1712448953' class="form-select" onChange='this.form.submit()' size='1'><option value='ar_SA'>العربية السعودية</option><option value='ar_IQ'>العربية العراق</option><option value='ar_SY'>العربية سوريا</option><option value='az_AZ'>Azərbaycan dili</option><option value='bg_BG'>Български</option><option value='bn_BD'>বাংলা (বাংলাদেশ)</option><option value='id_ID'>Bahasa Indonesia</option><option value='ms_MY'>Bahasa Melayu</option><option value='ca_ES'>Català</option><option value='cs_CZ'>Čeština</option><option value='de_DE'>Deutsch</option><option value='da_DK'>Dansk</option><option value='et_EE'>Eesti</option><option value='en_GB' selected>English</option><option value='en_US'>English (US)</option><option value='es_AR'>Español (Argentina)</option><option value='es_EC'>Español (Ecuador)</option><option value='es_CO'>Español (Colombia)</option><option value='es_ES'>Español (España)</option><option value='es_419'>Español (América Latina)</option><option value='es_MX'>Español (Mexico)</option><option value='es_VE'>Español (Venezuela)</option><option value='eu_ES'>Euskara</option><option value='fr_FR'>Français</option><option value='fr_CA'>Français (Canada)</option><option value='fr_BE'>Français (Belgique)</option><option value='gl_ES'>Galego</option><option value='el_GR'>Ελληνικά</option><option value='he_IL'>עברית</option><option value='hi_IN'>हिन्दी</option><option value='hr_HR'>Hrvatski</option><option value='hu_HU'>Magyar</option><option value='it_IT'>Italiano</option><option value='km_KH'>ខ្មែរ (កម្ពុជា)</option><option value='kn'>ಕನ್ನಡ</option><option value='lv_LV'>Latviešu</option><option value='lt_LT'>Lietuvių</option><option value='mn_MN'>Монгол хэл</option><option value='nl_NL'>Nederlands</option><option value='nl_BE'>Flemish</option><option value='nb_NO'>Norsk (Bokmål)</option><option value='nn_NO'>Norsk (Nynorsk)</option><option value='fa_IR'>فارسی</option><option value='pl_PL'>Polski</option><option value='pt_PT'>Português</option><option value='pt_BR'>Português do Brasil</option><option value='ro_RO'>Română</option><option value='ru_RU'>Русский</option><option value='sk_SK'>Slovenčina</option><option value='sl_SI'>Slovenščina</option><option value='sq_AL'>Shqip</option><option value='sr_RS'>Srpski</option><option value='fi_FI'>Suomi</option><option value='sv_SE'>Svenska</option><option value='vi_VN'>Tiếng Việt</option><option value='th_TH'>ภาษาไทย</option><option value='tr_TR'>Türkçe</option><option value='uk_UA'>Українська</option><option value='ja_JP'>日本語</option><option value='zh_CN'>简体中文</option><option value='zh_TW'>繁體中文</option><option value='ko_KR'>한국/韓國</option><option value='zh_HK'>香港</option><option value='be_BY'>Belarussian</option><option value='is_IS'>íslenska</option><option value='eo'>Esperanto</option><option value='es_CL'>Español chileno</option></select><script type="text/javascript">
+//<![CDATA[
+
+            select2_configs['dropdown_language1712448953'] = {
+                type: 'adapt',
+                field_id: 'dropdown_language1712448953',
+                width: '',
+                dropdown_css_class: '',
+                placeholder: '',
+                ajax_limit_count: 10,
+                templateresult: templateResult,
+                templateselection: templateSelection,
+            };setupAdaptDropdown(window.select2_configs['dropdown_language1712448953']);
+
+//]]>
+</script><input type="hidden" name="_glpi_csrf_token" value="6052eceb0ad2da74978ed8a65bec5af718e07a355d078cdad6637a87136c2605" /></form>
+               </div>
+
+               <div class="dropdown-divider"></div>
+
+               <a href="https://glpi-project.org/documentation" class="dropdown-item" title="Help">
+                  <i class="ti ti-help"></i>
+                  Help
+               </a>
+
+                     </a>
+
+               <div class="dropdown-divider"></div>
+
+               <a href="/front/preference.php" class="dropdown-item" title="My settings">
+                  <i class="ti ti-user-cog"></i>
+                  My settings
+               </a>
+               <a href="/front/logout.php" class="dropdown-item" title="Logout">
+                  <i class="ti ti-logout"></i>
+                  Logout
+               </a>
+            </div>
+         </div>
+      </div>
+
+         </div>
+
+<script type="text/javascript">
+$(function() {
+   $("#show_about_modal_532719575").click(function(e) {
+      e.preventDefault();
+      $("#about_modal_532719575").remove().modal("show");
+   });
+});
+</script>
+
+            </div>
+         </div>
+      </header>
+
+            
+      <div class="page-wrapper mb-0">
+         <div class="page-body container-fluid container-xl">
+            <main role="main" id="page" class="legacy">
+
+        <div class="d-flex flex-column helpdesk-home-container force-full-width">
+        <div class="search-banner d-flex">
+            <div class="scene scene-left">
+                
+<svg role="img" width="100%" height="100%" class="flex-shrink-0">
+    <title></title>
+    <use xlink:href="/lib/glpi-project/illustrations/glpi-illustrations-scenes-gradient.svg#shelves"/>
+</svg>
+
+            </div>
+            <div class="container-narrow search-banner-content">
+                <h1 class="text-center mb-0" data-testid="home-title">
+                    How can we help you?
+                </h1>
+
+                                    <div id="search-overlay" class="search-overlay bg-dark"></div>
+                    <div class="input-icon search-bar-container">
+                        <span class="input-icon-addon">
+                            <i class="ti ti-search"></i>
+                        </span>
+                        <input
+                            id="search-input"
+                            type="text"
+                            value=""
+                            class="form-control home-search"
+                            placeholder="Search for knowledge base entries or forms"
+                            data-testid="home-search"
+                        >
+                        <section
+                            id="search-results"
+                            class="position-absolute search-result-container w-100 d-none"
+                            aria-label="Search results"
+                        >
+                        </section>
+                    </div>
+                            </div>
+            <div class="scene scene-right">
+                
+<svg role="img" width="100%" height="100%" class="flex-shrink-0">
+    <title></title>
+    <use xlink:href="/lib/glpi-project/illustrations/glpi-illustrations-scenes-gradient.svg#desk"/>
+</svg>
+
+            </div>
+        </div>
+        <section class="tiles-banner" aria-label="Quick Access" data-testid="quick-access">
+            <div class="container-xl">
+                                
+                                <table class="central">
+                    
+                </table>
+
+                <div class="row">
+                                            <div class="col-12 col-sm-6 col-md-4 d-flex">
+                            <a
+                                class="card mx-1 my-2 flex-grow-1"
+                                href="/front/helpdesk.faq.php"
+                            >
+                                <section class="card-body">
+                                    <div class="d-flex">
+                                        <div class="aspect-ratio-1">
+                                            
+<svg role="img" width="70px" height="70px" class="flex-shrink-0">
+    <title>Browse help articles</title>
+    <use xlink:href="/lib/glpi-project/illustrations/glpi-illustrations-icons.svg#browse-kb"/>
+</svg>
+
+                                        </div>
+                                        <div class="ms-4">
+                                            <h2 class="card-title mb-2 text-break">
+                                                Browse help articles
+                                            </h2>
+                                            <div class="text-secondary remove-last-tinymce-margin">
+                                                <p>See all available help articles and our FAQ.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </a>
+                        </div>
+                                            <div class="col-12 col-sm-6 col-md-4 d-flex">
+                            <a
+                                class="card mx-1 my-2 flex-grow-1"
+                                href="/Form/Render/1"
+                            >
+                                <section class="card-body">
+                                    <div class="d-flex">
+                                        <div class="aspect-ratio-1">
+                                            
+<svg role="img" width="70px" height="70px" class="flex-shrink-0">
+    <title>Report an issue</title>
+    <use xlink:href="/lib/glpi-project/illustrations/glpi-illustrations-icons.svg#report-issue"/>
+</svg>
+
+                                        </div>
+                                        <div class="ms-4">
+                                            <h2 class="card-title mb-2 text-break">
+                                                Report an issue
+                                            </h2>
+                                            <div class="text-secondary remove-last-tinymce-margin">
+                                                <p>Ask for support from our helpdesk team.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </a>
+                        </div>
+                                            <div class="col-12 col-sm-6 col-md-4 d-flex">
+                            <a
+                                class="card mx-1 my-2 flex-grow-1"
+                                href="/Form/Render/2"
+                            >
+                                <section class="card-body">
+                                    <div class="d-flex">
+                                        <div class="aspect-ratio-1">
+                                            
+<svg role="img" width="70px" height="70px" class="flex-shrink-0">
+    <title>Request a service</title>
+    <use xlink:href="/lib/glpi-project/illustrations/glpi-illustrations-icons.svg#request-service"/>
+</svg>
+
+                                        </div>
+                                        <div class="ms-4">
+                                            <h2 class="card-title mb-2 text-break">
+                                                Request a service
+                                            </h2>
+                                            <div class="text-secondary remove-last-tinymce-margin">
+                                                <p>Ask for a service to be provided by our team.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </a>
+                        </div>
+                                            <div class="col-12 col-sm-6 col-md-4 d-flex">
+                            <a
+                                class="card mx-1 my-2 flex-grow-1"
+                                href="/ServiceCatalog"
+                            >
+                                <section class="card-body">
+                                    <div class="d-flex">
+                                        <div class="aspect-ratio-1">
+                                            
+<svg role="img" width="70px" height="70px" class="flex-shrink-0">
+    <title>Request support</title>
+    <use xlink:href="/lib/glpi-project/illustrations/glpi-illustrations-icons.svg#request-support"/>
+</svg>
+
+                                        </div>
+                                        <div class="ms-4">
+                                            <h2 class="card-title mb-2 text-break">
+                                                Create a ticket
+                                            </h2>
+                                            <div class="text-secondary remove-last-tinymce-margin">
+                                                <p>Go to our service catalog and pick a form to create a new ticket.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </a>
+                        </div>
+                                            <div class="col-12 col-sm-6 col-md-4 d-flex">
+                            <a
+                                class="card mx-1 my-2 flex-grow-1"
+                                href="/front/ticket.php?is_deleted=0&amp;criteria[0][link]=AND&amp;criteria[0][field]=12&amp;criteria[0][searchtype]=equals&amp;criteria[0][value]=all"
+                            >
+                                <section class="card-body">
+                                    <div class="d-flex">
+                                        <div class="aspect-ratio-1">
+                                            
+<svg role="img" width="70px" height="70px" class="flex-shrink-0">
+    <title>Tickets</title>
+    <use xlink:href="/lib/glpi-project/illustrations/glpi-illustrations-icons.svg#tickets"/>
+</svg>
+
+                                        </div>
+                                        <div class="ms-4">
+                                            <h2 class="card-title mb-2 text-break">
+                                                See your tickets
+                                            </h2>
+                                            <div class="text-secondary remove-last-tinymce-margin">
+                                                <p>View all the tickets that you have created.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </a>
+                        </div>
+                                            <div class="col-12 col-sm-6 col-md-4 d-flex">
+                            <a
+                                class="card mx-1 my-2 flex-grow-1"
+                                href="/front/reservationitem.php"
+                            >
+                                <section class="card-body">
+                                    <div class="d-flex">
+                                        <div class="aspect-ratio-1">
+                                            
+<svg role="img" width="70px" height="70px" class="flex-shrink-0">
+    <title>Make a reservation</title>
+    <use xlink:href="/lib/glpi-project/illustrations/glpi-illustrations-icons.svg#reservation"/>
+</svg>
+
+                                        </div>
+                                        <div class="ms-4">
+                                            <h2 class="card-title mb-2 text-break">
+                                                Make a reservation
+                                            </h2>
+                                            <div class="text-secondary remove-last-tinymce-margin">
+                                                <p>Pick an available asset and reserve it for a given date.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </a>
+                        </div>
+                                    </div>
+            </div>
+        </section>
+        <div class="tickets-banner">
+            <div class="container-xl">
+                <div class='d-flex card-tabs flex-column horizontal'><ul class='nav nav-tabs flex-row d-none d-md-flex' id='tabspanel'  role='tablist'>
+                        <li class='nav-item '>
+                            <a
+                                class='nav-link justify-content-between  '
+                                data-bs-toggle='tab'
+                                data-glpi-ajax-content='/ajax/common.tabs.php?_glpi_tab=Glpi%5CHelpdesk%5CHomePageTabs%241&amp;_target=%2FHelpdesk&amp;_itemtype=Glpi%5CHelpdesk%5CHomePageTabs&amp;id=0'
+                                href='/Helpdesk?forcetab=Glpi\Helpdesk\HomePageTabs$1'
+                                data-bs-target='#tab-Glpi_Helpdesk_HomePageTabs_1-1248184095'
+                                aria-label='Ongoing tickets'
+                            ><span class="d-flex align-items-center"><i class="ti ti-alert-circle me-2"></i>Ongoing tickets</span></a>
+                        </li>
+                    
+                        <li class='nav-item '>
+                            <a
+                                class='nav-link justify-content-between  '
+                                data-bs-toggle='tab'
+                                data-glpi-ajax-content='/ajax/common.tabs.php?_glpi_tab=Glpi%5CHelpdesk%5CHomePageTabs%242&amp;_target=%2FHelpdesk&amp;_itemtype=Glpi%5CHelpdesk%5CHomePageTabs&amp;id=0'
+                                href='/Helpdesk?forcetab=Glpi\Helpdesk\HomePageTabs$2'
+                                data-bs-target='#tab-Glpi_Helpdesk_HomePageTabs_2-1202344725'
+                                aria-label='Solved tickets'
+                            ><span class="d-flex align-items-center"><i class="ti ti-check me-2"></i>Solved tickets</span></a>
+                        </li>
+                    </ul><select class='form-select border-2 rounded-0 rounded-top d-md-none mb-2' id='tabspanel-select'><option value='0' selected><span class="d-flex align-items-center"><i class="ti ti-alert-circle me-2"></i>Ongoing tickets</span></option><option value='1' ><span class="d-flex align-items-center"><i class="ti ti-check me-2"></i>Solved tickets</span></option></select><div class='tab-content p-2 flex-grow-1 card ' style='min-height: 150px'><div data-glpi-tab-content class='tab-pane fade' role='tabpanel' id='tab-Glpi_Helpdesk_HomePageTabs_1-1248184095'></div><div data-glpi-tab-content class='tab-pane fade' role='tabpanel' id='tab-Glpi_Helpdesk_HomePageTabs_2-1202344725'></div></div></div><script type="text/javascript">
+//<![CDATA[
+
+         var url_hash = window.location.hash;
+         var loadTabContents = function (tablink, force_reload = false, update_session_tab = true) {
+            var url = tablink.data('glpi-ajax-content');
+            var base_url = CFG_GLPI.url_base;
+            if (base_url === '') {
+                // If base URL is not configured, fallback to current URL domain + GLPI base dir.
+                base_url = window.location.origin + '/' + CFG_GLPI.root_doc;
+            }
+            const href_url_params = new URL(url, base_url).searchParams;
+            var target = tablink.attr('data-bs-target');
+
+            const updateCurrentTab = () => {
+                $.get(
+                  CFG_GLPI.root_doc + '/ajax/updatecurrenttab.php',
+                  {
+                     itemtype: 'Glpi\\Helpdesk\\HomePageTabs',
+                     id: '0',
+                     tab_key: href_url_params.get('_glpi_tab'),
+                     withtemplate: 0
+                  }
+               );
+            }
+            if ($(target).html() && !force_reload) {
+                updateCurrentTab();
+                return;
+            }
+            $(target).html(`<div class="d-flex justify-content-center"><span class="spinner-border spinner-border position-absolute m-5" role="status" aria-hidden="true"></span></div>`);
+
+            $.get(url, function(data) {
+               $(target).html(data);
+
+               $(target).closest('main').trigger('glpi.tab.loaded');
+
+               if (update_session_tab) {
+                   updateCurrentTab();
+               }
+            }).done(function() {
+                // try to restore the scroll on a specific anchor
+                if (url_hash.length > 0) {
+                    // as we load content by ajax, when full page was ready, the anchor was not present
+                    // se we recall it to force the scroll.
+                    window.location.href = url_hash;
+
+                    // animate item with a flash
+                    $(url_hash).addClass('animate__animated animate__shakeX animate__slower');
+
+                    // unset hash (to avoid scrolling when changing tabs)
+                    url_hash   = '';
+                }
+            }).fail(function(data) {
+               $(target).html(data.responseText);
+            });
+         };
+
+         var reloadTab = function (add) {
+            var active_link = $('main #tabspanel .nav-item .nav-link.active');
+
+            // Update target AJAX endpoint URL and load tab contents
+            var current_url = active_link.data('glpi-ajax-content');
+            active_link.data('glpi-ajax-content', current_url + '&' + add);
+            loadTabContents(active_link, true);
+
+            // Restore URL
+            active_link.data('glpi-ajax-content', current_url);
+         };
+
+         var loadAllTabs = () => {
+             const tabs = $('#tabspanel a[data-bs-toggle=\"tab\"]');
+             tabs.each((index, tab) => {
+                loadTabContents($(tab));
+             });
+         }
+
+         $(function() {
+            // Keep track of the first load which will be the tab stored in the
+            // session.
+            // In this case, it is useless to send a request to the
+            // updatecurrenttab endpoint as we already are on this tab
+            let first_load = true;
+
+            $('a[data-bs-toggle=\"tab\"]').on('shown.bs.tab', function(e) {
+               e.preventDefault();
+               if ($(this).attr('data-show-all-tabs') === 'true') {
+                  loadAllTabs();
+                  // show all tabs by adding active and show classes to all tabs
+                  $('#tabspanel').parent().find('.tab-pane').addClass('active show').removeClass('fade');
+               } else {
+                  // Remove active and show classes from all tabs except the one that is clicked
+                  let clicked_tab = $(this).attr('data-bs-target');
+                  $('#tabspanel').parent().find('.tab-pane:not(' + clicked_tab + ')').removeClass('active show');
+                  loadTabContents($(this), false, !first_load);
+               }
+            });
+
+            // load initial tab
+            $('a[data-bs-target=\"#tab\u002DGlpi_Helpdesk_HomePageTabs_1\u002D1248184095\"]').tab('show');
+            first_load = false;
+
+            // select events in responsive mode
+            $('#tabspanel-select').on('change', function (e) {
+               $('#tabspanel li a').eq($(this).val()).tab('show');
+            });
+         });
+
+//]]>
+</script>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (async function() {
+            const module = await import(
+                "/js/modules/Helpdesk/IndexController.js"
+            );
+            new module.GlpiHelpdeskIndexController();
+        })();
+    </script>
+
+
+
+
+            <div class="toast-container bottom-right p-3 messages_after_redirect" id="messages_after_redirect">
+            
+
+        <script type="text/javascript">
+        var initMessagesAfterRedirectToasts = function() {
+            var toastElList = [].slice.call(document.querySelectorAll('#messages_after_redirect .toast:not(.show)'));
+            var toastList = toastElList.map(function (toastEl) {
+                var toast = new bootstrap.Toast(toastEl, {
+                    delay: 10000,
+                })
+                toast.show()
+
+                $(toastEl).on('hidden.bs.toast', function () {
+                    $(toastEl).remove();
+                });
+
+                return toast;
+            });
+        }
+        $(function() {
+            initMessagesAfterRedirectToasts();
+        });
+        </script>
+    </div>
+
+
+            </main>          </div>       </div>    </div> 
+   
+         <script type="text/javascript" src="/lib/tinymce.min.js?v=8089f4b87aad4847e72603fe6d7cd94d7e2201ef"></script>
+         <script type="text/javascript" src="/js/RichText/FormTags.min.js?v=8089f4b87aad4847e72603fe6d7cd94d7e2201ef"></script>
+         <script type="text/javascript" src="/js/RichText/UserMention.min.js?v=8089f4b87aad4847e72603fe6d7cd94d7e2201ef"></script>
+         <script type="text/javascript" src="/js/RichText/ContentTemplatesParameters.min.js?v=8089f4b87aad4847e72603fe6d7cd94d7e2201ef"></script>
+         <script type="text/javascript" src="/lib/leaflet.min.js?v=8089f4b87aad4847e72603fe6d7cd94d7e2201ef"></script>
+         <script type="text/javascript" src="/lib/flatpickr.min.js?v=8089f4b87aad4847e72603fe6d7cd94d7e2201ef"></script>
+         <script type="text/javascript" src="/js/flatpickr_buttons_plugin.min.js?v=8089f4b87aad4847e72603fe6d7cd94d7e2201ef"></script>
+         <script type="text/javascript" src="/lib/photoswipe.min.js?v=8089f4b87aad4847e72603fe6d7cd94d7e2201ef"></script>
+         <script type="text/javascript" src="/lib/gridstack.min.js?v=8089f4b87aad4847e72603fe6d7cd94d7e2201ef"></script>
+         <script type="text/javascript" src="/js/clipboard.min.js?v=8089f4b87aad4847e72603fe6d7cd94d7e2201ef"></script>
+         <script type="text/javascript" src="/lib/echarts.min.js?v=8089f4b87aad4847e72603fe6d7cd94d7e2201ef"></script>
+         <script type="text/javascript" src="/lib/jquery.rateit.min.js?v=8089f4b87aad4847e72603fe6d7cd94d7e2201ef"></script>
+         <script type="text/javascript" src="/lib/sortable.min.js?v=8089f4b87aad4847e72603fe6d7cd94d7e2201ef"></script>
+         <script type="text/javascript" src="/lib/jquery-file-upload.min.js?v=8089f4b87aad4847e72603fe6d7cd94d7e2201ef"></script>
+         <script type="text/javascript" src="/js/fileupload.min.js?v=8089f4b87aad4847e72603fe6d7cd94d7e2201ef"></script>
+         <script type="text/javascript" src="/lib/fuzzy.min.js?v=8089f4b87aad4847e72603fe6d7cd94d7e2201ef"></script>
+         <script type="text/javascript" src="/js/glpi_dialog.min.js?v=8089f4b87aad4847e72603fe6d7cd94d7e2201ef"></script>
+         <script type="text/javascript" src="/js/log_filters.min.js?v=8089f4b87aad4847e72603fe6d7cd94d7e2201ef"></script>
+         <script type="text/javascript" src="/js/misc.min.js?v=8089f4b87aad4847e72603fe6d7cd94d7e2201ef"></script>
+         <script type="text/javascript" src="/plugins/accounts/crypt.js?v=b02209e16b67965f37bddbdf6391c41884075c3a"></script>
+         <script type="text/javascript" src="/plugins/accounts/lib/lightcrypt.js?v=b02209e16b67965f37bddbdf6391c41884075c3a"></script>
+         <script type="text/javascript" src="/plugins/accounts/lib/crypto-js.min.js?v=b02209e16b67965f37bddbdf6391c41884075c3a"></script>
+         <script type="text/javascript" src="/plugins/advancedforms/js/advancedforms.js?v=f70ac11774b17cb748110e54979b11c7b4897338"></script>
+   
+   
+    </body>
+</html>
