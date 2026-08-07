@@ -157,7 +157,6 @@ cat log.glpwnme
 
 ![Exploitation of CVE 2024 27937](./images/cve_2024_27937_example_glpwnme.png)
 
-
 ## Args details
 ```bash
 # Login with creds
@@ -188,10 +187,10 @@ python3 glpwnme.py -t <target> -e <exploit_name> --infos
 ```
 
 ## Webshell
-On **GLPI** the passwords are encrypted with a random secret key. The way the key is handle has changed over the versions of GLPI.
-Moreover the encrypted passwords are stored in the database. A provided file **_shell.php_** is here to help you get those
-damn passwords easily. Just access it using the password *'?passwd=P@ssw0rd123'* and you will see the password in use. Add
-the option *'?passwd=P@ssw0rd123&_hidden_cmd=whoami'*, and you will execute the ```whoami``` command on the server. This might give you enough flexibility to recover *important credentials* fastly, and achieve **rev shell** if needed.
+On **GLPI** the passwords are encrypted with a random secret key. The way the key is handle has changed over the versions of GLPI, now rely on **libsodium**.
+A provided file **_shell.php_** is here to help you with some features (tested on versions between **9.2 and 11.0.8**)
+
+![Webshell of glpwnme](./images/webshell.png)
 
 ## Use glpwnme within python
 
