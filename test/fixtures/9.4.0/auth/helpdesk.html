@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>GLPI - Home</title><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name='viewport' content='width=device-width, initial-scale=1'><link rel="stylesheet" type="text/css" href="/lib/jquery/css/smoothness/jquery-ui-1.10.4.custom.min.css?v=9.4.0" media="all"><link rel="stylesheet" type="text/css" href="/css/jstree-glpi.min.css?v=9.4.0" media="all"><link rel="stylesheet" type="text/css" href="/lib/jqueryplugins/select2/css/select2.min.css?v=9.4.0" media="all"><link rel="stylesheet" type="text/css" href="/lib/jqueryplugins/qtip2/jquery.qtip.min.css?v=9.4.0" media="all"><link rel="stylesheet" type="text/css" href="/lib/jqueryplugins/jquery-ui-timepicker-addon/jquery-ui-timepicker-addon.min.css?v=9.4.0" media="all"><link rel="stylesheet" type="text/css" href="/lib/font-awesome/css/all.min.css?v=9.4.0" media="all"><link rel="stylesheet" type="text/css" href="/lib/leaflet/leaflet.css?v=9.4.0" media="all"><link rel="stylesheet" type="text/css" href="/lib/leaflet/plugins/Leaflet.markercluster/MarkerCluster.css?v=9.4.0" media="all"><link rel="stylesheet" type="text/css" href="/lib/leaflet/plugins/Leaflet.markercluster/MarkerCluster.Default.css?v=9.4.0" media="all"><link rel="stylesheet" type="text/css" href="/lib/leaflet/plugins/Leaflet.awesome-markers/leaflet.awesome-markers.css?v=9.4.0" media="all"><link rel="stylesheet" type="text/css" href="/lib/leaflet/plugins/leaflet-control-osm-geocoder/Control.OSMGeocoder.css?v=9.4.0" media="all"><link rel="stylesheet" type="text/css" href="/lib/leaflet/plugins/Leaflet.fullscreen/leaflet.fullscreen.css?v=9.4.0" media="all"><link rel="stylesheet" type="text/css" href="/lib/jqueryplugins/spectrum-colorpicker/spectrum.min.css?v=9.4.0" media="all"><link rel="stylesheet" type="text/css" href="/lib/jqueryplugins/rateit/rateit.min.css?v=9.4.0" media="all"><link rel="stylesheet" type="text/css" href="/css/jquery-glpi.min.css?v=9.4.0" media="all"><link rel="stylesheet" type="text/css" href="/front/css.php?file=main_styles&v=9.4.0" media="all"><link rel="stylesheet" type="text/css" href="/css/print.min.css?v=9.4.0" media="print"><link rel='shortcut icon' type='images/x-icon' href='/pics/favicon.ico' >
+<script type="text/javascript" src="/lib/jquery/js/jquery.min.js?v=9.4.0"></script><script type="text/javascript" src="/lib/jquery/js/jquery-ui-1.10.4.custom.min.js?v=9.4.0"></script><script type="text/javascript" src="/lib/jqueryplugins/select2/js/select2.full.js?v=9.4.0"></script><script type="text/javascript" src="/lib/jqueryplugins/qtip2/jquery.qtip.min.js?v=9.4.0"></script><script type="text/javascript" src="/lib/jqueryplugins/jquery-ui-timepicker-addon/jquery-ui-timepicker-addon.min.js?v=9.4.0"></script><script type="text/javascript" src="/lib/jqueryplugins/autogrow/jquery.autogrow-textarea.min.js?v=9.4.0"></script></head>
+<body class='layout_lefttab'><div id='header'><div id='header_top'><div id='c_logo'><a href='/front/helpdesk.public.php' accesskey='1' title="Home"><span class='invisible'>Logo</span></a></div><div id='c_preference' ><ul><li id='deconnexion'><a href='/front/logout.php' title="Logout" class='fa fa-sign-out-alt'><span class='sr-only'>Logout></span></a></li>
+<li id='preferences_link'><a href='/front/preference.php' title="My settings" class='fa fa-cog'><span class='sr-only'>My settings</span><span id='myname'>post-only</span></a></li><li id='bookmark_link'><script type='text/javascript'>
+$(function() {$('<div id=\'showSavedSearches\' class=\'slidepanel onright\'><div class="header"><button type=\'button\' class=\'close ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only ui-dialog-titlebar-close\' title=\'Close\'><span class=\'ui-button-icon-primary ui-icon ui-icon-closethick\'></span><span class=\'ui-button-text\'>Close</span></button><a href=\'/front/savedsearch.php\'><img class=\'icon\' src=\'/pics/menu_config.png\' alt=\'Manage saved searches\' title=\'Manage saved searches\'/></a><h3>Saved searches</h3></div><div class=\'contents\'></div></div>')
+         .hide()
+         .appendTo('body');
+$('#showSavedSearches .close').on('click', function() {
+         $('#showSavedSearches').hide(
+            'slow',
+            function () {
+               $(this).find('.contents').empty();
+            }
+         );
+       });
+$('#showSavedSearchesLink').on('click', function() {
+         $('#showSavedSearches').show(
+            'slow',
+            function() {
+               _loadshowSavedSearches();
+            }
+         );
+      });
+});var _loadshowSavedSearches = function() {
+            $.ajax({
+               url: '/ajax/savedsearch.php?action=show',
+               beforeSend: function() {
+                  var _loader = $('<div id=\'loadingslide\'><div class=\'loadingindicator\'>Loading...</div></div>');
+                  $('#showSavedSearches .contents').html(_loader);
+               }
+            })
+            .always( function() {
+               $('#loadingslide').remove();
+            })
+            .done(function(res) {
+               $('#showSavedSearches .contents').html(res);
+            });
+         };
+</script><a href='#' id='showSavedSearchesLink' class='fa fa-star' title="Load a saved search"><span class='sr-only'>Saved searches</span></a></li><li id='help_link'><a href='http://glpi-project.org/help-central' target='_blank' title="Help" class='fa fa-question'><span class='sr-only'>Help</span></a></li><li id='language_link'><a href='/front/preference.php?forcetab=User$1' title="English">English</a></li><li id='c_recherche'>
+</li></ul></div>
+</div><div id='c_menu'><ul id='menu'><li id='menu1'><a href='/front/helpdesk.public.php' title="Home" class='itemP'>Home</a></li><li id='menu1' data-id='1' class=''><a href='/front/helpdesk.public.php?create_ticket=1' class='itemP'>Create a ticket</a></li><li id='menu2' data-id='2' class=''><a href='/front/ticket.php' class='itemP'>Tickets</a></li><li id='menu3' data-id='3' class=''><a href='/front/reservationitem.php' class='itemP'>Reservations</a></li><li id='menu4' data-id='4' class=''><a href='/front/helpdesk.faq.php' class='itemP'>FAQ</a></li></ul><div id='show_all_menu' class='invisible'><dl><dt class='primary-bg primary-fg'><a class='primary-fg' href='/front/helpdesk.public.php?create_ticket=1' title="Create a ticket" class='itemP'>Create a ticket</a></dt></dl><dl><dt class='primary-bg primary-fg'><a class='primary-fg' href='/front/ticket.php' title="Tickets" class='itemP'>Tickets</a></dt></dl><dl><dt class='primary-bg primary-fg'><a class='primary-fg' href='/front/reservationitem.php' title="Reservations" class='itemP'>Reservations</a></dt></dl><dl><dt class='primary-bg primary-fg'><a class='primary-fg' href='/front/helpdesk.faq.php' title="FAQ" class='itemP'>FAQ</a></dt></dl></div><script type="text/javascript">
+//<![CDATA[
+
+
+         $(document).ready(
+            function() {
+               $('#show_all_menu').dialog({
+                  height: 'auto',
+                  width: 'auto',
+                  modal: true,
+                  autoOpen: false
+               });
+            }
+         );
+      
+
+//]]>
+</script><a href='#' onClick="$('#show_all_menu').dialog('open'); return false;"
+            id='menu_all_button' class='button-icon'></a></div><div id='c_ssmenu2' ><ul><li class='breadcrumb_item'><a href='/front/helpdesk.public.php' title="Home">Home</a></li></ul></div></div><div id='page' ><table class='tab_cadre_postonly'><tr class='noHover'><td class='top' width='50%'><br><table class='central'><tr class='noHover'><td class='top'><table class='tab_cadrehov' ><tr class='noHover'><th colspan='2'><a href="/front/helpdesk.public.php?create_ticket=1" class='pointer'>Create a ticket&nbsp;<i class='fa fa-plus'></i><span class='sr-only'>Add</span></a></th></tr><tr><th>Tickets</th><th>Number</th></tr><tr class='tab_bg_2'><td><a href="/front/ticket.php?criteria%5B0%5D%5Bfield%5D=12&amp;criteria%5B0%5D%5Bsearchtype%5D=equals&amp;criteria%5B0%5D%5Bvalue%5D=1&amp;criteria%5B0%5D%5Blink%5D=AND&amp;reset=reset">New</a></td><td class='numeric'>0</td></tr><tr class='tab_bg_2'><td><a href="/front/ticket.php?criteria%5B0%5D%5Bfield%5D=12&amp;criteria%5B0%5D%5Bsearchtype%5D=equals&amp;criteria%5B0%5D%5Bvalue%5D=2&amp;criteria%5B0%5D%5Blink%5D=AND&amp;reset=reset">Processing (assigned)</a></td><td class='numeric'>0</td></tr><tr class='tab_bg_2'><td><a href="/front/ticket.php?criteria%5B0%5D%5Bfield%5D=12&amp;criteria%5B0%5D%5Bsearchtype%5D=equals&amp;criteria%5B0%5D%5Bvalue%5D=3&amp;criteria%5B0%5D%5Blink%5D=AND&amp;reset=reset">Processing (planned)</a></td><td class='numeric'>0</td></tr><tr class='tab_bg_2'><td><a href="/front/ticket.php?criteria%5B0%5D%5Bfield%5D=12&amp;criteria%5B0%5D%5Bsearchtype%5D=equals&amp;criteria%5B0%5D%5Bvalue%5D=4&amp;criteria%5B0%5D%5Blink%5D=AND&amp;reset=reset">Pending</a></td><td class='numeric'>0</td></tr><tr class='tab_bg_2'><td><a href="/front/ticket.php?criteria%5B0%5D%5Bfield%5D=12&amp;criteria%5B0%5D%5Bsearchtype%5D=equals&amp;criteria%5B0%5D%5Bvalue%5D=5&amp;criteria%5B0%5D%5Blink%5D=AND&amp;reset=reset">Solved</a></td><td class='numeric'>0</td></tr><tr class='tab_bg_2'><td><a href="/front/ticket.php?criteria%5B0%5D%5Bfield%5D=12&amp;criteria%5B0%5D%5Bsearchtype%5D=equals&amp;criteria%5B0%5D%5Bvalue%5D=6&amp;criteria%5B0%5D%5Blink%5D=AND&amp;reset=reset">Closed</a></td><td class='numeric'>0</td></tr><tr class='tab_bg_2'><td><a href="/front/ticket.php?criteria%5B0%5D%5Bfield%5D=12&amp;criteria%5B0%5D%5Bsearchtype%5D=equals&amp;criteria%5B0%5D%5Bvalue%5D=all&amp;criteria%5B0%5D%5Blink%5D=AND&amp;reset=reset&amp;is_deleted=1">Deleted</a></td><td class='numeric'>0</td></tr></table><br></td></tr><tr class='noHover'><td class='top'></td></tr><tr class='noHover'><td class='top'><br><table class='tab_cadrehov'><tr class='noHover'><th><div class='relative'><span>Public reminders</span></div></th></tr>
+</table>
+</td></tr><tr class='noHover'><td class='top'><br><table class='tab_cadrehov'><tr class='noHover'><th colspan='2'><div class='relative'><span>Public RSS feeds</span></div></th></tr>
+</table>
+</td></tr></table></td><td class='top' width='50%'><br><table class='central'><tr class='noHover'><td class='top'></td></tr><tr class='noHover'><td class='top'><br></td></tr><tr class='noHover'><td class='top'><br></td></tr></table></td></tr></table></div><div id='footer'><table width='100%'><tr><td class='right'><a href="http://glpi-project.org/" title="Powered by Teclib and contributors" class="copyright">GLPI 9.4.0 Copyright (C) 2015-2018 Teclib' and contributors</a></td></tr></table></div></body></html><script type="text/javascript" src="/lib/leaflet/leaflet.js?v=9.4.0"></script><script type="text/javascript" src="/lib/spin.js/spin.min.js?v=9.4.0"></script><script type="text/javascript" src="/lib/leaflet/plugins/leaflet.spin/leaflet.spin.min.js?v=9.4.0"></script><script type="text/javascript" src="/lib/leaflet/plugins/Leaflet.markercluster/leaflet.markercluster.js?v=9.4.0"></script><script type="text/javascript" src="/lib/leaflet/plugins/Leaflet.awesome-markers/leaflet.awesome-markers.min.js?v=9.4.0"></script><script type="text/javascript" src="/lib/leaflet/plugins/leaflet-control-osm-geocoder/Control.OSMGeocoder.js?v=9.4.0"></script><script type="text/javascript" src="/lib/leaflet/plugins/Leaflet.fullscreen/Leaflet.fullscreen.min.js?v=9.4.0"></script><script type="text/javascript" src="/lib/jqueryplugins/spectrum-colorpicker/spectrum-min.js?v=9.4.0"></script><script type="text/javascript" src="/lib/tiny_mce/lib/tinymce.min.js?v=9.4.0"></script><script type="text/javascript" src="/lib/jqueryplugins/rateit/jquery.rateit.min.js?v=9.4.0"></script><script type="text/javascript" src="/lib/jqueryplugins/jquery-file-upload/js/jquery.fileupload.js?v=9.4.0"></script><script type="text/javascript" src="/lib/jqueryplugins/jquery-file-upload/js/jquery.iframe-transport.js?v=9.4.0"></script><script type="text/javascript" src="/js/fileupload.min.js?v=9.4.0"></script><script type="text/javascript" src="/lib/fuzzy/fuzzy-min.js?v=9.4.0"></script><script type="text/javascript" src="/lib/jqueryplugins/jquery.hotkeys.js?v=9.4.0"></script><script type="text/javascript" src="/js/fuzzysearch.min.js?v=9.4.0"></script><script type="text/javascript" src="/js/log_filters.min.js?v=9.4.0"></script><script type="text/javascript" src="/lib/jquery/i18n/jquery.ui.datepicker-en-GB.js?v=9.4.0"></script><script type="text/javascript" src="/js/common.min.js?v=9.4.0"></script><script type="text/javascript">
+//<![CDATA[
+
+
+      window.old_alert = window.alert;
+      window.alert = function(message, caption) {
+         // Don't apply methods on undefined objects... ;-) #3866
+         if(typeof message == 'string') {
+            message = message.replace('\n', '<br>');
+         }
+         caption = caption || 'Information';
+         $('<div/>').html(message).dialog({
+            title: caption,
+            buttons: {
+               OK: function() {
+                  $(this).dialog('close');
+               }
+            },
+            dialogClass: 'glpi_modal',
+            open: function(event, ui) {
+               $(this).parent().prev('.ui-widget-overlay').addClass('glpi_modal');
+            },
+            close: function(){
+               $(this).remove();
+            },
+            draggable: true,
+            modal: true,
+            resizable: false,
+            width: 'auto'
+         });
+      };
+
+//]]>
+</script><script type="text/javascript">
+//<![CDATA[
+
+
+      var confirmed = false;
+      var lastClickedElement;
+
+      // store last clicked element on dom
+      $(document).click(function(event) {
+          lastClickedElement = $(event.target);
+      });
+
+      // asynchronous confirm dialog with jquery ui
+      var newConfirm = function(message, caption) {
+         message = message.replace('\n', '<br>');
+         caption = caption || '';
+
+         $('<div/>').html(message).dialog({
+            title: caption,
+            dialogClass: 'fixed glpi_modal',
+            buttons: {
+               'Confirm': function () {
+                  $(this).dialog('close');
+                  confirmed = true;
+
+                  //trigger click on the same element (to return true value)
+                  lastClickedElement.click();
+
+                  // re-init confirmed (to permit usage of 'confirm' function again in the page)
+                  // maybe timeout is not essential ...
+                  setTimeout(function(){  confirmed = false; }, 100);
+               },
+               'Cancel': function () {
+                  $(this).dialog('close');
+                  confirmed = false;
+               }
+            },
+            open: function(event, ui) {
+               $(this).parent().prev('.ui-widget-overlay').addClass('glpi_modal');
+            },
+            close: function () {
+                $(this).remove();
+            },
+            draggable: true,
+            modal: true,
+            resizable: false,
+            width: 'auto'
+         });
+      };
+
+      window.nativeConfirm = window.confirm;
+
+      // redefine native 'confirm' function
+      window.confirm = function (message, caption) {
+         // if watched var isn't true, we can display dialog
+         if(!confirmed) {
+            // call asynchronous dialog
+            newConfirm(message, caption);
+         }
+
+         // return early
+         return confirmed;
+      };
+
+//]]>
+</script><script type="text/javascript">
+//<![CDATA[
+
+
+         var CFG_GLPI  = {
+            'url_base': 'http://localhost:8020',
+            'root_doc': '',
+         };
+      
+
+//]]>
+</script><script type="text/javascript">
+//<![CDATA[
+
+
+      displayAjaxMessageAfterRedirect = function() {
+         // attach MESSAGE_AFTER_REDIRECT to body
+         $('.message_after_redirect').remove();
+         $.ajax({
+            url:  '/ajax/displayMessageAfterRedirect.php',
+            success: function(html) {
+               $('body').append(html);
+            }
+         });
+      }
+
+//]]>
+</script><script type="text/javascript" src="/plugins/fusioninventory/js/footer.js?v=9.4+2.4"></script>

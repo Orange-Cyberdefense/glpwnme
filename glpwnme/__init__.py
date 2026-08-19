@@ -5,6 +5,7 @@ from glpwnme.exploits.utils import *
 from glpwnme.exploits.implementations import *
 from glpwnme.exploits.orchestrator import ExploitOrchestrator
 from glpwnme.exploits.logger import Log, KiddieLogger
+from glpwnme.exploits.exceptions import BadCredentialsException
 
 __all__ = ["run_cli"]
 
@@ -32,28 +33,35 @@ class GlpwnMe:
         # Authentication options
         self.parser.add_argument("-u", "--username", help="Username to use")
         self.parser.add_argument("-p", "--password", help="Password to use")
-        self.parser.add_argument("--token", help="Token for login into glpi")
-        self.parser.add_argument("--cookie", help="Cookie value for login into glpi")
-        self.parser.add_argument("--auth", help="Auth to use (default taken from glpi)")
-        self.parser.add_argument("--profile", help="Profile to use (if any)")
+        self.parser.add_argument("--token",          help="Token for login into glpi")
+        self.parser.add_argument("--cookie",         help="Cookie value for login into glpi")
+        self.parser.add_argument("--auth",           help="Auth to use (default taken from glpi)")
+        self.parser.add_argument("--profile",        help="Profile to use (if any)")
+        self.parser.add_argument("--otp",            help="MFA code to use for login")
+
+        self.parser.add_argument("-su", "--server-user",        help="Username to use for server authentication", default="")
+        self.parser.add_argument("-sp", "--server-password",    help="Password to use for server authentication", default="")
 
         # Exploit options
         self.parser.add_argument("-e", "--exploit", help="The exploit to use")
-        self.parser.add_argument("--run", help="Specify to run the exploit and not to check it", action="store_true")
-        self.parser.add_argument("--clean", help="Specify to clean the exploit traces if implemented", action="store_true")
-        self.parser.add_argument("--check", help="Specify to check the exploit if implemented", action="store_true")
-        self.parser.add_argument("--check-all", help="Check all the exploits available on the target", action="store_true")
-        self.parser.add_argument("--no-opsec", help="Check even if the exploit is noted as not opsec safe", action="store_false")
-        self.parser.add_argument("--infos", help="Display the informations about an exploit", action="store_true")
+        self.parser.add_argument("--run",           help="Specify to run the exploit and not to check it", action="store_true")
+        self.parser.add_argument("--clean",         help="Specify to clean the exploit traces if implemented", action="store_true")
+        self.parser.add_argument("--check",         help="Specify to check the exploit if implemented", action="store_true")
+        self.parser.add_argument("--check-all",     help="Check all the exploits available on the target", action="store_true")
+        self.parser.add_argument("--no-opsec",      help="Check even if the exploit is noted as not opsec safe", action="store_false")
+        self.parser.add_argument("--infos",         help="Display the informations about an exploit", action="store_true")
         self.parser.add_argument("-O", "--options", help="Options to add for the exploit", nargs="+")
 
         # Others
-        self.parser.add_argument("--dump-cookies", help="Just login on the target and dump the cookies", action="store_true")
-        self.parser.add_argument("--no-init", help="Do not init the session", action="store_true")
-        self.parser.add_argument('--proxy', help='Full url for the proxy')
-        self.parser.add_argument("-H", "--header", help="Header(s) to add", nargs="+")
-        self.parser.add_argument("--list-plugins", help="Try to enum plugins on the target", action="store_true")
-        self.parser.add_argument("--decrypt-old", help="Decrypt old password on GLPI version below or equal to 9.4.6")
+        self.parser.add_argument("--dump-cookies",  help="Just login on the target and dump the cookies", action="store_true")
+        self.parser.add_argument("--no-init",       help="Do not init the session", action="store_true")
+        self.parser.add_argument('--proxy',         help='Full url for the proxy')
+        self.parser.add_argument("-H", "--header",  help="Header(s) to add", nargs="+")
+        self.parser.add_argument("--list-plugins",  help="Try to enum plugins on the target", action="store_true")
+        self.parser.add_argument("--decrypt-old",   help="Decrypt old password on GLPI version below or equal to 9.4.6")
+        self.parser.add_argument("--decrypt",       help="Decrypt password from GLPI")
+        self.parser.add_argument("--key",           help="Key for decrypting passwords in hex")
+        self.parser.add_argument("--debug", action="store_true", help="Debug requests made to the target")
 
         self.args = self.parser.parse_args()
 
@@ -100,10 +108,14 @@ def run_cli():
                           headers=headers_to_dict(glpwnme.header),
                           credentials=GlpiCredentials(glpwnme.username,
                                                       glpwnme.password,
+                                                      glpwnme.otp,
                                                       glpwnme.auth,
                                                       glpwnme.token,
                                                       glpwnme.cookie,
-                                                      glpwnme.profile))
+                                                      glpwnme.profile,
+                                                      glpwnme.server_user,
+                                                      glpwnme.server_password),
+                          debug_request=glpwnme.debug)
 
     init_exploits = list(map(lambda exploit: exploit(session), get_all_exploits()))
     exploit_options = headers_to_dict(glpwnme.options, separator="=")
@@ -119,6 +131,19 @@ def run_cli():
             print(res.decode())
         except:
             print(res)
+    
+    elif glpwnme.decrypt:
+        if not glpwnme.key:
+            Log.err("[cyan]--key[/cyan] is required for decrypting passwords")
+        else:
+            plaintext = GlpiUtils.decrypt(glpwnme.decrypt, glpwnme.key)
+            if plaintext:
+                try:
+                    plaintext = plaintext.decode("utf-8")
+                    Log.msg(f"Decrypted password: [bold green]{plaintext}[/bold green]")
+                except:
+                    Log.msg("Decrypted password:")
+                    print(plaintext)
 
     elif glpwnme.list_plugins:
         from glpwnme.exploits.plugins_enum import PluginEnums
@@ -128,7 +153,6 @@ def run_cli():
 
     elif(glpwnme.check_all or glpwnme.exploit or glpwnme.dump_cookies):
         try:
-            ### TODO, login before initializing the session if credentials are provided
             if not glpwnme.no_init:
                 session.init_session()
                 if(session.glpi_infos.session_dir_listing
@@ -161,6 +185,10 @@ def run_cli():
                     " [b]Check your internet connections !!![/b]")
             Log.err(e)
             exit(1)
+
+        except BadCredentialsException as e:
+            Log.err(e)
+            exit(2)
 
         if glpwnme.dump_cookies:
             if session.login_with_credentials():
