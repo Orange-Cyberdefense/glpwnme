@@ -96,8 +96,8 @@ All generated files (like `log.glpwnme`) will be available on your local machine
 | CVE_2026_42320       | 6.5    | Self-Service | GLPI < 11.0.7 |
 | CVE_2026_48482       | 7.2    | Super-Admin | GLPI < 11.0.8 |
 | CVE_2026_49469       | 4.4    | Hotliner     | GLPI < 11.0.8 |
-| CVE_2026_52848       | 5.2    | Authenticated | GLPI < 11.0.8 |
 | CVE_2026_52728       | 10     | Unauthenticated | Plugin GenericObject < 2.14.15 |
+| CVE_2026_52848       | 5.2    | Authenticated | GLPI < 11.0.8 |
 
 Also, this tool checks for **default credentials** and is able to **upload php file** from a privileged user.
 
