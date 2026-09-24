@@ -4,6 +4,7 @@ check_file.py
 venv/
 .venv/
 tests/
+.pytest_cache/
 
 glpwnme/exploits/implementations/others/*
 !glpwnme/exploits/implementations/others/.gitkeep
