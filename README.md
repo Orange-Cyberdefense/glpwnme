@@ -27,6 +27,7 @@ glpwnme -t "$Target" -e "$EXPLOIT_NAME" --infos # Show how to use the exploit
 glpwnme -t "$Target" -e "$EXPLOIT_NAME" --run
 cat log.glpwnme # Check what happened
 glpwnme -t "$Target" -e "$EXPLOIT_NAME" --clean # Clean the target
+glpwnme --find-by-version 10.0.25
 ```
 
 ## :whale: Docker
