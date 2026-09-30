@@ -28,7 +28,11 @@ class GlpwnMe:
         Parse the arguments needed
         """
         # Target options
-        self.parser.add_argument('-t', '--target', required=True, help='Target url to attack')
+        self.parser.add_argument('-t', '--target', help='Target url to attack')
+        self.parser.add_argument('--find-by-version', dest='find_by_version',
+                                 metavar='VERSION',
+                                 help='List all known exploits affecting a specific GLPI version'
+                                      ' (e.g. --find-by-version 10.0.25). No target required.')
 
         # Authentication options
         self.parser.add_argument("-u", "--username", help="Username to use")
@@ -96,12 +100,77 @@ def headers_to_dict(headers, separator=":"):
         headers_dict[key.strip()] = val.strip()
     return headers_dict
 
+def display_exploits_for_version(glpi_version):
+    """
+    Display all known exploits that affect a given GLPI version.
+
+    This helper does NOT contact any remote target: it instantiates every
+    exploit class with a ``None`` session (exploit constructors do not touch
+    the session) and asks each one whether it applies to the provided
+    version through :meth:`GlpiExploit.is_glpi_vulnerable`.
+
+    :param glpi_version: The GLPI version to test, e.g. ``"10.0.25"``.
+    :type glpi_version: str
+    """
+    # Validate the version format up-front to fail fast with a clear error
+    # instead of crashing deep inside packaging when comparisons happen.
+    try:
+        version.Version(glpi_version)
+    except version.InvalidVersion:
+        Log.err(f"Invalid GLPI version: [red]{glpi_version}[/red]")
+        exit(2)
+
+    header()
+    Log.log(f"Searching exploits matching GLPI version [b blue]{glpi_version}[/b blue]...")
+
+    matching = []
+    for exploit_cls in get_all_exploits():
+        try:
+            # glpi_session is only used at exploit runtime; instantiation and
+            # is_glpi_vulnerable() only rely on class-level requirements.
+            exploit = exploit_cls(None)
+        except Exception as e:
+            Log.err(f"Skipping {exploit_cls.__name__}: {e}")
+            continue
+
+        # If the exploit did not declare any version constraint we cannot say
+        # it applies to this version — skip it to avoid false positives.
+        if exploit.requirements.glpi_version.is_default():
+            continue
+
+        try:
+            if exploit.is_glpi_vulnerable(glpi_version):
+                matching.append(exploit)
+        except Exception as e:
+            Log.err(f"Error checking {exploit_cls.__name__}: {e}")
+
+    if not matching:
+        Log.err(f"No known exploit matches GLPI version [b]{glpi_version}[/b]")
+        Log.log("Good news — this version is not vulnerable to any exploit"
+                " tracked by glpwnme. Keep it up to date!")
+        return
+
+    ExploitOrchestrator.display_exploits(matching)
+    Log.print(f"[b red]{len(matching)}[/b red] known vulnerabilit"
+              f"{'y' if len(matching) == 1 else 'ies'} affect"
+              f"{'s' if len(matching) == 1 else ''} GLPI"
+              f" [b]{glpi_version}[/b].")
+
 def run_cli():
     """
     Run glpwnme
     """
     glpwnme = GlpwnMe()
     glpwnme.parse()
+
+    # --find-by-version: standalone mode, no target required
+    if glpwnme.find_by_version:
+        display_exploits_for_version(glpwnme.find_by_version)
+        return
+
+    if not glpwnme.target:
+        glpwnme.parser.error("the following arguments are required: -t/--target"
+                             " (or use --find-by-version to search offline)")
 
     session = GlpiSession(target=glpwnme.target,
                           proxies=glpwnme.proxy,
@@ -230,3 +299,4 @@ def run_cli():
         Log.print(f"There are currently [i b]{len(orchestrator.exploits)}[/] [u]exploits[/] available")
         Log.log("Choose among the actions:")
         Log.log("(--check-all or --exploit <exploit name>), --check, --run, --clean, --infos")
+
