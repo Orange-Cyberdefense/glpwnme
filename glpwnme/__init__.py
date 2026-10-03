@@ -221,6 +221,11 @@ def run_cli():
         plugin_enumerator.show_plugins_found()
 
     elif(glpwnme.check_all or glpwnme.exploit or glpwnme.dump_cookies):
+        if not(session._ensure_glpi()
+               or Log.ask(f"Target {session.target} is not GLPI, [b]check url[/b] continue")):
+            Log.err("aborting")
+            exit(1)
+
         try:
             if not glpwnme.no_init:
                 session.init_session()
