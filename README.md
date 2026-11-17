@@ -103,6 +103,7 @@ All generated files (like `log.glpwnme`) will be available on your local machine
 | CVE_2026_52848       | 5.2    | Authenticated | GLPI < 11.0.8 |
 | DOCUMENTS LEAK       | 6.1    | Unauthenticated | GLPI < 10.0.27 |
 | UNAUTH USER ENUM     | 4.3    | Unauthenticated | GLPI < 10.0.28 |
+| GHSA_753w_2942_4pxm  | 7.5    | Unauthenticated | GLPI < 11.0.9 |
 | GHSA_pjj6_ww22_86qh  | 6.5    | Authenticated | GLPI < 11.0.10 |
 
 Also, this tool checks for **default credentials**, **version**, **plugins** and some other **configuration details**.
