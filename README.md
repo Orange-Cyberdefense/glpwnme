@@ -105,6 +105,7 @@ All generated files (like `log.glpwnme`) will be available on your local machine
 | UNAUTH USER ENUM     | 4.3    | Unauthenticated | GLPI < 10.0.28 |
 | GHSA_753w_2942_4pxm  | 7.5    | Unauthenticated | GLPI < 11.0.9 |
 | GHSA_pjj6_ww22_86qh  | 6.5    | Authenticated | GLPI < 11.0.10 |
+| GHSA_????_????_????  | 7.5    | Authenticated | GLPI < 11.0.13 |
 
 Also, this tool checks for **default credentials**, **version**, **plugins** and some other **configuration details**.
 
