@@ -93,7 +93,7 @@ def get_file_hash(repo: Path, tag: str, url_rel: str) -> str | None:
 
 def list_version_tags(repo: Path) -> list[str]:
     result = subprocess.run(
-        ["git", "tag", "-l", "10.*", "11.*"],
+        ["git", "tag", "-l", "11.*", "12.*"],
         cwd=repo,
         capture_output=True,
         text=True,
