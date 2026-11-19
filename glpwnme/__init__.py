@@ -13,7 +13,7 @@ def header():
     """
     Print the header of the tool
     """
-    Log.print("[b black on blue]\uE0B0 GlpwnMe [/b black on blue][blue]\uE0B0[/blue] by [b u blue]RIOUX Guilhem[/b u blue]")
+    Log.print("[b white on blue] GlpwnMe [/b white on blue][blue]\uE0B0[/blue] by [b u blue]RIOUX Guilhem[/b u blue]")
 
 class GlpwnMe:
     """
